@@ -2856,12 +2856,13 @@ namespace Fusion.Editor {
       private int               _rootFolderIndex;
 
       private readonly string[] _rootFolders;
+      private readonly string   _searchFilter;
 
       /// <summary>
       /// Creates a new instance.
       /// </summary>
       public AssetEnumerator(string root, string label, Type type) {
-        var searchFilter = MakeSearchFilter(label, type);
+        _searchFilter    = MakeSearchFilter(label, type);
         _rootFolderIndex = 0;
         if (string.IsNullOrEmpty(root)) {
           // search everywhere
@@ -2872,7 +2873,7 @@ namespace Fusion.Editor {
           _hierarchyProperty = new HierarchyProperty(root);
         }
 
-        _hierarchyProperty.SetSearchFilter(searchFilter, (int)SearchableEditorWindow.SearchMode.All);
+        _hierarchyProperty.SetSearchFilter(_searchFilter, (int)SearchableEditorWindow.SearchMode.All);
       }
 
       /// <summary>
@@ -2889,7 +2890,11 @@ namespace Fusion.Editor {
         }
 
         var newHierarchyProperty = new HierarchyProperty(_rootFolders[++_rootFolderIndex]);
-        UnityInternal.HierarchyProperty.CopySearchFilterFrom(newHierarchyProperty, _hierarchyProperty);
+        if (UnityInternal.HierarchyProperty.CopySearchFilterFrom != null) {
+          UnityInternal.HierarchyProperty.CopySearchFilterFrom(newHierarchyProperty, _hierarchyProperty);
+        } else {
+          newHierarchyProperty.SetSearchFilter(_searchFilter, (int)SearchableEditorWindow.SearchMode.All);
+        }
         _hierarchyProperty = newHierarchyProperty;
 
         // try again
@@ -6355,6 +6360,14 @@ namespace Fusion.Editor {
       }
     }
 
+    public static T TryCreateMethodDelegate<T>(this Type type, string methodName, BindingFlags flags = DefaultBindingFlags) where T : Delegate {
+      try {
+        return CreateMethodDelegateInternal<T>(type, methodName, flags);
+      } catch {
+        return null;
+      }
+    }
+
     public static Delegate CreateMethodDelegate(this Type type, string methodName, BindingFlags flags, Type delegateType) {
       try {
         return CreateMethodDelegateInternal(type, methodName, flags, delegateType);
@@ -7487,7 +7500,7 @@ namespace Fusion.Editor {
     [UnityEditor.InitializeOnLoad]
     public static class HierarchyProperty {
       public delegate void CopySearchFilterFromDelegate(UnityEditor.HierarchyProperty to, UnityEditor.HierarchyProperty from);
-      public static CopySearchFilterFromDelegate CopySearchFilterFrom = typeof(UnityEditor.HierarchyProperty).CreateMethodDelegate<CopySearchFilterFromDelegate>(nameof(CopySearchFilterFrom), 
+      public static readonly CopySearchFilterFromDelegate CopySearchFilterFrom = typeof(UnityEditor.HierarchyProperty).TryCreateMethodDelegate<CopySearchFilterFromDelegate>(nameof(CopySearchFilterFrom), 
         BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
     }
     

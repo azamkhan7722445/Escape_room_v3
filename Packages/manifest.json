@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "com.atteneder.gltfast": "https://github.com/atteneder/glTFast.git#v5.0.0",
     "com.hwaet.projectcloner": "https://github.com/hwaet/UnityProjectCloner.git",
-    "com.readyplayerme.core": "https://github.com/readyplayerme/rpm-unity-sdk-core.git#v3.3.0",
+    "com.readyplayerme.core": "https://github.com/readyplayerme/rpm-unity-sdk-core.git",
+    "com.unity.ai.assistant": "2.7.0-pre.2",
     "com.unity.ai.navigation": "2.0.10",
     "com.unity.collab-proxy": "2.11.3",
     "com.unity.feature.development": "1.0.2",
