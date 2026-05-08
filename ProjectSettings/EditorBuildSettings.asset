@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Metaverse/Spaces/AvatarSelection/Scenes/AvatarSelection.unity
+    guid: b89ebdf1b470bdd45aad24418c48162c
+  - enabled: 1
+    path: Assets/Metaverse/Spaces/Hub/Scenes/Hub.unity
+    guid: 92037d849f7ae7b4597e630166aacb31
+  - enabled: 1
+    path: Assets/Metaverse/Spaces/Music/Scenes/Music.unity
+    guid: b6c47a3a95b2af143ab097a71eee35f2
+  - enabled: 1
+    path: Assets/Metaverse/Spaces/ArtGallery/Scenes/ArtGallery.unity
+    guid: 0518fbbcd5214234c82c0e742e1733e6
+  - enabled: 1
+    path: Assets/Metaverse/Spaces/PicaZoo/Scenes/PicaZoo.unity
+    guid: 37505ae8b150fbe458e80bedb3f1bf65
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f7c99e3480555744e9a379ea516af73e, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 556f3dfeff662654c848f4e4f84449fc, type: 2}
