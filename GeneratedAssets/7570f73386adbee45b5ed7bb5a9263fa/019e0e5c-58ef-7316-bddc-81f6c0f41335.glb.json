@@ -1,0 +1,23 @@
+{
+    "asset": "7570f73386adbee45b5ed7bb5a9263fa",
+    "fileName": "019e0e5c-58ef-7316-bddc-81f6c0f41335.glb",
+    "prompt": "A wrapped Egyptian Mummy standing upright, ancient and weathered.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "59e43cb88471ebe47ac1161467d3aff9",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

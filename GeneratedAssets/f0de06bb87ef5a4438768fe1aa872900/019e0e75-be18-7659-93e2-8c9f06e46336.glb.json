@@ -1,0 +1,23 @@
+{
+    "asset": "f0de06bb87ef5a4438768fe1aa872900",
+    "fileName": "019e0e75-be18-7659-93e2-8c9f06e46336.glb",
+    "prompt": "A small heart-shaped stone carving, reddish stone, ancient Egyptian style.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "3f3c5c71d28084441a9d071603d8627a",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

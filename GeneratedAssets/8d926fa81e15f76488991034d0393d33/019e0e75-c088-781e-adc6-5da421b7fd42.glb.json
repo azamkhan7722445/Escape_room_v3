@@ -1,0 +1,23 @@
+{
+    "asset": "8d926fa81e15f76488991034d0393d33",
+    "fileName": "019e0e75-c088-781e-adc6-5da421b7fd42.glb",
+    "prompt": "An ancient Egyptian balance scale made of gold and dark wood, with two hanging pans, ornate decorations.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "331dac768a2f8594991740539211f617",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

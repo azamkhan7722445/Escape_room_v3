@@ -1,0 +1,23 @@
+{
+    "asset": "a6d08c8f1c4d4524d806c112431f3565",
+    "fileName": "019e0e75-a92e-7b7b-b43e-d8156af7e955.glb",
+    "prompt": "A stone plinth with hieroglyphic carvings, ancient Egyptian style, sandstone texture.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "766a3cd74a549284bb5aa9f88a889bb1",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

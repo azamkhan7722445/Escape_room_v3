@@ -1,0 +1,23 @@
+{
+    "asset": "b7a01878854a5fc4e99ed2441894fcfe",
+    "fileName": "019e0e5a-b951-7f1b-9d32-1b308cd139da.glb",
+    "prompt": "An elaborate ancient Egyptian chest made of wood and gold, with hieroglyphic carvings.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "16608367569f8f04f96569959b79a704",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

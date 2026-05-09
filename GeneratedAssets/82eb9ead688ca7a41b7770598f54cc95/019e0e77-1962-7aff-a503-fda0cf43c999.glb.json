@@ -1,0 +1,23 @@
+{
+    "asset": "82eb9ead688ca7a41b7770598f54cc95",
+    "fileName": "019e0e77-1962-7aff-a503-fda0cf43c999.glb",
+    "prompt": "An ancient papyrus scroll, slightly unrolled, with Egyptian drawings.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "1eed1debc0b093349bf34ea7394bc2ff",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

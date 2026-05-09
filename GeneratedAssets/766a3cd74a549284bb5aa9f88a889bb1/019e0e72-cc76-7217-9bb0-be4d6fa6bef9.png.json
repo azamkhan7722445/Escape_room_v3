@@ -1,0 +1,28 @@
+{
+    "asset": "766a3cd74a549284bb5aa9f88a889bb1",
+    "fileName": "019e0e72-cc76-7217-9bb0-be4d6fa6bef9.png",
+    "prompt": "A stone plinth with hieroglyphic carvings, ancient Egyptian style, sandstone texture, white background, high quality.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

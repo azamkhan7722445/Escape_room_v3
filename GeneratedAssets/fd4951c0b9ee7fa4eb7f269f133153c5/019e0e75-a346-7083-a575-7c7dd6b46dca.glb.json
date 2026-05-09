@@ -1,0 +1,23 @@
+{
+    "asset": "fd4951c0b9ee7fa4eb7f269f133153c5",
+    "fileName": "019e0e75-a346-7083-a575-7c7dd6b46dca.glb",
+    "prompt": "A small feather-shaped stone carving, white stone, ancient Egyptian style.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "532320416c8b8164bb2f9fa70ce2a108",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}
