@@ -20,6 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Metaverse/Spaces/PicaZoo/Scenes/PicaZoo.unity
     guid: 37505ae8b150fbe458e80bedb3f1bf65
+  - enabled: 0
+    path: Assets/Scenes/PyramidEscapeRoom.unity
+    guid: 3dfeb89e318e6e64cb0db4bff0f67fda
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f7c99e3480555744e9a379ea516af73e, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 556f3dfeff662654c848f4e4f84449fc, type: 2}
+  m_UseUCBPForAssetBundles: 0
