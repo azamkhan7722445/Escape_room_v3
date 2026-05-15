@@ -8771,6 +8771,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle 2 Hierogylph Cipher
       objectReference: {fileID: 0}
+    - target: {fileID: 9071303879434363938, guid: f4294256698c6634e914b281c07ed76f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12653,16 +12657,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 1956434589}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 235.23
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 235.23
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 235.23
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.078
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.753
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12703,13 +12719,185 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1607598199}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1607598198}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1607598197}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1607598196}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1607598195}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1607598194}
   m_SourcePrefab: {fileID: 100100000, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
 --- !u!4 &1607598192 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
   m_PrefabInstance: {fileID: 1607598191}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1607598193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
+  m_PrefabInstance: {fileID: 1607598191}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1607598194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607598193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a591d221a634417e9827eb58e17de84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fusion.Addons.Physics::Fusion.Addons.Physics.NetworkRigidbody3D
+  _stateAuthorityChangeErrorCorrectionDelta: 0
+  SyncScale: 0
+  SyncParent: 1
+  _interpolationTarget: {fileID: 0}
+  UsePreciseRotation: 0
+  UseRenderSleepThresholds: 1
+  RenderThresholds:
+    UseEnergy: 1
+    Position: 0.01
+    Rotation: 0.01
+    Scale: 0.01
+--- !u!114 &1607598195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607598193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e29a5da46f946a43a21a0c03ef7d768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.NetworkGrabbable
+  networkTransform: {fileID: 0}
+  networkRigidbody: {fileID: 0}
+  _InitialIsKinematicState:
+    _value: 0
+  _CurrentGrabber: {fileID: 0}
+  _LocalPositionOffset: {x: 0, y: 0, z: 0}
+  _LocalRotationOffset: {x: 0, y: 0, z: 0, w: 0}
+  onDidUngrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onDidGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  extrapolateWhileTakingAuthority: 1
+  isTakingAuthority: 0
+  grabbable: {fileID: 0}
+--- !u!114 &1607598196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607598193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4290acb83d51f7448a942794de0756e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.Grabbable
+  localPositionOffset: {x: 0, y: 0, z: 0}
+  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
+  currentGrabber: {fileID: 0}
+  expectedIsKinematic: 0
+  allowedClosedHandGrabing: 1
+  networkGrabbable: {fileID: 0}
+  rb: {fileID: 0}
+  applyVelocityOnRelease: 1
+  onWillGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onUngrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onGrab:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1607598197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607598193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkObject
+  SortKey: 2604816383
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1607598195}
+  - {fileID: 1607598194}
+  ForceRemoteRenderTimeframe: 0
+--- !u!54 &1607598198
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607598193}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1607598199
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607598193}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1304574682027382511, guid: fa415dbbad9868842aa827dd54a1cc0f, type: 3}
 --- !u!1 &1608424023
 GameObject:
   m_ObjectHideFlags: 0
