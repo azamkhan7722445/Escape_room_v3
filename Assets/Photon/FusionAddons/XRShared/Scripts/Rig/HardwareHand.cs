@@ -145,6 +145,18 @@ namespace Fusion.XR.Shared.Rig
             }
         }
 
+        public void StopHaptics()
+        {
+            if (Device != null)
+            {
+                var inputDevice = Device.GetValueOrDefault();
+                if (supportImpulse)
+                {
+                    inputDevice.StopHaptics();
+                }
+            }
+        }
+
         // If a device supporting haptic feedback has been detected, send a vibration to it (here in the form of a buffer describing the vibration data)
         public void SendHapticBuffer(byte[] buffer, uint channel = 0)
         {
