@@ -1,3 +1,4 @@
+using Fusion.XR.Shared;
 using Fusion.XR.Shared.Grabbing;
 using Fusion.XR.Shared.Rig;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace Fusion.Addons.HapticAndAudioFeedback
      * If the audio source is not defined or not find on the object, Feedback uses the SoundManager audio source.
      * 
      ***/
-    public class Feedback : MonoBehaviour
+    public class Feedback : MonoBehaviour, IFeedbackHandler
     {
         public bool EnableAudioFeedback = true;
         public bool EnableHapticFeedback = true;
@@ -46,18 +47,41 @@ namespace Fusion.Addons.HapticAndAudioFeedback
                 Debug.LogError("AudioSource not found");
         }
 
-        public void PlayAudioAndHapticFeeback(string audioType, float hapticAmplitude)
+        HardwareHand GrabbingHand()
         {
-            PlayHapticFeedback(hapticAmplitude, GrabbingHand());
-            PlayAudioFeeback(audioType);
+            if (grabbable != null)
+            {
+                if (IsGrabbedByLocalPLayer && grabbable.CurrentGrabber.hand && grabbable.CurrentGrabber.hand.LocalHardwareHand != null)
+                {
+                    return grabbable.CurrentGrabber.hand.LocalHardwareHand;
+                }
+            }
+            return null;
         }
 
-        public void PlayAudioAndHapticFeeback(string audioType)
+        #region IFeedbackHandler
+        public void PlayAudioAndHapticFeeback(string audioType = null, float hapticAmplitude = -1, float hapticDuration = -1, HardwareHand hardwareHand = null, FeedbackMode feedbackMode = FeedbackMode.AudioAndHaptic, bool audioOverwrite = true)
         {
-            PlayHapticFeedback();
-            PlayAudioFeeback(audioType);
+            if ((feedbackMode & FeedbackMode.Audio) != 0)
+            {
+                if (IsAudioFeedbackIsPlaying() == false || audioOverwrite == true)
+                    PlayAudioFeeback(audioType);
+            }
+
+            if ((feedbackMode & FeedbackMode.Haptic) != 0)
+            {
+                PlayHapticFeedback(hardwareHand, hapticAmplitude, hapticDuration);
+            }
         }
 
+        public void StopAudioAndHapticFeeback(HardwareHand hardwareHand = null)
+        {
+            StopAudioFeeback();
+            StopHapticFeedback(hardwareHand);
+        }
+        #endregion
+
+        #region IAudioFeedbackHandler
         public void PlayAudioFeeback(string audioType)
         {
             if (EnableAudioFeedback == false) return;
@@ -78,33 +102,32 @@ namespace Fusion.Addons.HapticAndAudioFeedback
                 audioSource.Pause();
         }
 
-        public void PlayHapticFeedback(float hapticAmplitude, HardwareHand hardwareHand)
+        public bool IsAudioFeedbackIsPlaying()
         {
-            if (EnableHapticFeedback == false || hardwareHand == null) return;
-
-            hardwareHand.SendHapticImpulse(amplitude: hapticAmplitude, duration: defaultHapticDuration);
+            return audioSource && audioSource.isPlaying;
         }
+        #endregion
 
-
-        public void PlayHapticFeedback(HardwareHand hardwareHand = null)
+        #region IHapticFeedbackHandler
+        public void PlayHapticFeedback(HardwareHand hardwareHand = null, float hapticAmplitude = -1, float hapticDuration = -1)
         {
+            if (hapticAmplitude == IFeedbackHandler.USE_DEFAULT_VALUES) hapticAmplitude = defaultHapticAmplitude;
+            if (hapticDuration == IFeedbackHandler.USE_DEFAULT_VALUES) hapticDuration = defaultHapticDuration;
             if (hardwareHand == null)
             {
                 hardwareHand = GrabbingHand();
+
             }
-            PlayHapticFeedback(defaultHapticAmplitude, hardwareHand);
+            if (EnableHapticFeedback == false || hardwareHand == null) return;
+            hardwareHand.SendHapticImpulse(amplitude: hapticAmplitude, duration: hapticDuration);
         }
 
-        HardwareHand GrabbingHand()
+        public void StopHapticFeedback(HardwareHand hardwareHand = null)
         {
-            if (grabbable != null)
-            {
-                if (IsGrabbedByLocalPLayer && grabbable.CurrentGrabber.hand && grabbable.CurrentGrabber.hand.LocalHardwareHand != null)
-                {
-                    return grabbable.CurrentGrabber.hand.LocalHardwareHand;
-                }
-            }
-            return null;
+            if (hardwareHand == null) return;
+
+            hardwareHand.StopHaptics();
         }
+        #endregion
     }
 }
