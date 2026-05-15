@@ -104,3 +104,4 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+Packages/com.unity.ai.assistant/RelayApp~/relay_win.exe
