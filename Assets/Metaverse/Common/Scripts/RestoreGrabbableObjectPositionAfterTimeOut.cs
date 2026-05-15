@@ -5,21 +5,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Automatically returns a grabbable object to its original position/rotation
+// after it has been ungrabbed for longer than the specified timeout duration.
+[RequireComponent(typeof(NetworkGrabbable))]
 public class RestoreGrabbableObjectPositionAfterTimeOut : NetworkBehaviour
 {
+    // How many seconds after being ungrabbed before the object snaps back to its start transform
     [SerializeField] private float timeOut;
+
+    // Tracks the Time.time value when the object was last released; 0 means not released yet
     private float lastUnGrabTime = 0f;
+
+    // Reference to the Fusion grabbing component on this object
     NetworkGrabbable networkGrabbable;
 
+    // Networked so all clients agree on the object's original spawn position
     [Networked]
     Vector3 InitialObjectPosition { get; set; }
+
+    // Networked so all clients agree on the object's original spawn rotation
     [Networked]
     Quaternion InitialObjectRotation { get; set; }
+
+    // Networked flag indicating whether the object is currently at its start transform
     [Networked]
     NetworkBool IsAtStartPosition { get; set; }
 
-
-    // Start is called before the first frame update
+    // Cache the NetworkGrabbable component and warn if it is missing
     private void Awake()
     {
         networkGrabbable = GetComponent<NetworkGrabbable>();
@@ -27,6 +39,7 @@ public class RestoreGrabbableObjectPositionAfterTimeOut : NetworkBehaviour
             Debug.LogError("NetworkGrabbable not found !");
     }
 
+    // Capture the spawn transform on the State Authority so networked properties are set once
     public override void Spawned()
     {
         base.Spawned();
@@ -39,35 +52,30 @@ public class RestoreGrabbableObjectPositionAfterTimeOut : NetworkBehaviour
         }
     }
 
-    // Update is called once per frame
+    // Only the State Authority runs the restore logic to avoid conflicting writes
     void Update()
     {
-        // Check if has StateAuthority
         if (networkGrabbable && networkGrabbable.Object && networkGrabbable.Object.HasStateAuthority)
         {
-            // Check if the object has moved
             if (networkGrabbable.IsGrabbed)
             {
-                // reset last ungrab time
+                // While grabbed, clear the ungrab timer and mark object as displaced
                 lastUnGrabTime = 0f;
                 if (IsAtStartPosition == true)
-                    //Object has moved
                     IsAtStartPosition = false;
             }
 
-            // Check if the object is ungrabbed and at initial position
+            // Only count down when the object has been released away from its start position
             if (networkGrabbable.IsGrabbed == false && IsAtStartPosition == false)
             {
-                // Check if object has just been ungrabbed
                 if (lastUnGrabTime == 0f)
                 {
-                    //object just ungrabbed
+                    // First frame after release — record the release time
                     lastUnGrabTime = Time.time;
                 }
-                // Check if the object has been ungrabbed for longer than the timer.
                 else if (Time.time > (lastUnGrabTime + timeOut))
                 {
-                    // time to move object to initial position
+                    // Timeout elapsed — snap back to the original transform
                     transform.position = InitialObjectPosition;
                     transform.rotation = InitialObjectRotation;
                     IsAtStartPosition = true;
