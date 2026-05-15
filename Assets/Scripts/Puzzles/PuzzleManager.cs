@@ -1,10 +1,12 @@
 using UnityEngine;
+using Fusion;
 
-public class PuzzleManager : MonoBehaviour
+public class PuzzleManager : NetworkBehaviour
 {
     public static PuzzleManager Instance { get; private set; }
 
-    public bool puzzleOneCompleted = false;
+    [Networked] public NetworkBool puzzleOneCompleted { get; set; }
+    [Networked] public NetworkBool puzzleThreeCompleted { get; set; }
 
     private void Awake()
     {
@@ -20,7 +22,20 @@ public class PuzzleManager : MonoBehaviour
 
     public void CompletePuzzleOne()
     {
-        puzzleOneCompleted = true;
-        Debug.Log("Puzzle One Completed!");
+        // Only the authority should update networked state
+        if (Object != null && Object.HasStateAuthority)
+        {
+            puzzleOneCompleted = true;
+            Debug.Log("Puzzle One Completed!");
+        }
+    }
+
+    public void CompletePuzzleThree()
+    {
+        if (Object != null && Object.HasStateAuthority)
+        {
+            puzzleThreeCompleted = true;
+            Debug.Log("Puzzle Three Completed!");
+        }
     }
 }
