@@ -7,9 +7,10 @@ public class PuzzleManager : NetworkBehaviour
 
     [Networked] public NetworkBool puzzleOneCompleted { get; set; }
     [Networked] public NetworkBool puzzleThreeCompleted { get; set; }
+    [Networked] public NetworkBool puzzleSixCompleted { get; set; }
 
     private void Awake()
-    {
+{
         if (Instance == null)
         {
             Instance = this;
@@ -38,4 +39,13 @@ public class PuzzleManager : NetworkBehaviour
             Debug.Log("Puzzle Three Completed!");
         }
     }
-}
+
+    public void CompletePuzzleSix()
+    {
+        if (Object != null && Object.HasStateAuthority)
+        {
+            puzzleSixCompleted = true;
+            Debug.Log("Puzzle Six Completed!");
+        }
+    }
+    }
