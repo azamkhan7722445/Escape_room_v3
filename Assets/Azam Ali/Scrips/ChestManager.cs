@@ -22,6 +22,16 @@ public class ChestManager : MonoBehaviour
 
     private const float DegreesPerStep = 36f; // 360 / 10 digits
 
+    /// <summary>Called by ChestDialRotator when the user releases a dial after dragging.</summary>
+    public void SetDigit(int index, int digit)
+    {
+        if (isUnlocked) return;
+        if (index < 0 || index >= currentDigits.Length) return;
+
+        currentDigits[index] = digit;
+        CheckCode();
+    }
+
     public void OnRotatorClicked(int rotatorIndex)
     {
         if (isUnlocked) return;

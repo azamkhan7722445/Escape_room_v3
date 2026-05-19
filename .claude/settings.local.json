@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "mcp__unity-mcp__Unity_SceneView_CaptureMultiAngleSceneView"
+      "mcp__unity-mcp__Unity_SceneView_CaptureMultiAngleSceneView",
+      "mcp__unity-mcp__Unity_RunCommand",
+      "Bash(tasklist /FI \"IMAGENAME eq Unity.exe\")",
+      "Bash(findstr Unity)",
+      "Bash(not exist *)",
+      "mcp__unity-mcp__Unity_ManageGameObject"
     ]
   }
 }
