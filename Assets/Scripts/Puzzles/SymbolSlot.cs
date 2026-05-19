@@ -6,7 +6,7 @@ public class SymbolSlot : MonoBehaviour
 {
     public Transform snapPoint;
     public float snapSmoothing = 20f;
-    public float snapDistanceThreshold = 0.15f; // Threshold for snapping distance
+    public float snapDistanceThreshold = 0.6f; // Large threshold for ease of use
     
     [Header("Current State")]
     public Grabbable snappedObject;
@@ -40,7 +40,6 @@ public class SymbolSlot : MonoBehaviour
     {
         if (snappedObject != null)
         {
-            // If the player grabs the object again, it should detach immediately
             if (snappedObject.currentGrabber != null)
             {
                 Unsnap();
@@ -48,7 +47,6 @@ public class SymbolSlot : MonoBehaviour
         }
         else
         {
-            // Try to find the best candidate among objects released inside the trigger
             Grabbable bestObj = GetClosestReleasedObject();
             if (bestObj != null)
             {
@@ -61,18 +59,19 @@ public class SymbolSlot : MonoBehaviour
     {
         if (snappedObject != null)
         {
-            // Lock position and rotation to snap point with smoothing
-            snappedObject.transform.position = Vector3.Lerp(snappedObject.transform.position, snapPoint.position, Time.deltaTime * snapSmoothing);
-            snappedObject.transform.rotation = Quaternion.Slerp(snappedObject.transform.rotation, snapPoint.rotation, Time.deltaTime * snapSmoothing);
+            // Lock position and rotation directly to snap point transforms
+            float effectiveSmoothing = snapSmoothing * Time.deltaTime;
+            snappedObject.transform.position = Vector3.Lerp(snappedObject.transform.position, snapPoint.position, effectiveSmoothing);
+            snappedObject.transform.rotation = Quaternion.Slerp(snappedObject.transform.rotation, snapPoint.rotation, effectiveSmoothing);
 
-            // Once it is extremely close, hard-snap to prevent jitter or micro-movements
-            if (Vector3.Distance(snappedObject.transform.position, snapPoint.position) < 0.001f)
+            // Hard snap if close
+            if (Vector3.Distance(snappedObject.transform.position, snapPoint.position) < 0.005f && 
+                Quaternion.Angle(snappedObject.transform.rotation, snapPoint.rotation) < 0.5f)
             {
                 snappedObject.transform.position = snapPoint.position;
                 snappedObject.transform.rotation = snapPoint.rotation;
             }
 
-            // Ensure it is locked kinematic to the slot while not grabbed
             Rigidbody rb = snappedObject.GetComponent<Rigidbody>();
             if (rb != null && !rb.isKinematic)
             {
@@ -92,19 +91,15 @@ public class SymbolSlot : MonoBehaviour
         {
             Grabbable g = hoveredObjects[i];
             if (g == null) { hoveredObjects.RemoveAt(i); continue; }
-
-            // Only snap objects that are NOT currently being held
             if (g.currentGrabber != null) continue;
-
-            // Check if object is already claimed by another slot
+            if (g.GetComponent<SymbolTablet>() == null) continue;
             if (IsObjectSnappedElsewhere(g)) continue;
 
+            // Use direct transform distance
             float d = Vector3.Distance(g.transform.position, snapPoint.position);
             
-            // Check threshold for realistic "correct placement"
             if (d > snapDistanceThreshold) continue;
 
-            // Only claim if this specific slot is the absolute closest one to the object
             if (d < minCDist && IsThisTheClosestSlot(g, d))
             {
                 minCDist = d;
@@ -118,12 +113,8 @@ public class SymbolSlot : MonoBehaviour
     {
         foreach (var slot in allSlots)
         {
-            if (slot == this) continue;
-            // If the other slot is already occupied, it doesn't compete for this object
-            if (slot.snappedObject != null) continue;
-
-            float otherDist = Vector3.Distance(g.transform.position, slot.snapPoint.position);
-            if (otherDist < myDist) return false;
+            if (slot == this || slot.snappedObject != null) continue;
+            if (Vector3.Distance(g.transform.position, slot.snapPoint.position) < myDist) return false;
         }
         return true;
     }
@@ -156,10 +147,7 @@ public class SymbolSlot : MonoBehaviour
         if (snappedObject != null)
         {
             Rigidbody rb = snappedObject.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.isKinematic = false;
-            }
+            if (rb != null) rb.isKinematic = false;
             snappedObject = null;
             snappedTablet = null;
         }
