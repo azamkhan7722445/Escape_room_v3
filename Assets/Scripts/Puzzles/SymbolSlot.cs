@@ -6,66 +6,74 @@ public class SymbolSlot : MonoBehaviour
 {
     public Transform snapPoint;
     public float snapSmoothing = 20f;
+    public float snapDistanceThreshold = 0.15f; // Threshold for snapping distance
     
     [Header("Current State")]
+    public Grabbable snappedObject;
     public SymbolTablet snappedTablet;
     
     private static List<SymbolSlot> allSlots = new List<SymbolSlot>();
-    private List<SymbolTablet> hoveredTablets = new List<SymbolTablet>();
+    private List<Grabbable> hoveredObjects = new List<Grabbable>();
 
     private void OnEnable() => allSlots.Add(this);
     private void OnDisable() => allSlots.Remove(this);
 
     private void OnTriggerEnter(Collider other)
     {
-        SymbolTablet tablet = other.GetComponentInParent<SymbolTablet>();
-        if (tablet != null && !hoveredTablets.Contains(tablet))
+        Grabbable g = other.GetComponentInParent<Grabbable>();
+        if (g != null && !hoveredObjects.Contains(g))
         {
-            hoveredTablets.Add(tablet);
+            hoveredObjects.Add(g);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        SymbolTablet tablet = other.GetComponentInParent<SymbolTablet>();
-        if (tablet != null)
+        Grabbable g = other.GetComponentInParent<Grabbable>();
+        if (g != null)
         {
-            hoveredTablets.Remove(tablet);
+            hoveredObjects.Remove(g);
         }
     }
 
     private void Update()
     {
-        if (snappedTablet != null)
+        if (snappedObject != null)
         {
-            Grabbable g = snappedTablet.GetComponent<Grabbable>();
             // If the player grabs the object again, it should detach immediately
-            if (g != null && g.currentGrabber != null)
+            if (snappedObject.currentGrabber != null)
             {
                 Unsnap();
             }
         }
         else
         {
-            // Try to find the best candidate among tablets released inside the trigger
-            SymbolTablet bestTablet = GetClosestReleasedTablet();
-            if (bestTablet != null)
+            // Try to find the best candidate among objects released inside the trigger
+            Grabbable bestObj = GetClosestReleasedObject();
+            if (bestObj != null)
             {
-                Snap(bestTablet);
+                Snap(bestObj);
             }
         }
     }
 
     private void LateUpdate()
     {
-        if (snappedTablet != null)
+        if (snappedObject != null)
         {
-            // Lock position and rotation to snap point
-            snappedTablet.transform.position = Vector3.Lerp(snappedTablet.transform.position, snapPoint.position, Time.deltaTime * snapSmoothing);
-            snappedTablet.transform.rotation = Quaternion.Slerp(snappedTablet.transform.rotation, snapPoint.rotation, Time.deltaTime * snapSmoothing);
+            // Lock position and rotation to snap point with smoothing
+            snappedObject.transform.position = Vector3.Lerp(snappedObject.transform.position, snapPoint.position, Time.deltaTime * snapSmoothing);
+            snappedObject.transform.rotation = Quaternion.Slerp(snappedObject.transform.rotation, snapPoint.rotation, Time.deltaTime * snapSmoothing);
+
+            // Once it is extremely close, hard-snap to prevent jitter or micro-movements
+            if (Vector3.Distance(snappedObject.transform.position, snapPoint.position) < 0.001f)
+            {
+                snappedObject.transform.position = snapPoint.position;
+                snappedObject.transform.rotation = snapPoint.rotation;
+            }
 
             // Ensure it is locked kinematic to the slot while not grabbed
-            Rigidbody rb = snappedTablet.GetComponent<Rigidbody>();
+            Rigidbody rb = snappedObject.GetComponent<Rigidbody>();
             if (rb != null && !rb.isKinematic)
             {
                 rb.isKinematic = true;
@@ -75,62 +83,66 @@ public class SymbolSlot : MonoBehaviour
         }
     }
 
-    private SymbolTablet GetClosestReleasedTablet()
+    private Grabbable GetClosestReleasedObject()
     {
-        SymbolTablet best = null;
+        Grabbable best = null;
         float minCDist = float.MaxValue;
 
-        for (int i = hoveredTablets.Count - 1; i >= 0; i--)
+        for (int i = hoveredObjects.Count - 1; i >= 0; i--)
         {
-            SymbolTablet t = hoveredTablets[i];
-            if (t == null) { hoveredTablets.RemoveAt(i); continue; }
+            Grabbable g = hoveredObjects[i];
+            if (g == null) { hoveredObjects.RemoveAt(i); continue; }
 
-            Grabbable g = t.GetComponent<Grabbable>();
-            // Only snap tablets that are NOT currently being held
-            if (g == null || g.currentGrabber != null) continue;
+            // Only snap objects that are NOT currently being held
+            if (g.currentGrabber != null) continue;
 
-            // Check if tablet is already claimed by another slot
-            if (IsTabletSnappedElsewhere(t)) continue;
+            // Check if object is already claimed by another slot
+            if (IsObjectSnappedElsewhere(g)) continue;
 
-            float d = Vector3.Distance(t.transform.position, snapPoint.position);
+            float d = Vector3.Distance(g.transform.position, snapPoint.position);
             
-            // Only claim if this specific slot is the absolute closest one to the tablet
-            if (d < minCDist && IsThisTheClosestSlot(t, d))
+            // Check threshold for realistic "correct placement"
+            if (d > snapDistanceThreshold) continue;
+
+            // Only claim if this specific slot is the absolute closest one to the object
+            if (d < minCDist && IsThisTheClosestSlot(g, d))
             {
                 minCDist = d;
-                best = t;
+                best = g;
             }
         }
         return best;
     }
 
-    private bool IsThisTheClosestSlot(SymbolTablet t, float myDist)
+    private bool IsThisTheClosestSlot(Grabbable g, float myDist)
     {
         foreach (var slot in allSlots)
         {
             if (slot == this) continue;
-            // If the other slot is already occupied, it doesn't compete for this tablet
-            if (slot.snappedTablet != null) continue;
+            // If the other slot is already occupied, it doesn't compete for this object
+            if (slot.snappedObject != null) continue;
 
-            float otherDist = Vector3.Distance(t.transform.position, slot.snapPoint.position);
+            float otherDist = Vector3.Distance(g.transform.position, slot.snapPoint.position);
             if (otherDist < myDist) return false;
         }
         return true;
     }
 
-    private bool IsTabletSnappedElsewhere(SymbolTablet t)
+    private bool IsObjectSnappedElsewhere(Grabbable g)
     {
         foreach (var slot in allSlots)
         {
-            if (slot != this && slot.snappedTablet == t) return true;
+            if (slot != this && slot.snappedObject == g) return true;
         }
         return false;
     }
 
-    private void Snap(SymbolTablet t)
+    private void Snap(Grabbable g)
     {
-        snappedTablet = t;
-        Rigidbody rb = t.GetComponent<Rigidbody>();
+        snappedObject = g;
+        snappedTablet = g.GetComponent<SymbolTablet>();
+        
+        Rigidbody rb = g.GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.isKinematic = true;
@@ -141,13 +153,14 @@ public class SymbolSlot : MonoBehaviour
 
     public void Unsnap()
     {
-        if (snappedTablet != null)
+        if (snappedObject != null)
         {
-            Rigidbody rb = snappedTablet.GetComponent<Rigidbody>();
+            Rigidbody rb = snappedObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.isKinematic = false;
             }
+            snappedObject = null;
             snappedTablet = null;
         }
     }
@@ -157,3 +170,4 @@ public class SymbolSlot : MonoBehaviour
         return snappedTablet != null && snappedTablet.symbol == expectedSymbol;
     }
 }
+

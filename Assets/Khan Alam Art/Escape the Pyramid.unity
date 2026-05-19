@@ -2077,37 +2077,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.2868617, y: 8.67913, z: 0.79267746}
   m_Center: {x: 0.011712293, y: -0.28291276, z: 0.44242218}
---- !u!1 &324036984
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 324036985}
-  m_Layer: 0
-  m_Name: SnapPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &324036985
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 324036984}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.0019764022, y: 0.0034678422, z: 0.0009798689}
-  m_LocalScale: {x: 0.011690916, y: 0.011690917, z: 0.011690917}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5919853066948865903}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &342928980
 GameObject:
   m_ObjectHideFlags: 0
@@ -2416,37 +2385,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &353545241
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 353545242}
-  m_Layer: 0
-  m_Name: SnapPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &353545242
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353545241}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.0019804041, y: 0.003467831, z: 0.0010081113}
-  m_LocalScale: {x: 0.011690916, y: 0.011690917, z: 0.011690917}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8436663591387449704}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &359142748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8560,37 +8498,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
---- !u!1 &654745581
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 654745582}
-  m_Layer: 0
-  m_Name: SnapPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &654745582
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654745581}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.005906572, y: 0.0034710532, z: 0.0010661443}
-  m_LocalScale: {x: 0.011690916, y: 0.011690917, z: 0.011690917}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3261425724617848789}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &663459909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10104,37 +10011,6 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!1 &859359996
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 859359997}
-  m_Layer: 0
-  m_Name: SnapPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &859359997
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859359996}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.0059025255, y: 0.0034710532, z: 0.00094266277}
-  m_LocalScale: {x: 0.011690916, y: 0.011690917, z: 0.011690917}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1686516124710982857}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &877884886
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12558,6 +12434,14 @@ MonoBehaviour:
   - {fileID: 5981675892479673648}
   correctWord: ANKH
   finalDoor: {fileID: 1026903472796557229}
+  slot1: {fileID: 889516576556869927}
+  slot2: {fileID: 4659000200770105679}
+  slot3: {fileID: 8340557514712565920}
+  slot4: {fileID: 1029164350220850626}
+  apoint: {fileID: 6120453604640994206}
+  npoint: {fileID: 5208106196587630258}
+  kpoint: {fileID: 5666768856803238360}
+  hpoint: {fileID: 9193324755510698810}
   roomLights: []
   successAudioSource: {fileID: 0}
   alarmSound: {fileID: 0}
@@ -24995,8 +24879,7 @@ Transform:
   m_LocalPosition: {x: 9.132, y: 0.3377676, z: 7.42964}
   m_LocalScale: {x: 85.5365, y: 85.53648, z: 85.53648}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 859359997}
+  m_Children: []
   m_Father: {fileID: 1611197294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1711813855323809494
@@ -25286,8 +25169,7 @@ Transform:
   m_LocalPosition: {x: 9.132, y: 0.3377676, z: 7.42964}
   m_LocalScale: {x: 85.5365, y: 85.53648, z: 85.53648}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 654745582}
+  m_Children: []
   m_Father: {fileID: 1611197294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3459770250290530610
@@ -26038,8 +25920,7 @@ Transform:
   m_LocalPosition: {x: 9.132, y: 0.3377676, z: 7.42964}
   m_LocalScale: {x: 85.5365, y: 85.53648, z: 85.53648}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 324036985}
+  m_Children: []
   m_Father: {fileID: 1611197294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5919853066948865904
@@ -26054,8 +25935,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274ddcfae53d9dd4c967abfbc1e97c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SymbolSlot
-  snapPoint: {fileID: 324036985}
+  snapPoint: {fileID: 5919853066948865903}
   snapSmoothing: 20
+  snapDistanceThreshold: 5
+  snappedObject: {fileID: 0}
   snappedTablet: {fileID: 0}
 --- !u!65 &5919853066948865905
 BoxCollider:
@@ -26098,8 +25981,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274ddcfae53d9dd4c967abfbc1e97c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SymbolSlot
-  snapPoint: {fileID: 654745582}
+  snapPoint: {fileID: 3261425724617848789}
   snapSmoothing: 20
+  snapDistanceThreshold: 5
+  snappedObject: {fileID: 0}
   snappedTablet: {fileID: 0}
 --- !u!65 &5981675892479673649
 BoxCollider:
@@ -27497,8 +27382,7 @@ Transform:
   m_LocalPosition: {x: 9.132, y: 0.3377676, z: 7.42964}
   m_LocalScale: {x: 85.5365, y: 85.53648, z: 85.53648}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 353545242}
+  m_Children: []
   m_Father: {fileID: 1611197294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8442527537239465408
@@ -27585,8 +27469,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274ddcfae53d9dd4c967abfbc1e97c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SymbolSlot
-  snapPoint: {fileID: 859359997}
+  snapPoint: {fileID: 1686516124710982857}
   snapSmoothing: 20
+  snapDistanceThreshold: 5
+  snappedObject: {fileID: 0}
   snappedTablet: {fileID: 0}
 --- !u!65 &8624175677577173106
 BoxCollider:
@@ -27688,8 +27574,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274ddcfae53d9dd4c967abfbc1e97c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SymbolSlot
-  snapPoint: {fileID: 353545242}
+  snapPoint: {fileID: 8436663591387449704}
   snapSmoothing: 20
+  snapDistanceThreshold: 5
+  snappedObject: {fileID: 0}
   snappedTablet: {fileID: 0}
 --- !u!65 &9089556060151415998
 BoxCollider:
