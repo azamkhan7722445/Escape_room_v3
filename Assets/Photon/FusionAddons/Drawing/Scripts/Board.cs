@@ -21,16 +21,27 @@ namespace Fusion.Addons.Drawing
         {
             renderCamera = GetComponentInChildren<Camera>();
             var renderer = GetComponent<MeshRenderer>();
-            cameraTexture = new RenderTexture(renderCamera.targetTexture.width, renderCamera.targetTexture.height, renderCamera.targetTexture.height, renderCamera.targetTexture.format);
-            cameraTexture.useMipMap = true;
-            renderCamera.targetTexture = cameraTexture;
-            renderer.material.mainTexture = renderCamera.targetTexture;
+            
+            if (renderCamera != null && renderCamera.targetTexture != null)
+            {
+                RenderTexture template = renderCamera.targetTexture;
+                // Use template.depth instead of template.height
+                cameraTexture = new RenderTexture(template.width, template.height, template.depth, template.format);
+                cameraTexture.useMipMap = true;
+                cameraTexture.autoGenerateMips = true; // Let Unity handle it automatically
+                cameraTexture.Create();
+                
+                renderCamera.targetTexture = cameraTexture;
+                renderer.material.mainTexture = cameraTexture;
+            }
+            
             renderCamera.enabled = false;
-
         }
+
         private void OnDestroy()
         {
-            cameraTexture.Release();
+            if (cameraTexture != null)
+                cameraTexture.Release();
         }
 
 
@@ -39,6 +50,7 @@ namespace Fusion.Addons.Drawing
             if (state)
             {
                 renderCamera.Render();
+                // No need to call GenerateMips() manually when autoGenerateMips is true
             }
         }
 

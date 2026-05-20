@@ -222,7 +222,25 @@ namespace Fusion.Addons.Drawing
                 Debug.LogError("Draw should be spawned by drawer");
                 return;
             }
-            currentDraw = Object.Runner.Spawn(drawPrefab, position, rotation, Runner.LocalPlayer);
+
+            Vector3 spawnPosition = position;
+            Quaternion spawnRotation = rotation;
+
+            // If we are drawing on a board, we project the spawn position on the board surface
+            // and align the draw object with the board
+            if (Is2DPen && projectionBoard != null)
+            {
+                // Get local position on the board
+                Vector3 localPos = projectionBoard.transform.InverseTransformPoint(tip.position);
+                // Force Z to be slightly in front of the surface (0 is the surface, but let's be safe)
+                // The Board Camera is at Z=-9.96 looking at +Z. Background is at 0.1.
+                // So Z=0 is perfect.
+                localPos.z = 0; 
+                spawnPosition = projectionBoard.transform.TransformPoint(localPos);
+                spawnRotation = projectionBoard.transform.rotation;
+            }
+
+            currentDraw = Object.Runner.Spawn(drawPrefab, spawnPosition, spawnRotation, Runner.LocalPlayer);
             currentDraw.StartDraw(color, projectionBoard);
             currentDraw.DrawingDrawer = this;
         }
