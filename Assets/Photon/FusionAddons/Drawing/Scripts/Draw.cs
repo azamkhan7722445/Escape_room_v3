@@ -155,6 +155,13 @@ namespace Fusion.Addons.Drawing
             // We store the local position, relatively to the current drawing (to have a stable referential if the drawing is moved)
             var localDrawingPosition = transform.InverseTransformPoint(worldDrawingPosition);
 
+            if (isBoardDrawing)
+            {
+                // For board drawing, we ensure the points are exactly on the plane of the Draw object
+                // which was aligned with the board surface in CreateDraw.
+                localDrawingPosition.z = 0;
+            }
+
             var point = new DrawPoint() { localPosition = localDrawingPosition, drawPressure = drawPRessure };
             AddPoint(point); // Actual drawing point
         }

@@ -1,0 +1,15 @@
+{
+    "asset": "350118a57e5a7fd4a81e7afacfc7c868",
+    "fileName": "019e4723-83a0-7006-b67a-0d1097542972.wav",
+    "prompt": "A marker or felt-tip pen squeaking and scratching on a whiteboard, continuous writing sound, high quality sfx",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 3.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

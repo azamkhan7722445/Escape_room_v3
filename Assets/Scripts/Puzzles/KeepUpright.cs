@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class KeepUpright : MonoBehaviour
 {
-    private Quaternion initialWorldRotation;
+    public Quaternion initialWorldRotation;
 
-    void Start()
+    void Awake()
     {
         initialWorldRotation = transform.rotation;
+    }
+
+    void FixedUpdate()
+    {
+        transform.rotation = initialWorldRotation;
     }
 
     void LateUpdate()

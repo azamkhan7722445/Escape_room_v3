@@ -1,0 +1,15 @@
+{
+    "asset": "d0f26c37986157141b394dc19962bee7",
+    "fileName": "019e4722-e946-7f99-9a43-a435ccd62595.wav",
+    "prompt": "A sharp plastic pen tip tapping a hard whiteboard surface, short click sound, high quality sfx",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 2.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

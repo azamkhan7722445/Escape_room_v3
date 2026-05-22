@@ -1,0 +1,15 @@
+{
+    "asset": "1121f553b3f2d234891e1dcc07faae35",
+    "fileName": "019e4724-21f0-7e2b-b132-d44e682db41a.wav",
+    "prompt": "A smooth felt-tip marker writing on a whiteboard, soft squeaky sound, high quality sfx",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 2.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}
