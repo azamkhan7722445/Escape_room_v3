@@ -3302,7 +3302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 5
+  weight: 15
   objectType: Feather
 --- !u!54 &415346777
 Rigidbody:
@@ -6443,7 +6443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 6
+  weight: 36
   objectType: Heart
 --- !u!54 &541195127
 Rigidbody:
@@ -7052,7 +7052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 5
+  weight: 20
   objectType: Feather
 --- !u!54 &556667560
 Rigidbody:
@@ -7883,7 +7883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 5
+  weight: 35
   objectType: Feather
 --- !u!54 &592662696
 Rigidbody:
@@ -8737,7 +8737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 5
+  weight: 10
   objectType: Feather
 --- !u!54 &634248384
 Rigidbody:
@@ -11067,7 +11067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 6
+  weight: 42
   objectType: Heart
 --- !u!54 &890746528
 Rigidbody:
@@ -11434,7 +11434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 5
+  weight: 30
   objectType: Feather
 --- !u!54 &947955251
 Rigidbody:
@@ -12869,7 +12869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 6
+  weight: 12
   objectType: Heart
 --- !u!54 &1104187746
 Rigidbody:
@@ -14998,7 +14998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 5
+  weight: 25
   objectType: Feather
 --- !u!54 &1327614478
 Rigidbody:
@@ -17202,7 +17202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 5
+  weight: 40
   objectType: Feather
 --- !u!54 &1566990590
 Rigidbody:
@@ -20215,7 +20215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 6
+  weight: 48
   objectType: Heart
 --- !u!54 &1694311321
 Rigidbody:
@@ -20658,7 +20658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 6
+  weight: 24
   objectType: Heart
 --- !u!54 &1716427925
 Rigidbody:
@@ -22025,7 +22025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 6
+  weight: 30
   objectType: Heart
 --- !u!54 &1805843455
 Rigidbody:
@@ -22660,7 +22660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a358502253cb731409aca138dc5f4178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightObject
-  weight: 6
+  weight: 18
   objectType: Heart
 --- !u!54 &1860527510
 Rigidbody:
@@ -26046,6 +26046,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 363555615938118935}
+  - component: {fileID: 1026903472796557230}
   m_Layer: 0
   m_Name: Final Door
   m_TagString: Untagged
@@ -26053,6 +26054,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &1026903472796557230
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026903472796557229}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3a5ac0dcc30a25e4498fba7dd6336c22, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &1061959765655535033
 MeshRenderer:
   m_ObjectHideFlags: 0
