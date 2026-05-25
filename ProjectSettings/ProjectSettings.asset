@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Photon
-  productName: Fusion2Metaverse
+  companyName: SaltySharks
+  productName: Pharaoh's Vault Escape
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -144,9 +144,7 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.5
-  preloadedAssets:
-  - {fileID: 7366564159535378782, guid: f7c99e3480555744e9a379ea516af73e, type: 2}
-  - {fileID: 1418811554966329655, guid: 556f3dfeff662654c848f4e4f84449fc, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -168,7 +166,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: com.AzamBhai.EscapeThePyramid
+    Android: com.SaltySharks.PharaohsVaultEscape
     Standalone: com.Photon.FusionMetaverse
   buildNumber:
     Standalone: 0
@@ -909,8 +907,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Template_3D
-  metroPackageVersion: 
+  metroPackageName: Template3D
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -918,7 +916,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Template_3D
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Fusion2Metaverse
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
