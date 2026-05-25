@@ -15,6 +15,9 @@ public class PuzzleSevenController : NetworkBehaviour
 
     [Networked] public NetworkBool isCompleted { get; set; }
 
+    public ZAxisDoor leftSideDoor;
+    public ZAxisDoor rightSideDoor;
+
     public override void FixedUpdateNetwork()
     {
         if (isCompleted) return;
@@ -24,6 +27,8 @@ public class PuzzleSevenController : NetworkBehaviour
             if (CheckCompletion())
             {
                 isCompleted = true;
+                if (leftSideDoor != null) leftSideDoor.IsOpen = true;
+                if (rightSideDoor != null) rightSideDoor.IsOpen = true;
                 if (PuzzleManager.Instance != null) PuzzleManager.Instance.CompletePuzzleSeven();
                 RPC_OnSuccess();
             }
@@ -46,7 +51,7 @@ public class PuzzleSevenController : NetworkBehaviour
     {
         if (finalDoor != null)
         {
-            finalDoor.SetActive(false); 
+            //finalDoor.SetActive(false); 
             slot1.SetActive(false);
             slot2.SetActive(false);
             slot3.SetActive(false);
