@@ -9970,6 +9970,14 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 2006466253804549574, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006466253804549582, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2006466254208262372, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
       propertyPath: m_Name
       value: Portal v3
@@ -29631,6 +29639,7 @@ Transform:
   - {fileID: 1756000123}
   - {fileID: 1611197294}
   - {fileID: 1237631722}
+  - {fileID: 5234476890909071517}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2112349114
@@ -32955,7 +32964,7 @@ Transform:
   m_GameObject: {fileID: 4895210841983418919}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7058248, z: -0, w: 0.7083865}
-  m_LocalPosition: {x: 33.584, y: 7.905, z: 5.185}
+  m_LocalPosition: {x: 12.065001, y: -0.095590115, z: 6.47624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32987,7 +32996,7 @@ Transform:
   - {fileID: 1002320363}
   - {fileID: 4007046563051409802}
   - {fileID: 3549090787066369259}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2111859600}
   m_LocalEulerAnglesHint: {x: 0, y: -89.792, z: 0}
 --- !u!114 &5234476890909071518
 MonoBehaviour:
@@ -33036,7 +33045,7 @@ MonoBehaviour:
   chestLid: {fileID: 8612469270708053723}
   correctCombination: 010000000200000003000000040000000500000006000000
   openRotation: {x: -90, y: 0, z: 0}
-  openSpeed: 2
+  openSpeed: 1
   _IsOpen:
     _value: 0
 --- !u!23 &5480591853505917468
@@ -36292,4 +36301,3 @@ SceneRoots:
   - {fileID: 1174590657479586601}
   - {fileID: 4613184903027709733}
   - {fileID: 339424105}
-  - {fileID: 5234476890909071517}
