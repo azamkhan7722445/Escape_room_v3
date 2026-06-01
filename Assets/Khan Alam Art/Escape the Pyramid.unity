@@ -30660,11 +30660,10 @@ GameObject:
   - component: {fileID: 6536382180231262821}
   - component: {fileID: 3102492273039456042}
   - component: {fileID: 6609136499620641892}
-  - component: {fileID: 6609136499620641891}
   - component: {fileID: 6609136499620641890}
-  - component: {fileID: 6609136499620641889}
   - component: {fileID: 6609136499620641887}
   - component: {fileID: 6609136499620641888}
+  - component: {fileID: 6609136499620641893}
   m_Layer: 0
   m_Name: Digit 2
   m_TagString: Untagged
@@ -31422,11 +31421,10 @@ GameObject:
   - component: {fileID: 5021540269558030426}
   - component: {fileID: 3050402852253882242}
   - component: {fileID: 5021540269558030432}
-  - component: {fileID: 5021540269558030431}
   - component: {fileID: 5021540269558030430}
-  - component: {fileID: 5021540269558030429}
   - component: {fileID: 5021540269558030427}
   - component: {fileID: 5021540269558030428}
+  - component: {fileID: 5021540269558030433}
   m_Layer: 0
   m_Name: Digit 5
   m_TagString: Untagged
@@ -32212,11 +32210,10 @@ GameObject:
   - component: {fileID: 666797586088881788}
   - component: {fileID: 2021766260647711080}
   - component: {fileID: 4190300148913229884}
-  - component: {fileID: 4190300148913229883}
   - component: {fileID: 4190300148913229882}
-  - component: {fileID: 4190300148913229881}
   - component: {fileID: 4190300148913229879}
   - component: {fileID: 4190300148913229880}
+  - component: {fileID: 4190300148913229885}
   m_Layer: 0
   m_Name: Digit 6
   m_TagString: Untagged
@@ -32261,35 +32258,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01, y: 0.01, z: 0.01}
   m_Center: {x: 0.000000014901161, y: -0.000000475673, z: 0.00018408592}
---- !u!114 &4190300148913229881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4190300148913229878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4290acb83d51f7448a942794de0756e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.Grabbable
-  localPositionOffset: {x: 0, y: 0, z: 0}
-  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
-  currentGrabber: {fileID: 0}
-  expectedIsKinematic: 1
-  allowedClosedHandGrabing: 1
-  networkGrabbable: {fileID: 0}
-  rb: {fileID: 0}
-  applyVelocityOnRelease: 0
-  onWillGrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onUngrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onGrab:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4190300148913229882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32318,23 +32286,6 @@ MonoBehaviour:
   extrapolateWhileTakingAuthority: 1
   isTakingAuthority: 0
   grabbable: {fileID: 0}
---- !u!114 &4190300148913229883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4190300148913229878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkTransform
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 0
-  _autoAOIOverride: 1
-  DisableSharedModeInterpolation: 0
 --- !u!114 &4190300148913229884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32352,10 +32303,38 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 4190300148913229883}
   - {fileID: 4190300148913229882}
   - {fileID: 4190300148913229879}
   ForceRemoteRenderTimeframe: 0
+--- !u!114 &4190300148913229885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190300148913229878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6070e2aad154514aa47f4dd323f4101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.StationaryGrabbable
+  localPositionOffset: {x: 0, y: 0, z: 0}
+  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
+  currentGrabber: {fileID: 0}
+  expectedIsKinematic: 1
+  allowedClosedHandGrabing: 1
+  networkGrabbable: {fileID: 0}
+  rb: {fileID: 0}
+  applyVelocityOnRelease: 0
+  onWillGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onUngrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onGrab:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!23 &4219209128274792288
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32788,35 +32767,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01, y: 0.01, z: 0.01}
   m_Center: {x: 0.000000044703484, y: -0.00000023725443, z: 0.00018410082}
---- !u!114 &5021540269558030429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2897665954489552821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4290acb83d51f7448a942794de0756e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.Grabbable
-  localPositionOffset: {x: 0, y: 0, z: 0}
-  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
-  currentGrabber: {fileID: 0}
-  expectedIsKinematic: 1
-  allowedClosedHandGrabing: 1
-  networkGrabbable: {fileID: 0}
-  rb: {fileID: 0}
-  applyVelocityOnRelease: 0
-  onWillGrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onUngrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onGrab:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &5021540269558030430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32845,23 +32795,6 @@ MonoBehaviour:
   extrapolateWhileTakingAuthority: 1
   isTakingAuthority: 0
   grabbable: {fileID: 0}
---- !u!114 &5021540269558030431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2897665954489552821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkTransform
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 0
-  _autoAOIOverride: 1
-  DisableSharedModeInterpolation: 0
 --- !u!114 &5021540269558030432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32879,10 +32812,38 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 5021540269558030431}
   - {fileID: 5021540269558030430}
   - {fileID: 5021540269558030427}
   ForceRemoteRenderTimeframe: 0
+--- !u!114 &5021540269558030433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897665954489552821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6070e2aad154514aa47f4dd323f4101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.StationaryGrabbable
+  localPositionOffset: {x: 0, y: 0, z: 0}
+  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
+  currentGrabber: {fileID: 0}
+  expectedIsKinematic: 1
+  allowedClosedHandGrabing: 1
+  networkGrabbable: {fileID: 0}
+  rb: {fileID: 0}
+  applyVelocityOnRelease: 0
+  onWillGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onUngrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onGrab:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5041049064375665131
 GameObject:
   m_ObjectHideFlags: 0
@@ -33327,11 +33288,10 @@ GameObject:
   - component: {fileID: 2773775970727782496}
   - component: {fileID: 8748711923576633132}
   - component: {fileID: 8748711923576633138}
-  - component: {fileID: 8748711923576633137}
   - component: {fileID: 8748711923576633136}
-  - component: {fileID: 8748711923576633135}
   - component: {fileID: 8748711923576633133}
   - component: {fileID: 8748711923576633134}
+  - component: {fileID: 8748711923576633139}
   m_Layer: 0
   m_Name: Digit 3
   m_TagString: Untagged
@@ -33893,35 +33853,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01, y: 0.01, z: 0.01}
   m_Center: {x: 0.000000029802322, y: -0.000000475673, z: 0.00018410082}
---- !u!114 &6609136499620641889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087137996975866447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4290acb83d51f7448a942794de0756e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.Grabbable
-  localPositionOffset: {x: 0, y: 0, z: 0}
-  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
-  currentGrabber: {fileID: 0}
-  expectedIsKinematic: 1
-  allowedClosedHandGrabing: 1
-  networkGrabbable: {fileID: 0}
-  rb: {fileID: 0}
-  applyVelocityOnRelease: 0
-  onWillGrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onUngrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onGrab:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6609136499620641890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33950,23 +33881,6 @@ MonoBehaviour:
   extrapolateWhileTakingAuthority: 1
   isTakingAuthority: 0
   grabbable: {fileID: 0}
---- !u!114 &6609136499620641891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087137996975866447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkTransform
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 0
-  _autoAOIOverride: 1
-  DisableSharedModeInterpolation: 0
 --- !u!114 &6609136499620641892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33984,10 +33898,38 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 6609136499620641891}
   - {fileID: 6609136499620641890}
   - {fileID: 6609136499620641887}
   ForceRemoteRenderTimeframe: 0
+--- !u!114 &6609136499620641893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087137996975866447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6070e2aad154514aa47f4dd323f4101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.StationaryGrabbable
+  localPositionOffset: {x: 0, y: 0, z: 0}
+  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
+  currentGrabber: {fileID: 0}
+  expectedIsKinematic: 1
+  allowedClosedHandGrabing: 1
+  networkGrabbable: {fileID: 0}
+  rb: {fileID: 0}
+  applyVelocityOnRelease: 0
+  onWillGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onUngrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onGrab:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!33 &6779957707327436905
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -34207,11 +34149,10 @@ GameObject:
   - component: {fileID: 3507302135648963563}
   - component: {fileID: 1092735616117062392}
   - component: {fileID: 9132318315920936954}
-  - component: {fileID: 9132318315920936953}
   - component: {fileID: 9132318315920936952}
-  - component: {fileID: 9132318315920936951}
   - component: {fileID: 9132318315920936949}
   - component: {fileID: 9132318315920936950}
+  - component: {fileID: 9132318315920936955}
   m_Layer: 0
   m_Name: Digit 1
   m_TagString: Untagged
@@ -35454,11 +35395,10 @@ GameObject:
   - component: {fileID: 8012291959870913598}
   - component: {fileID: 7783216197090197155}
   - component: {fileID: 8495271409467889190}
-  - component: {fileID: 8495271409467889189}
   - component: {fileID: 8495271409467889188}
-  - component: {fileID: 8495271409467889187}
   - component: {fileID: 8495271409467889185}
   - component: {fileID: 8495271409467889186}
+  - component: {fileID: 8495271409467889191}
   m_Layer: 0
   m_Name: Digit 4
   m_TagString: Untagged
@@ -35503,35 +35443,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01, y: 0.01, z: 0.01}
   m_Center: {x: 0.000000014901161, y: -0.000000475673, z: 0.00018410082}
---- !u!114 &8495271409467889187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8495271409467889184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4290acb83d51f7448a942794de0756e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.Grabbable
-  localPositionOffset: {x: 0, y: 0, z: 0}
-  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
-  currentGrabber: {fileID: 0}
-  expectedIsKinematic: 1
-  allowedClosedHandGrabing: 1
-  networkGrabbable: {fileID: 0}
-  rb: {fileID: 0}
-  applyVelocityOnRelease: 0
-  onWillGrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onUngrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onGrab:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8495271409467889188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35560,23 +35471,6 @@ MonoBehaviour:
   extrapolateWhileTakingAuthority: 1
   isTakingAuthority: 0
   grabbable: {fileID: 0}
---- !u!114 &8495271409467889189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8495271409467889184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkTransform
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 0
-  _autoAOIOverride: 1
-  DisableSharedModeInterpolation: 0
 --- !u!114 &8495271409467889190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35594,10 +35488,38 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 8495271409467889189}
   - {fileID: 8495271409467889188}
   - {fileID: 8495271409467889185}
   ForceRemoteRenderTimeframe: 0
+--- !u!114 &8495271409467889191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8495271409467889184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6070e2aad154514aa47f4dd323f4101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.StationaryGrabbable
+  localPositionOffset: {x: 0, y: 0, z: 0}
+  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
+  currentGrabber: {fileID: 0}
+  expectedIsKinematic: 1
+  allowedClosedHandGrabing: 1
+  networkGrabbable: {fileID: 0}
+  rb: {fileID: 0}
+  applyVelocityOnRelease: 0
+  onWillGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onUngrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onGrab:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!33 &8514516661495164775
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -35807,35 +35729,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01, y: 0.01, z: 0.01}
   m_Center: {x: 0.000000029802322, y: -0.00000023725443, z: 0.00018410082}
---- !u!114 &8748711923576633135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5870062029948124067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4290acb83d51f7448a942794de0756e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.Grabbable
-  localPositionOffset: {x: 0, y: 0, z: 0}
-  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
-  currentGrabber: {fileID: 0}
-  expectedIsKinematic: 1
-  allowedClosedHandGrabing: 1
-  networkGrabbable: {fileID: 0}
-  rb: {fileID: 0}
-  applyVelocityOnRelease: 0
-  onWillGrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onUngrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onGrab:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8748711923576633136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35864,23 +35757,6 @@ MonoBehaviour:
   extrapolateWhileTakingAuthority: 1
   isTakingAuthority: 0
   grabbable: {fileID: 0}
---- !u!114 &8748711923576633137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5870062029948124067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkTransform
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 0
-  _autoAOIOverride: 1
-  DisableSharedModeInterpolation: 0
 --- !u!114 &8748711923576633138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35898,10 +35774,38 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 8748711923576633137}
   - {fileID: 8748711923576633136}
   - {fileID: 8748711923576633133}
   ForceRemoteRenderTimeframe: 0
+--- !u!114 &8748711923576633139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5870062029948124067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6070e2aad154514aa47f4dd323f4101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.StationaryGrabbable
+  localPositionOffset: {x: 0, y: 0, z: 0}
+  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
+  currentGrabber: {fileID: 0}
+  expectedIsKinematic: 1
+  allowedClosedHandGrabing: 1
+  networkGrabbable: {fileID: 0}
+  rb: {fileID: 0}
+  applyVelocityOnRelease: 0
+  onWillGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onUngrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onGrab:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8916773646025792457
 GameObject:
   m_ObjectHideFlags: 0
@@ -36023,35 +35927,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.01, y: 0.01, z: 0.01}
   m_Center: {x: 0.000000029802322, y: -0.00000023725443, z: 0.00018410082}
---- !u!114 &9132318315920936951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7099491292613758214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4290acb83d51f7448a942794de0756e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.Grabbable
-  localPositionOffset: {x: 0, y: 0, z: 0}
-  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
-  currentGrabber: {fileID: 0}
-  expectedIsKinematic: 1
-  allowedClosedHandGrabing: 1
-  networkGrabbable: {fileID: 0}
-  rb: {fileID: 0}
-  applyVelocityOnRelease: 0
-  onWillGrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onUngrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onGrab:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &9132318315920936952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36080,23 +35955,6 @@ MonoBehaviour:
   extrapolateWhileTakingAuthority: 1
   isTakingAuthority: 0
   grabbable: {fileID: 0}
---- !u!114 &9132318315920936953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7099491292613758214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkTransform
-  _stateAuthorityChangeErrorCorrectionDelta: 0
-  SyncScale: 0
-  SyncParent: 0
-  _autoAOIOverride: 1
-  DisableSharedModeInterpolation: 0
 --- !u!114 &9132318315920936954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36114,10 +35972,38 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
-  - {fileID: 9132318315920936953}
   - {fileID: 9132318315920936952}
   - {fileID: 9132318315920936949}
   ForceRemoteRenderTimeframe: 0
+--- !u!114 &9132318315920936955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099491292613758214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6070e2aad154514aa47f4dd323f4101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Grabbing.StationaryGrabbable
+  localPositionOffset: {x: 0, y: 0, z: 0}
+  localRotationOffset: {x: 0, y: 0, z: 0, w: 0}
+  currentGrabber: {fileID: 0}
+  expectedIsKinematic: 1
+  allowedClosedHandGrabing: 1
+  networkGrabbable: {fileID: 0}
+  rb: {fileID: 0}
+  applyVelocityOnRelease: 0
+  onWillGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onUngrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onGrab:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9193324755510698810
 GameObject:
   m_ObjectHideFlags: 0
