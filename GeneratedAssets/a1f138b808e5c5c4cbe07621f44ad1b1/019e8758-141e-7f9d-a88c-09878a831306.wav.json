@@ -1,0 +1,15 @@
+{
+    "asset": "a1f138b808e5c5c4cbe07621f44ad1b1",
+    "fileName": "019e8758-141e-7f9d-a88c-09878a831306.wav",
+    "prompt": "The Pharaoh's sacred beetle always faces the rising sun... look for those facing East.",
+    "negativePrompt": "",
+    "model": "elevenlabs-multilingual-v2",
+    "modelName": "ElevenLabs Multilingual V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": "Adam"
+}

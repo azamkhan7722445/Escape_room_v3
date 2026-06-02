@@ -1,0 +1,15 @@
+{
+    "asset": "52722b491dd7f9040b36a126d2a01ad1",
+    "fileName": "019e8758-57c5-7720-8b97-33e8cab5f2d6.wav",
+    "prompt": "The embalmers had a sacred order: Liver, Lungs, Stomach, then Intestines. Sequence them correctly.",
+    "negativePrompt": "",
+    "model": "elevenlabs-multilingual-v2",
+    "modelName": "ElevenLabs Multilingual V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": "Adam"
+}

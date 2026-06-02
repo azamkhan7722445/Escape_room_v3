@@ -2,18 +2,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Fusion.Addons.Touch;
+using System.Collections;
 
 public class MummyHintSystem : MonoBehaviour
 {
     [Header("UI References")]
     public GameObject canvasRoot;
     public GameObject hintPanel;
-    public TextMeshProUGUI puzzleTitleText; // New field for Puzzle Number
+    public TextMeshProUGUI puzzleTitleText;
     public TextMeshProUGUI hintText;
     public UnityEngine.UI.Button[] puzzleButtons;
 
+    [Header("Audio & Animation")]
+    public AudioSource audioSource;
+    public AudioClip[] hintClips;
+    public Animator animator;
+    public string idleStateName = "Standing Idle";
+    public string talkStateName = "Talking";
+
     [Header("Settings")]
-    public float interactionDistance = 2.0f; // Distance to auto-enable UI
+    public float interactionDistance = 2.0f;
     public Transform playerTransform;
 
     [Header("Hint Data")]
@@ -28,32 +36,33 @@ public class MummyHintSystem : MonoBehaviour
         "The embalmers had a sacred order: Liver, Lungs, Stomach, then Intestines. Sequence them correctly."
     };
 
+    private Coroutine hintCoroutine;
+
     private void Start()
     {
-        // Hide UI by default
         if (canvasRoot != null) canvasRoot.SetActive(false);
 
-        // Assign button listeners
         for (int i = 0; i < puzzleButtons.Length; i++)
         {
             int index = i;
             puzzleButtons[i].onClick.AddListener(() => ShowHint(index));
         }
 
-        // Add interaction to mummy if present (for VR touch)
         Touchable touchable = GetComponent<Touchable>();
         if (touchable != null)
         {
             touchable.onTouch.AddListener(OpenUI);
         }
 
-        // Try to find player if not assigned
         if (playerTransform == null)
         {
             GameObject rig = GameObject.Find("HardwareRig");
             if (rig != null) playerTransform = rig.transform;
             else if (Camera.main != null) playerTransform = Camera.main.transform;
         }
+
+        if (animator == null) animator = GetComponent<Animator>();
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -62,7 +71,6 @@ public class MummyHintSystem : MonoBehaviour
 
         float dist = Vector3.Distance(transform.position, playerTransform.position);
         
-        // Auto-enable UI when close, disable when far
         if (dist <= interactionDistance)
         {
             if (canvasRoot != null && !canvasRoot.activeSelf)
@@ -93,11 +101,32 @@ public class MummyHintSystem : MonoBehaviour
             if (puzzleTitleText != null) puzzleTitleText.text = "Puzzle " + (index + 1);
             hintText.text = puzzleHints[index];
             hintPanel.SetActive(true);
+
+            if (hintCoroutine != null) StopCoroutine(hintCoroutine);
+            hintCoroutine = StartCoroutine(PlayHintSequence(index));
+        }
+    }
+
+    private IEnumerator PlayHintSequence(int index)
+    {
+        if (audioSource != null && index < hintClips.Length && hintClips[index] != null)
+        {
+            audioSource.clip = hintClips[index];
+            audioSource.Play();
+            
+            if (animator != null) animator.CrossFade(talkStateName, 0.2f);
+
+            yield return new WaitForSeconds(audioSource.clip.length);
+
+            if (animator != null) animator.CrossFade(idleStateName, 0.2f);
         }
     }
 
     public void ClosePanel()
     {
         if (canvasRoot != null) canvasRoot.SetActive(false);
+        if (audioSource != null) audioSource.Stop();
+        if (animator != null) animator.CrossFade(idleStateName, 0.2f);
+        if (hintCoroutine != null) StopCoroutine(hintCoroutine);
     }
 }

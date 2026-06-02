@@ -1,0 +1,15 @@
+{
+    "asset": "6ab44d289bfdebe46a6b00e4ab4eb1f9",
+    "fileName": "019e8758-1b3a-7528-a07d-2dd0162f6f47.wav",
+    "prompt": "Balance the Scale of Ma'at: Hearts on the left, feathers on the right... pure hearts are lighter than they appear.",
+    "negativePrompt": "",
+    "model": "elevenlabs-multilingual-v2",
+    "modelName": "ElevenLabs Multilingual V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": "Adam"
+}

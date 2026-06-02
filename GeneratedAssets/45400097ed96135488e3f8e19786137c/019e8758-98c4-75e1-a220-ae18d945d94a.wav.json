@@ -1,0 +1,15 @@
+{
+    "asset": "45400097ed96135488e3f8e19786137c",
+    "fileName": "019e8758-98c4-75e1-a220-ae18d945d94a.wav",
+    "prompt": "The Soul of Osiris (Orion) points the way... count the stars in his belt to find the direction.",
+    "negativePrompt": "",
+    "model": "elevenlabs-multilingual-v2",
+    "modelName": "ElevenLabs Multilingual V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": "Adam"
+}

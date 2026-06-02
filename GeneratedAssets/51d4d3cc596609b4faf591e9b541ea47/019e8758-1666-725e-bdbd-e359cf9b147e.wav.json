@@ -1,0 +1,15 @@
+{
+    "asset": "51d4d3cc596609b4faf591e9b541ea47",
+    "fileName": "019e8758-1666-725e-bdbd-e359cf9b147e.wav",
+    "prompt": "SEEK THE EYE OF HORUS UPON THE FOUR PILLARS... one pillar holds the secret number.",
+    "negativePrompt": "",
+    "model": "elevenlabs-multilingual-v2",
+    "modelName": "ElevenLabs Multilingual V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": "Adam"
+}

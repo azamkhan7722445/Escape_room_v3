@@ -1,0 +1,15 @@
+{
+    "asset": "d9ce5aeac8602144398ccd4d2542709f",
+    "fileName": "019e8758-13b0-7902-821d-d91f2f2a3c68.wav",
+    "prompt": "Mathematical tablet: Count the base blocks of all 4 sides, then divide by the pyramids on the plateau...",
+    "negativePrompt": "",
+    "model": "elevenlabs-multilingual-v2",
+    "modelName": "ElevenLabs Multilingual V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": "Adam"
+}
