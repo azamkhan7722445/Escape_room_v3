@@ -827,7 +827,7 @@ MonoBehaviour:
   - {fileID: 1852787946}
   - {fileID: 397716468}
   - {fileID: 275261739}
-  interactionDistance: 1.5
+  interactionDistance: 3
   playerTransform: {fileID: 0}
   puzzleHints:
   - The Pharaoh's sacred beetle always faces the rising sun... look for those facing
