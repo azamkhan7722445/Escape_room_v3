@@ -29,7 +29,7 @@ public class MummyHintSystem : MonoBehaviour
     public string[] puzzleHints = new string[6]
     {
         "The Pharaoh's sacred beetle always faces the rising sun... look for those facing East.",
-        "SEEK THE EYE OF HORUS UPON THE FOUR PILLARS... one pillar holds the secret number.",
+        "Use the Rosetta Stone Card to unlock the symbols and find the hint sentence.",
         "Balance the Scale of Ma'at: Hearts on the left, feathers on the right... pure hearts are lighter than they appear.",
         "Mathematical tablet: Count the base blocks of all 4 sides, then divide by the pyramids on the plateau...",
         "The Soul of Osiris (Orion) points the way... count the stars in his belt to find the direction.",
@@ -37,13 +37,22 @@ public class MummyHintSystem : MonoBehaviour
     };
 
     private Coroutine hintCoroutine;
+    private Transform hipsBone;
+    private float initialHipsY;
 
     private void Start()
     {
         if (canvasRoot != null) canvasRoot.SetActive(false);
 
-        for (int i = 0; i < puzzleButtons.Length; i++)
+        // Find Hips bone to lock height
+        hipsBone = FindChildRecursive(transform, "Hips");
+        if (hipsBone != null)
         {
+            initialHipsY = hipsBone.localPosition.y;
+        }
+
+        for (int i = 0; i < puzzleButtons.Length; i++)
+{
             int index = i;
             puzzleButtons[i].onClick.AddListener(() => ShowHint(index));
         }
@@ -87,8 +96,30 @@ public class MummyHintSystem : MonoBehaviour
         }
     }
 
-    public void OpenUI()
+    private void LateUpdate()
     {
+        // Force Hips to stay at initial height to prevent animation sinking
+        if (hipsBone != null)
+        {
+            Vector3 lp = hipsBone.localPosition;
+            lp.y = initialHipsY;
+            hipsBone.localPosition = lp;
+        }
+    }
+
+    private Transform FindChildRecursive(Transform parent, string name)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name.Contains(name)) return child;
+            Transform found = FindChildRecursive(child, name);
+            if (found != null) return found;
+        }
+        return null;
+    }
+
+    public void OpenUI()
+{
         if (canvasRoot != null) canvasRoot.SetActive(true);
         if (puzzleTitleText != null) puzzleTitleText.text = "Ancient Guide";
         hintText.text = "Greetings, traveler. I hold the secrets of the pyramid. Choose a puzzle to learn more...";

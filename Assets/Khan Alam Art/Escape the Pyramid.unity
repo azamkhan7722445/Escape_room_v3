@@ -830,7 +830,7 @@ MonoBehaviour:
   audioSource: {fileID: 47959397}
   hintClips:
   - {fileID: 8300000, guid: a1f138b808e5c5c4cbe07621f44ad1b1, type: 3}
-  - {fileID: 8300000, guid: 51d4d3cc596609b4faf591e9b541ea47, type: 3}
+  - {fileID: 8300000, guid: ac6a6974bd1050c49a00d362b84985b9, type: 3}
   - {fileID: 8300000, guid: 6ab44d289bfdebe46a6b00e4ab4eb1f9, type: 3}
   - {fileID: 8300000, guid: d9ce5aeac8602144398ccd4d2542709f, type: 3}
   - {fileID: 8300000, guid: 45400097ed96135488e3f8e19786137c, type: 3}
@@ -3420,6 +3420,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3753012979430135836, guid: a168f29b9e5da7f4185d404916c8a2ca, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7130691068300935782, guid: a168f29b9e5da7f4185d404916c8a2ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.928

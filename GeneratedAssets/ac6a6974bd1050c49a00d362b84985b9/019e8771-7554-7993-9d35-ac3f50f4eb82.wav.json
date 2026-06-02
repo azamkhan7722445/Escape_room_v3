@@ -1,0 +1,15 @@
+{
+    "asset": "ac6a6974bd1050c49a00d362b84985b9",
+    "fileName": "019e8771-7554-7993-9d35-ac3f50f4eb82.wav",
+    "prompt": "Use the Rosetta Stone Card to unlock the symbols and find the hint sentence.",
+    "negativePrompt": "",
+    "model": "elevenlabs-multilingual-v2",
+    "modelName": "ElevenLabs Multilingual V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": "Adam"
+}
