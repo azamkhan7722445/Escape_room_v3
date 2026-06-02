@@ -22,10 +22,18 @@ public class LargeChestKnob : NetworkBehaviour
     private Quaternion _initialLocalRotation;
     private bool _initialRotationCaptured = false;
 
+    [Header("Audio")]
+    public AudioClip rotateSound;
+    private AudioSource _audioSource;
+
+    private ChangeDetector _changeDetector;
+
     public override void Spawned()
     {
         _grabbable = GetComponent<Grabbable>();
         _networkGrabbable = GetComponent<NetworkGrabbable>();
+        _audioSource = GetComponent<AudioSource>();
+        _changeDetector = GetChangeDetector(ChangeDetector.Source.SimulationState);
 
         if (visualTransform != null && !_initialRotationCaptured)
         {
@@ -85,12 +93,28 @@ public class LargeChestKnob : NetworkBehaviour
 
     public override void Render()
     {
+        foreach (var change in _changeDetector.DetectChanges(this))
+        {
+            if (change == nameof(CurrentDigit))
+            {
+                PlayRotateSound();
+            }
+        }
+
         if (visualTransform != null && _initialRotationCaptured)
         {
             // Rotate negatively so that increasing CurrentDigit (1, 2, 3) 
             // results in clockwise rotation, showing those numbers on the mesh.
             float targetAngle = -CurrentDigit * (360f / maxDigits);
             visualTransform.localRotation = _initialLocalRotation * Quaternion.AngleAxis(targetAngle, rotationAxis);
+        }
+    }
+
+    private void PlayRotateSound()
+    {
+        if (_audioSource != null && rotateSound != null)
+        {
+            _audioSource.PlayOneShot(rotateSound);
         }
     }
 
