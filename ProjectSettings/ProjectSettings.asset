@@ -992,11 +992,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: acdbcc85-216d-46e7-b404-f1f2f7206aba
+  cloudProjectId: e83bdf48-55ad-4092-9b45-3c8314a3af66
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Fusion2Metaverse (1)
-  organizationId: aneesmuhmmad272
+  projectName: Pharaoh's Vault Escape
+  organizationId: ma-studio2
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
