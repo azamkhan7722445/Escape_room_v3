@@ -528,6 +528,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48603631}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &52620016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5710807279017302462, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &55973310 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230537213405, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &57001391 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4534684048951178964, guid: e239d9112f09a94469deb4400a85708d, type: 3}
@@ -678,11 +700,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72396662}
   m_CullTransparentMesh: 1
+--- !u!114 &74076439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229685776083, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &82634870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229962833779, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &87689701 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230319305211, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &95872244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2368229055431128616, guid: 660677b78c56c9d42bded61c9471ea12, type: 3}
   m_PrefabInstance: {fileID: 378973766}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &108428697 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229667092273, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &128907214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1031,11 +1097,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7008fcdd14b2f0945a1786807bd02bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &139783440 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8237839643082106142, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &176206628 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3797709091777443337, guid: 660677b78c56c9d42bded61c9471ea12, type: 3}
   m_PrefabInstance: {fileID: 378973766}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &187473193 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230482560570, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &263219600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1362,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7008fcdd14b2f0945a1786807bd02bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &294749194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2688210795518009158, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &302303803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,6 +1409,28 @@ Transform:
   - {fileID: 1478901589}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &314486176 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230925971507, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &319547153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229370415598, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &342829128 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1903530552128169343, guid: 660677b78c56c9d42bded61c9471ea12, type: 3}
@@ -1351,6 +1472,17 @@ RectTransform:
   m_AnchoredPosition: {x: 800, y: -510}
   m_SizeDelta: {x: 300, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &366987893 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5474934724966209242, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &367779509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7548361101973055250, guid: 660677b78c56c9d42bded61c9471ea12, type: 3}
@@ -1499,6 +1631,28 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 509677495}
   m_SourcePrefab: {fileID: 100100000, guid: 660677b78c56c9d42bded61c9471ea12, type: 3}
+--- !u!114 &383772933 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1895210312131465062, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &399721877 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230530062294, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &399848587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1701,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 302303804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &414270813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3766577023274552512, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &433462783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,6 +1856,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433462783}
   m_CullTransparentMesh: 1
+--- !u!114 &444575039 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3930464826901690870, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &451962263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,6 +1961,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451962263}
   m_Mesh: {fileID: 2933621521906231697, guid: e0a521cdc30b85449a4193312441f41d, type: 3}
+--- !u!114 &461429817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3522694042659519485, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &473297524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2162,6 +2349,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AvatarModel
       objectReference: {fileID: 0}
+    - target: {fileID: 8472282788715847707, guid: e239d9112f09a94469deb4400a85708d, type: 3}
+      propertyPath: touchable
+      value: 
+      objectReference: {fileID: 1858122841}
+    - target: {fileID: 8472282788715847707, guid: e239d9112f09a94469deb4400a85708d, type: 3}
+      propertyPath: inputfield
+      value: 
+      objectReference: {fileID: 1872714452}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2615,6 +2810,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522654455}
   m_CullTransparentMesh: 1
+--- !u!114 &555828308 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6271222519689850742, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &560282929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1815403620868318227, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &588780611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2676,6 +2893,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017496f240ffc8247a857e6b72f13515, type: 3}
+--- !u!114 &594120828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7818780653590837413, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &604589721
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,6 +3007,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604589721}
   m_CullTransparentMesh: 1
+--- !u!114 &608006667 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5266035898079747765, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &618693685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2973,6 +3212,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 721421086137048847, guid: 2b94f900ebf8ea742b087ae254ae43d9, type: 3}
   m_PrefabInstance: {fileID: 618693685}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &619883687 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229322575168, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &625162114 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229416819447, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &663740296 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3112830674103738573, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &677799579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230488566840, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &702281625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3562,6 +3845,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6458947598622693735, guid: 4fcbdba73f1b3704a881d8c9907d57c1, type: 3}
   m_PrefabInstance: {fileID: 731912752}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &735617601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6543483147469982520, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &773713847
 GameObject:
   m_ObjectHideFlags: 0
@@ -4156,6 +4450,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858657830}
   m_CullTransparentMesh: 1
+--- !u!114 &889059265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230075141967, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &903477246 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5088777848764173036, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a719e64d4ac3149b77216147da3599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &906136082
 GameObject:
   m_ObjectHideFlags: 0
@@ -4283,6 +4599,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1763058680}
   m_LocalEulerAnglesHint: {x: 0, y: -23.43, z: 0}
+--- !u!114 &914409604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230798880246, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &914638179
 GameObject:
   m_ObjectHideFlags: 0
@@ -4477,6 +4804,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916939264}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &917046257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4697810463153436810, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &927962270 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2368229056182958355, guid: 660677b78c56c9d42bded61c9471ea12, type: 3}
@@ -4588,6 +4926,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &945795788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2634413459681802786, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &953550717
 GameObject:
   m_ObjectHideFlags: 0
@@ -4621,6 +4970,17 @@ Transform:
   - {fileID: 773713848}
   m_Father: {fileID: 367779509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &966142851 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6206832597642232987, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &978877814
 GameObject:
   m_ObjectHideFlags: 0
@@ -4744,6 +5104,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980768534}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &982526418 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5802364463889520043, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &986652471 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3053313908129691159, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &986792087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2944637591293925358, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &989438388 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5368017914617323421, guid: 660677b78c56c9d42bded61c9471ea12, type: 3}
@@ -5031,6 +5424,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993756873}
   m_CullTransparentMesh: 1
+--- !u!114 &995903699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 854051951088431022, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1003357466
 GameObject:
   m_ObjectHideFlags: 0
@@ -5138,6 +5542,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003357466}
   m_CullTransparentMesh: 1
+--- !u!114 &1005803062 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7064585792424401973, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1006854677
 GameObject:
   m_ObjectHideFlags: 0
@@ -5351,6 +5766,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040511589}
   m_CullTransparentMesh: 1
+--- !u!114 &1045760436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230315650868, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1062161457 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5811676191240579198, guid: e239d9112f09a94469deb4400a85708d, type: 3}
@@ -5360,6 +5786,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c6ed67a9fa2ee24288fbb56225be45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1078792481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229452363859, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1087433422
@@ -5545,6 +5982,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1092997628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230016429620, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1145044544
@@ -5943,6 +6391,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191814754}
   m_CullTransparentMesh: 1
+--- !u!114 &1194312496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256231342899991, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1217118878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8845693191095863217, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1243223013
 GameObject:
   m_ObjectHideFlags: 0
@@ -6184,6 +6654,17 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1262085758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229743403601, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1272835937
 GameObject:
   m_ObjectHideFlags: 0
@@ -6376,6 +6857,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 978877815}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1287287926 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3970798503097915001, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1318484672
 GameObject:
   m_ObjectHideFlags: 0
@@ -6741,6 +7233,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350437341}
   m_Mesh: {fileID: 1242471271220902052, guid: e0a521cdc30b85449a4193312441f41d, type: 3}
+--- !u!114 &1351532301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229743630030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1371410540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7028,6 +7531,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394328974}
   m_CullTransparentMesh: 1
+--- !u!114 &1395596788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229724463152, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1403048142
 GameObject:
   m_ObjectHideFlags: 0
@@ -7639,6 +8153,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 302303804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1480673559 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256231157723549, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1515467593 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413208920792233331, guid: 660677b78c56c9d42bded61c9471ea12, type: 3}
@@ -7863,6 +8388,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1529707138 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229326071788, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1547560171
@@ -8657,6 +9193,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611811967}
   m_CullTransparentMesh: 1
+--- !u!114 &1624560786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230190377104, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1627596597 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1364639817773490795, guid: 660677b78c56c9d42bded61c9471ea12, type: 3}
@@ -8873,6 +9420,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667169250}
   m_CullTransparentMesh: 1
+--- !u!114 &1669358165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229790688085, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1687800104
 GameObject:
   m_ObjectHideFlags: 0
@@ -8935,6 +9493,17 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1718239161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256230090386165, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1719388943
 GameObject:
   m_ObjectHideFlags: 0
@@ -9161,6 +9730,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1752379856 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8980539871356361269, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1753383175
@@ -9528,6 +10108,17 @@ MonoBehaviour:
   minAngleTomoveUI: 90
   minHeightDiffTomoveUI: 0.35
   UIMoveSpeed: 2
+--- !u!114 &1769102035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6124928775557296993, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1795099306
 GameObject:
   m_ObjectHideFlags: 0
@@ -10061,6 +10652,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7008fcdd14b2f0945a1786807bd02bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1854483990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7932256229809838409, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1858122841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1680990482430760859, guid: e239d9112f09a94469deb4400a85708d, type: 3}
+  m_PrefabInstance: {fileID: 479843929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fbe01c6abc2914283ccb45db7b2ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1858970130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1828054706616952132, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1872714452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3960580522342499023, guid: e239d9112f09a94469deb4400a85708d, type: 3}
+  m_PrefabInstance: {fileID: 479843929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1873403705
@@ -10919,6 +11554,17 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2037971457 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2249762986166259243, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2041156776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10995,6 +11641,90 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 560130132186007241, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 560130132186007241, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 560130132186007241, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 560130132186007241, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouchSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 560130132186007241, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 595599890978744978, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 595599890978744978, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 595599890978744978, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 595599890978744978, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 595599890978744978, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 595599890978744978, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 595599890978744978, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1287287926}
+    - target: {fileID: 595599890978744978, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 707964736094143773, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 707964736094143773, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 707964736094143773, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 707964736094143773, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 707964736094143773, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 707964736094143773, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 707964736094143773, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 444575039}
+    - target: {fileID: 707964736094143773, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 736574109028145903, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11010,6 +11740,38 @@ PrefabInstance:
     - target: {fileID: 736574109028145903, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 800922864293048363, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800922864293048363, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 800922864293048363, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 800922864293048363, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 800922864293048363, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 800922864293048363, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 800922864293048363, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 414270813}
+    - target: {fileID: 800922864293048363, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
       objectReference: {fileID: 0}
     - target: {fileID: 854051951088431022, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -11046,6 +11808,166 @@ PrefabInstance:
     - target: {fileID: 1115790362499567140, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133778268044625686, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133778268044625686, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133778268044625686, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 1133778268044625686, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133778268044625686, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133778268044625686, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133778268044625686, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 461429817}
+    - target: {fileID: 1133778268044625686, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389278595258728631, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389278595258728631, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389278595258728631, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 1389278595258728631, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389278595258728631, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389278595258728631, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1389278595258728631, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2098854682}
+    - target: {fileID: 1389278595258728631, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471020955372739622, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471020955372739622, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471020955372739622, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 1471020955372739622, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471020955372739622, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471020955372739622, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471020955372739622, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 663740296}
+    - target: {fileID: 1471020955372739622, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515300815438678780, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515300815438678780, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515300815438678780, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 1515300815438678780, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515300815438678780, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515300815438678780, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515300815438678780, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 986652471}
+    - target: {fileID: 1515300815438678780, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694926358596512517, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694926358596512517, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694926358596512517, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 1694926358596512517, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694926358596512517, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694926358596512517, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694926358596512517, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 986792087}
+    - target: {fileID: 1694926358596512517, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
       objectReference: {fileID: 0}
     - target: {fileID: 1723681184670957451, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11103,6 +12025,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1879852327955456941, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879852327955456941, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879852327955456941, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 1879852327955456941, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879852327955456941, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879852327955456941, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879852327955456941, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 294749194}
+    - target: {fileID: 1879852327955456941, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 1895210312131465062, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
@@ -11123,9 +12077,61 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2006269898339518153, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006269898339518153, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006269898339518153, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 2006269898339518153, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006269898339518153, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006269898339518153, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006269898339518153, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 945795788}
+    - target: {fileID: 2006269898339518153, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 2249762986166259243, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256955324155164518, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256955324155164518, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 2256955324155164518, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256955324155164518, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouchBackSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256955324155164518, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2275928422183943764, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11167,6 +12173,38 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 2332901193967366848, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332901193967366848, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332901193967366848, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 2332901193967366848, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332901193967366848, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332901193967366848, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332901193967366848, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2037971457}
+    - target: {fileID: 2332901193967366848, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 2634413459681802786, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
@@ -11187,9 +12225,105 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2672254702510519181, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672254702510519181, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672254702510519181, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 2672254702510519181, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672254702510519181, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672254702510519181, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672254702510519181, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 383772933}
+    - target: {fileID: 2672254702510519181, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 2688210795518009158, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739997078005684655, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739997078005684655, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739997078005684655, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 2739997078005684655, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739997078005684655, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739997078005684655, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739997078005684655, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1858970130}
+    - target: {fileID: 2739997078005684655, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767876741246556408, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767876741246556408, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767876741246556408, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 2767876741246556408, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767876741246556408, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767876741246556408, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767876741246556408, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 560282929}
+    - target: {fileID: 2767876741246556408, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
       objectReference: {fileID: 0}
     - target: {fileID: 2944637591293925358, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -11339,6 +12473,38 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 3783816966605345605, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783816966605345605, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783816966605345605, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 3783816966605345605, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783816966605345605, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783816966605345605, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783816966605345605, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 995903699}
+    - target: {fileID: 3783816966605345605, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 3835805721176771279, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11419,6 +12585,14 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 4225964948819880231, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: rigInfo
+      value: 
+      objectReference: {fileID: 399848588}
+    - target: {fileID: 4225964948819880231, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: keyboardManager
+      value: 
+      objectReference: {fileID: 903477246}
     - target: {fileID: 4264264386290032339, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -11462,6 +12636,26 @@ PrefabInstance:
     - target: {fileID: 4264264386290032339, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508377780921805546, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508377780921805546, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 4508377780921805546, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508377780921805546, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LettersAndNumbersToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508377780921805546, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4697810463153436810, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -11995,6 +13189,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4898134825680824030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898134825680824030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898134825680824030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 4898134825680824030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898134825680824030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898134825680824030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898134825680824030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1752379856}
+    - target: {fileID: 4898134825680824030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 4997679608411219469, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12010,6 +13236,38 @@ PrefabInstance:
     - target: {fileID: 4997679608411219469, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015556248227887962, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015556248227887962, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015556248227887962, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5015556248227887962, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015556248227887962, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015556248227887962, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015556248227887962, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1217118878}
+    - target: {fileID: 5015556248227887962, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
       objectReference: {fileID: 0}
     - target: {fileID: 5266035898079747765, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -12035,6 +13293,38 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 5551334431639951861, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551334431639951861, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551334431639951861, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5551334431639951861, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551334431639951861, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551334431639951861, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551334431639951861, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 139783440}
+    - target: {fileID: 5551334431639951861, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 5583570868075600284, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12059,6 +13349,886 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 5858597904475821179, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904475821179, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904475821179, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597904475821179, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904475821179, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904475821179, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904475821179, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1624560786}
+    - target: {fileID: 5858597904475821179, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904613035280, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904613035280, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904613035280, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597904613035280, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904613035280, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904613035280, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904613035280, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 87689701}
+    - target: {fileID: 5858597904613035280, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904617739231, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904617739231, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597904617739231, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904617739231, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1045760436}
+    - target: {fileID: 5858597904617739231, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904835486616, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904835486616, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904835486616, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597904835486616, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904835486616, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904835486616, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904835486616, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 82634870}
+    - target: {fileID: 5858597904835486616, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904847164127, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904847164127, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904847164127, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597904847164127, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904847164127, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904847164127, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904847164127, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1092997628}
+    - target: {fileID: 5858597904847164127, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904912733726, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904912733726, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597904912733726, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904912733726, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1718239161}
+    - target: {fileID: 5858597904912733726, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904922669988, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904922669988, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597904922669988, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597904922669988, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 889059265}
+    - target: {fileID: 5858597904922669988, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905044976184, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905044976184, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905044976184, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905044976184, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905044976184, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905044976184, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905044976184, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 74076439}
+    - target: {fileID: 5858597905044976184, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905068116954, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905068116954, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905068116954, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905068116954, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905068116954, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905068116954, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905068116954, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 108428697}
+    - target: {fileID: 5858597905068116954, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905127792314, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905127792314, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905127792314, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905127792314, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1262085758}
+    - target: {fileID: 5858597905127792314, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905127893541, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905127893541, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905127893541, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905127893541, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905127893541, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905127893541, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905127893541, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1351532301}
+    - target: {fileID: 5858597905127893541, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905142275291, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905142275291, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905142275291, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905142275291, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905142275291, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905142275291, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905142275291, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1395596788}
+    - target: {fileID: 5858597905142275291, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905164206873, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905164206873, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905164206873, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905164206873, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouchSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905164206873, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905194067362, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905194067362, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905194067362, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905194067362, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905194067362, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905194067362, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905194067362, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1854483990}
+    - target: {fileID: 5858597905194067362, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905208500158, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905208500158, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905208500158, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905208500158, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905208500158, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905208500158, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905208500158, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1669358165}
+    - target: {fileID: 5858597905208500158, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905272494855, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905272494855, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905272494855, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905272494855, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905272494855, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905272494855, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905272494855, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1529707138}
+    - target: {fileID: 5858597905272494855, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905277366699, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905277366699, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905277366699, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905277366699, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 619883687}
+    - target: {fileID: 5858597905277366699, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905291654405, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905291654405, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905291654405, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905291654405, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905291654405, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905291654405, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905291654405, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 319547153}
+    - target: {fileID: 5858597905291654405, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905312884252, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905312884252, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905312884252, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905312884252, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905312884252, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905312884252, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905312884252, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 625162114}
+    - target: {fileID: 5858597905312884252, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905348314296, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905348314296, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905348314296, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905348314296, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905348314296, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905348314296, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905348314296, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1078792481}
+    - target: {fileID: 5858597905348314296, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905670340604, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905670340604, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905670340604, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905670340604, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1194312496}
+    - target: {fileID: 5858597905670340604, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905699781476, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905699781476, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905699781476, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905699781476, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LettersAndNumbersToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905699781476, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905705714845, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905705714845, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905705714845, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905705714845, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouchReturn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905705714845, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905988423030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905988423030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905988423030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597905988423030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905988423030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905988423030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597905988423030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1480673559}
+    - target: {fileID: 5858597905988423030, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906216653085, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906216653085, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906216653085, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597906216653085, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906216653085, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906216653085, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906216653085, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 914409604}
+    - target: {fileID: 5858597906216653085, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906293574872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906293574872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906293574872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597906293574872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906293574872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906293574872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906293574872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 314486176}
+    - target: {fileID: 5858597906293574872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906393010387, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906393010387, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597906393010387, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906393010387, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 677799579}
+    - target: {fileID: 5858597906393010387, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906395413201, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906395413201, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906395413201, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597906395413201, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906395413201, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906395413201, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906395413201, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 187473193}
+    - target: {fileID: 5858597906395413201, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906475239734, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906475239734, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597906475239734, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906475239734, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 55973310}
+    - target: {fileID: 5858597906475239734, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906484751165, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906484751165, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597906484751165, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906484751165, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 399721877}
+    - target: {fileID: 5858597906484751165, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906538196685, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906538196685, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906538196685, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597906538196685, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CapsLockToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906538196685, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906538196685, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906564726283, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906564726283, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5858597906564726283, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906564726283, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouchBackSpace
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858597906564726283, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981342781683113083, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981342781683113083, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 5981342781683113083, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981342781683113083, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseKeyboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981342781683113083, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6041559283660382108, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12075,9 +14245,61 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6041861846527050830, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041861846527050830, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041861846527050830, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 6041861846527050830, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041861846527050830, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041861846527050830, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041861846527050830, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 594120828}
+    - target: {fileID: 6041861846527050830, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 6124928775557296993, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 6157852961716756303, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6157852961716756303, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 6157852961716756303, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6157852961716756303, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouchReturn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6157852961716756303, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6164570737413868772, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_Name
@@ -12111,6 +14333,38 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 6585612123836280265, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585612123836280265, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585612123836280265, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 6585612123836280265, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585612123836280265, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585612123836280265, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585612123836280265, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2066595234}
+    - target: {fileID: 6585612123836280265, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 6711498983701602487, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12126,6 +14380,38 @@ PrefabInstance:
     - target: {fileID: 6711498983701602487, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724597290729414878, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724597290729414878, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724597290729414878, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 6724597290729414878, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724597290729414878, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724597290729414878, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724597290729414878, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1005803062}
+    - target: {fileID: 6724597290729414878, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
       objectReference: {fileID: 0}
     - target: {fileID: 6932864675011714071, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
@@ -12167,6 +14453,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7320598455300487123, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320598455300487123, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320598455300487123, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 7320598455300487123, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320598455300487123, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320598455300487123, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320598455300487123, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 735617601}
+    - target: {fileID: 7320598455300487123, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 7377477803569601308, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12183,9 +14501,105 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7520793010570417053, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7520793010570417053, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7520793010570417053, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 7520793010570417053, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7520793010570417053, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7520793010570417053, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7520793010570417053, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 555828308}
+    - target: {fileID: 7520793010570417053, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600945454071068784, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600945454071068784, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600945454071068784, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 7600945454071068784, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600945454071068784, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600945454071068784, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600945454071068784, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 966142851}
+    - target: {fileID: 7600945454071068784, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 7651040061633831844, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663152425211547530, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663152425211547530, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663152425211547530, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 7663152425211547530, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663152425211547530, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663152425211547530, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663152425211547530, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1769102035}
+    - target: {fileID: 7663152425211547530, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
       objectReference: {fileID: 0}
     - target: {fileID: 7818780653590837413, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -12355,6 +14769,70 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8061093131673495872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061093131673495872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061093131673495872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 8061093131673495872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061093131673495872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061093131673495872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061093131673495872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 982526418}
+    - target: {fileID: 8061093131673495872, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077274325810144597, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077274325810144597, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077274325810144597, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 8077274325810144597, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077274325810144597, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077274325810144597, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077274325810144597, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 52620016}
+    - target: {fileID: 8077274325810144597, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 8173275250211672433, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12379,6 +14857,38 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 8404283004109630001, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404283004109630001, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404283004109630001, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 8404283004109630001, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404283004109630001, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404283004109630001, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404283004109630001, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 366987893}
+    - target: {fileID: 8404283004109630001, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     - target: {fileID: 8483013712760000145, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -12394,6 +14904,38 @@ PrefabInstance:
     - target: {fileID: 8483013712760000145, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524282190446387806, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524282190446387806, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524282190446387806, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 8524282190446387806, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524282190446387806, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524282190446387806, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524282190446387806, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 608006667}
+    - target: {fileID: 8524282190446387806, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
       objectReference: {fileID: 0}
     - target: {fileID: 8678855266670537439, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
@@ -12450,6 +14992,38 @@ PrefabInstance:
     - target: {fileID: 8980539871356361269, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108841937898488929, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108841937898488929, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108841937898488929, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 903477246}
+    - target: {fileID: 9108841937898488929, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108841937898488929, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: KeyTouch
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108841937898488929, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fusion.Addons.VirtualKeyboard.KeyboardManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108841937898488929, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 917046257}
+    - target: {fileID: 9108841937898488929, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: onTouch.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
       objectReference: {fileID: 0}
     - target: {fileID: 9219014650733776898, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
@@ -12567,6 +15141,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044624824}
   m_Mesh: {fileID: 7046167814315175114, guid: 3aadebbefc0f36f4d8121b70a8e668e1, type: 3}
+--- !u!114 &2066595234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7222693631248109858, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2093958150
 GameObject:
   m_ObjectHideFlags: 0
@@ -12671,6 +15256,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093958150}
   m_CullTransparentMesh: 1
+--- !u!114 &2098854682 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3179355825436245084, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+  m_PrefabInstance: {fileID: 2041156776}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2104618462 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6458947598622693737, guid: 4fcbdba73f1b3704a881d8c9907d57c1, type: 3}
@@ -12793,6 +15389,14 @@ PrefabInstance:
       propertyPath: adaptSize
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1267839987554755281, guid: 04d28534758732940a82134c5062ace0, type: 3}
+      propertyPath: touchable
+      value: 
+      objectReference: {fileID: 1814228960437865057}
+    - target: {fileID: 1267839987554755281, guid: 04d28534758732940a82134c5062ace0, type: 3}
+      propertyPath: inputfield
+      value: 
+      objectReference: {fileID: 5463003986309319259}
     - target: {fileID: 1267839987554755281, guid: 04d28534758732940a82134c5062ace0, type: 3}
       propertyPath: preferredKeyboardSpawnPosition
       value: 
@@ -12920,6 +15524,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5302b9340ff22042a5825543f736da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1814228960437865057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8313590480666744145, guid: 04d28534758732940a82134c5062ace0, type: 3}
+  m_PrefabInstance: {fileID: 1814228960437865054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fbe01c6abc2914283ccb45db7b2ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &5036698970344913613
