@@ -54,6 +54,11 @@ namespace Fusion.Addons.VirtualKeyboard
 
         private void Awake()
         {
+            if (buffer == null) buffer = "";
+            if (onBufferChanged == null) onBufferChanged = new UnityEvent();
+            if (onReturnPressed == null) onReturnPressed = new UnityEvent();
+            if (onKeyboardStatusChanged == null) onKeyboardStatusChanged = new UnityEvent<bool>();
+
             if (!grabbableKeyboard)
             {
                 var grabbable = GetComponentInChildren<Grabbable>();

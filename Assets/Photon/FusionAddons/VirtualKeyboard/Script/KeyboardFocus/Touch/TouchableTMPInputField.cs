@@ -138,9 +138,16 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
         #region TMP_InputField callbacks
         private void OnInputFieldDeSelect(string text)
         {
+            // In VR, we often lose EventSystem focus when touching keyboard buttons.
+            // We should only lose focus if the keyboard itself is closed or if we explicitly deselect.
             if (hasFocus == false) return;
-            hasFocus = false;
-            OnFocusChanged();
+            
+            // Only lose focus if we are NOT in VR or if the KeyboardFocusManager says so
+            if (KeyboardFocusManager.Instance != null && KeyboardFocusManager.Instance.IsInDesktopMode)
+            {
+                hasFocus = false;
+                OnFocusChanged();
+            }
         }
 
         private void LateUpdate()
