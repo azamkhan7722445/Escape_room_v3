@@ -4059,11 +4059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanopicJarSlot
   requiredJarType: 0
-  snapPoint: {fileID: 0}
-  snapSmoothing: 20
-  snapDistanceThreshold: 0.5
   jarsInSlot: []
-  snappedJar: {fileID: 0}
 --- !u!65 &359809028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7114,8 +7110,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.004057974, y: 0.002879788, z: 0.00036815664}
-  m_Center: {x: -0.00000014563561, y: -0.0000000016045225, z: 0.00018407384}
+  m_Size: {x: 0.004057974, y: 0.002879788, z: 0.0004801922}
+  m_Center: {x: -0.00000014560663, y: -0.0000000015445256, z: 0.00012805624}
 --- !u!1 &459955056
 GameObject:
   m_ObjectHideFlags: 0
@@ -15926,11 +15922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanopicJarSlot
   requiredJarType: 2
-  snapPoint: {fileID: 0}
-  snapSmoothing: 20
-  snapDistanceThreshold: 0.5
   jarsInSlot: []
-  snappedJar: {fileID: 0}
 --- !u!65 &1017625739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31932,11 +31924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanopicJarSlot
   requiredJarType: 1
-  snapPoint: {fileID: 0}
-  snapSmoothing: 20
-  snapDistanceThreshold: 0.5
   jarsInSlot: []
-  snappedJar: {fileID: 0}
 --- !u!65 &1989836892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32879,11 +32867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanopicJarSlot
   requiredJarType: 3
-  snapPoint: {fileID: 0}
-  snapSmoothing: 20
-  snapDistanceThreshold: 0.5
   jarsInSlot: []
-  snappedJar: {fileID: 0}
 --- !u!65 &2065846025
 BoxCollider:
   m_ObjectHideFlags: 0

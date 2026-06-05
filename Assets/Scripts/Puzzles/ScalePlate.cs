@@ -42,7 +42,7 @@ public class ScalePlate : MonoBehaviour
         }
     }
 
-    public void UpdateWeight()
+    private void UpdateWeight()
     {
         totalWeight = 0f;
         foreach (var wo in weightsOnPlate)

@@ -1,6 +1,5 @@
 using UnityEngine;
 using Fusion;
-using System.Collections.Generic;
 
 public class BalanceScale : NetworkBehaviour
 {
@@ -23,49 +22,15 @@ public class BalanceScale : NetworkBehaviour
 
     private Quaternion initialRotation;
 
-    private void Awake()
-    {
-        if (beam != null)
-        {
-            initialRotation = beam.localRotation;
-        }
-    }
-
     public override void Spawned()
     {
         if (beam != null)
         {
+            initialRotation = beam.localRotation;
             // Synchronize visual state if already tilted (Rotation on Z axis)
             beam.localRotation = initialRotation * Quaternion.Euler(0, 0, Angle);
-            UpdatePlatesRotation();
         }
         SetupPhysicsMaterials();
-        InitializePlates();
-    }
-
-    private void InitializePlates()
-    {
-        if (leftPlate != null) CheckForInitialWeights(leftPlate);
-        if (rightPlate != null) CheckForInitialWeights(rightPlate);
-    }
-
-    private void CheckForInitialWeights(ScalePlate plate)
-    {
-        Collider plateCollider = plate.GetComponent<Collider>();
-        if (plateCollider == null) return;
-
-        // Use overlap to find objects already in the trigger
-        Collider[] colliders = Physics.OverlapBox(plateCollider.bounds.center, plateCollider.bounds.extents, plate.transform.rotation);
-        foreach (var c in colliders)
-        {
-            WeightObject wo = c.GetComponent<WeightObject>();
-            if (wo != null && !plate.weightsOnPlate.Contains(wo))
-            {
-                plate.weightsOnPlate.Add(wo);
-                plate.localOffsets[wo] = plate.transform.InverseTransformPoint(wo.transform.position);
-            }
-        }
-        plate.UpdateWeight();
     }
 
     private void SetupPhysicsMaterials()
@@ -97,13 +62,13 @@ public class BalanceScale : NetworkBehaviour
             UpdateAuthorityLogic();
         }
 
-        // Apply rotation in FUN so physics/stickiness logic uses current state
+        // Apply rotation on all clients. 
         if (beam != null)
         {
             beam.localRotation = initialRotation * Quaternion.Euler(0, 0, Angle);
             UpdatePlatesRotation();
         }
-
+        
         // Apply stickiness to objects on all clients (if they own the object)
         ApplyStickiness(leftPlate);
         ApplyStickiness(rightPlate);
@@ -111,16 +76,6 @@ public class BalanceScale : NetworkBehaviour
         if (Object.HasStateAuthority)
         {
             CheckWinCondition();
-        }
-    }
-
-    public override void Render()
-    {
-        // Apply rotation on all clients in Render for smoothness and up-to-date visual
-        if (beam != null)
-        {
-            beam.localRotation = initialRotation * Quaternion.Euler(0, 0, Angle);
-            UpdatePlatesRotation();
         }
     }
 
