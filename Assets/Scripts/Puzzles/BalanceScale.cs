@@ -21,12 +21,26 @@ public class BalanceScale : NetworkBehaviour
     [Networked] public float RightWeight { get; set; }
 
     private Quaternion initialRotation;
+    private bool initialRotationCaptured = false;
+
+    private void Awake()
+    {
+        if (beam != null && !initialRotationCaptured)
+        {
+            initialRotation = beam.localRotation;
+            initialRotationCaptured = true;
+        }
+    }
 
     public override void Spawned()
     {
         if (beam != null)
         {
-            initialRotation = beam.localRotation;
+            if (!initialRotationCaptured)
+            {
+                initialRotation = beam.localRotation;
+                initialRotationCaptured = true;
+            }
             // Synchronize visual state if already tilted (Rotation on Z axis)
             beam.localRotation = initialRotation * Quaternion.Euler(0, 0, Angle);
         }
@@ -61,13 +75,6 @@ public class BalanceScale : NetworkBehaviour
         {
             UpdateAuthorityLogic();
         }
-
-        // Apply rotation on all clients. 
-        if (beam != null)
-        {
-            beam.localRotation = initialRotation * Quaternion.Euler(0, 0, Angle);
-            UpdatePlatesRotation();
-        }
         
         // Apply stickiness to objects on all clients (if they own the object)
         ApplyStickiness(leftPlate);
@@ -76,6 +83,16 @@ public class BalanceScale : NetworkBehaviour
         if (Object.HasStateAuthority)
         {
             CheckWinCondition();
+        }
+    }
+
+    public override void Render()
+    {
+        // Apply rotation on all clients in Render for smoothness.
+        if (beam != null && initialRotationCaptured)
+        {
+            beam.localRotation = initialRotation * Quaternion.Euler(0, 0, Angle);
+            UpdatePlatesRotation();
         }
     }
 

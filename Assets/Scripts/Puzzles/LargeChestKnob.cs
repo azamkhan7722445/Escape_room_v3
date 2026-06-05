@@ -59,12 +59,14 @@ public class LargeChestKnob : NetworkBehaviour
 
     private void OnGrab()
     {
-        if (_networkGrabbable != null && _networkGrabbable.Object.HasStateAuthority)
+        if (Object != null && !Object.HasStateAuthority)
         {
-            _isLocalGrabbing = true;
-            _startDigit = CurrentDigit;
-            _startHandAngle = GetHandAngle();
+            Object.RequestStateAuthority();
         }
+
+        _isLocalGrabbing = true;
+        _startDigit = CurrentDigit;
+        _startHandAngle = GetHandAngle();
     }
 
     private void OnUngrab()
@@ -84,7 +86,7 @@ public class LargeChestKnob : NetworkBehaviour
             int digitDelta = Mathf.RoundToInt(angleDelta / (360f / maxDigits));
             int newDigit = (_startDigit - digitDelta + maxDigits) % maxDigits;
             
-            if (newDigit != CurrentDigit)
+            if (newDigit != CurrentDigit && Object.HasStateAuthority)
             {
                 CurrentDigit = newDigit;
             }
