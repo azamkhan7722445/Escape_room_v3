@@ -4059,7 +4059,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanopicJarSlot
   requiredJarType: 0
+  snapPoint: {fileID: 0}
+  snapSmoothing: 20
+  snapDistanceThreshold: 0.5
   jarsInSlot: []
+  snappedJar: {fileID: 0}
 --- !u!65 &359809028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15922,7 +15926,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanopicJarSlot
   requiredJarType: 2
+  snapPoint: {fileID: 0}
+  snapSmoothing: 20
+  snapDistanceThreshold: 0.5
   jarsInSlot: []
+  snappedJar: {fileID: 0}
 --- !u!65 &1017625739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31924,7 +31932,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanopicJarSlot
   requiredJarType: 1
+  snapPoint: {fileID: 0}
+  snapSmoothing: 20
+  snapDistanceThreshold: 0.5
   jarsInSlot: []
+  snappedJar: {fileID: 0}
 --- !u!65 &1989836892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32867,7 +32879,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanopicJarSlot
   requiredJarType: 3
+  snapPoint: {fileID: 0}
+  snapSmoothing: 20
+  snapDistanceThreshold: 0.5
   jarsInSlot: []
+  snappedJar: {fileID: 0}
 --- !u!65 &2065846025
 BoxCollider:
   m_ObjectHideFlags: 0

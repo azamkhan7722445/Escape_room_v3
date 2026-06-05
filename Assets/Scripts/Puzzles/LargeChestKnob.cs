@@ -44,8 +44,14 @@ public class LargeChestKnob : NetworkBehaviour
         _audioSource = GetComponent<AudioSource>();
         _changeDetector = GetChangeDetector(ChangeDetector.Source.SimulationState);
 
-        if (_grabbable != null)
+        if (_networkGrabbable != null)
         {
+            _networkGrabbable.onDidGrab.AddListener(OnNetworkGrab);
+            _networkGrabbable.onDidUngrab.AddListener(OnNetworkUngrab);
+        }
+        else if (_grabbable != null)
+        {
+            // Fallback for non-networked grabbing if applicable
             _grabbable.onGrab.AddListener(OnGrab);
             _grabbable.onUngrab.AddListener(OnUngrab);
         }
@@ -53,6 +59,12 @@ public class LargeChestKnob : NetworkBehaviour
 
     private void OnDestroy()
     {
+        if (_networkGrabbable != null)
+        {
+            _networkGrabbable.onDidGrab.RemoveListener(OnNetworkGrab);
+            _networkGrabbable.onDidUngrab.RemoveListener(OnNetworkUngrab);
+        }
+        
         if (_grabbable != null)
         {
             _grabbable.onGrab.RemoveListener(OnGrab);
@@ -60,19 +72,25 @@ public class LargeChestKnob : NetworkBehaviour
         }
     }
 
+    private void OnNetworkGrab(NetworkGrabber grabber)
+    {
+        // NetworkGrabbable.onDidGrab is called AFTER authority is acquired
+        _isLocalGrabbing = true;
+        _startDigit = CurrentDigit;
+        _startHandAngle = GetHandAngle();
+    }
+
+    private void OnNetworkUngrab()
+    {
+        _isLocalGrabbing = false;
+    }
+
     private void OnGrab()
     {
-        if (_grabbable != null)
-        {
-            if (Object != null && !Object.HasStateAuthority)
-            {
-                Object.RequestStateAuthority();
-            }
-            
-            _isLocalGrabbing = true;
-            _startDigit = CurrentDigit;
-            _startHandAngle = GetHandAngle();
-        }
+        // Local fallback
+        _isLocalGrabbing = true;
+        _startDigit = CurrentDigit;
+        _startHandAngle = GetHandAngle();
     }
 
     private void OnUngrab()
