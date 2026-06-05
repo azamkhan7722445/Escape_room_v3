@@ -28,18 +28,21 @@ public class LargeChestKnob : NetworkBehaviour
 
     private ChangeDetector _changeDetector;
 
+    private void Awake()
+    {
+        if (visualTransform != null && !_initialRotationCaptured)
+        {
+            _initialLocalRotation = visualTransform.localRotation;
+            _initialRotationCaptured = true;
+        }
+    }
+
     public override void Spawned()
     {
         _grabbable = GetComponent<Grabbable>();
         _networkGrabbable = GetComponent<NetworkGrabbable>();
         _audioSource = GetComponent<AudioSource>();
         _changeDetector = GetChangeDetector(ChangeDetector.Source.SimulationState);
-
-        if (visualTransform != null && !_initialRotationCaptured)
-        {
-            _initialLocalRotation = visualTransform.localRotation;
-            _initialRotationCaptured = true;
-        }
 
         if (_grabbable != null)
         {
@@ -59,8 +62,13 @@ public class LargeChestKnob : NetworkBehaviour
 
     private void OnGrab()
     {
-        if (_networkGrabbable != null && _networkGrabbable.Object.HasStateAuthority)
+        if (_grabbable != null)
         {
+            if (Object != null && !Object.HasStateAuthority)
+            {
+                Object.RequestStateAuthority();
+            }
+            
             _isLocalGrabbing = true;
             _startDigit = CurrentDigit;
             _startHandAngle = GetHandAngle();
@@ -74,7 +82,7 @@ public class LargeChestKnob : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        if (_isLocalGrabbing)
+        if (_isLocalGrabbing && Object.HasStateAuthority)
         {
             float currentAngle = GetHandAngle();
             float angleDelta = currentAngle - _startHandAngle;
