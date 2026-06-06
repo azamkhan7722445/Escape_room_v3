@@ -60,23 +60,22 @@ public class BalanceScale : NetworkBehaviour
         if (Object.HasStateAuthority)
         {
             UpdateAuthorityLogic();
+            CheckWinCondition();
         }
+    }
 
-        // Apply rotation on all clients. 
+    public override void Render()
+    {
+        // Apply rotation on all clients for visual sync
         if (beam != null)
         {
             beam.localRotation = initialRotation * Quaternion.Euler(0, 0, Angle);
             UpdatePlatesRotation();
         }
-        
-        // Apply stickiness to objects on all clients (if they own the object)
+
+        // Apply stickiness to objects on all clients so they move with the plates
         ApplyStickiness(leftPlate);
         ApplyStickiness(rightPlate);
-
-        if (Object.HasStateAuthority)
-        {
-            CheckWinCondition();
-        }
     }
 
     private void UpdatePlatesRotation()
