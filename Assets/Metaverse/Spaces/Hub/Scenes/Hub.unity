@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to the Metaverse sample
+  m_text: Welcome to Pharaoh's Vault
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 551d66d1ef951614b908e8103b986ec4, type: 2}
   m_sharedMaterial: {fileID: -3461725706462711650, guid: 551d66d1ef951614b908e8103b986ec4, type: 2}
@@ -2053,9 +2053,75 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 667065138266129345, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065139839140030, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140136861120, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_text
+      value: The flood gates have opened. Solve 7 ancient puzzles, scarabs, star
+        maps, hieroglyphs, and the sacred scales of Ma'at,  before the Nile swallows
+        the chamber. Only the worthy escape.
+      objectReference: {fileID: 0}
     - target: {fileID: 667065140136861120, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140136861135, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -308
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156269, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.39226982
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156269, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.23536187
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156269, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.58840466
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156270, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_text
+      value: PHARAOH'S VAULT         E S C A P E
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156270, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_margin.x
+      value: -139.63934
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156270, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_margin.z
+      value: -134.15082
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156270, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156270, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156270, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156270, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156270, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294835709
+      objectReference: {fileID: 0}
+    - target: {fileID: 667065140392156270, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 667065140392156270, guid: a2978804f3a24414db0d970b7695d3c0, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
