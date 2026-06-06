@@ -9958,7 +9958,7 @@ MonoBehaviour:
   skinPalette: {fileID: 1272835938}
   referenceAvatar: {fileID: 57001391}
   prefabChoiceButton: {fileID: 6458947598622693734, guid: 4fcbdba73f1b3704a881d8c9907d57c1, type: 3}
-  mainSceneName: ArtGallery
+  mainSceneName: Hub
   simpleAvatarConfig:
     hairMat: 0
     hairMesh: 0
