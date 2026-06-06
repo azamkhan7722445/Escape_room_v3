@@ -63,5 +63,10 @@ namespace Fusion.Samples.IndustriesComponents
         {
             SetSelected(false);
         }
+
+        public void on_Quit()
+        {
+            Application.Quit();
+        }
     }
 }
