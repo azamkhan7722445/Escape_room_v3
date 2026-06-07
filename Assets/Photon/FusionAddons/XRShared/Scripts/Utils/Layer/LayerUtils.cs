@@ -13,7 +13,7 @@ namespace Fusion.XR.Shared.Utils
                 int layer = LayerMask.NameToLayer(layerToApplyName);
                 if (layer == -1)
                 {
-                    Debug.LogError($"Please add a {layerToApplyName} layer. Required by {gameObject.name}");
+                    // Debug.LogError($"Please add a {layerToApplyName} layer. Required by {gameObject.name}");
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace Fusion.XR.Shared.Utils
                         int layer = LayerMask.NameToLayer(layerName);
                         if (layer == -1)
                         {
-                            Debug.LogError($"Please add a {layerName} layer. Required by {c.name}");
+                            // Debug.LogError($"Please add a {layerName} layer. Required by {c.name}");
                         }
                         else
                         {
@@ -76,7 +76,7 @@ namespace Fusion.XR.Shared.Utils
                         int layer = LayerMask.NameToLayer(layerName);
                         if (layer == -1)
                         {
-                            Debug.LogError($"Please add a {layerName} layer. Required by {c.name}");
+                            // Debug.LogError($"Please add a {layerName} layer. Required by {c.name}");
                         }
                         else
                         {
