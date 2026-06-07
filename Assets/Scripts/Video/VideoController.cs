@@ -25,7 +25,7 @@ namespace EscapeRoom.Video
             // For "not continuously on screen", we start by showing then hiding, or just hidden.
             if (controlsContainer != null)
             {
-                controlsContainer.SetActive(false);
+                //controlsContainer.SetActive(false);
             }
         }
 
@@ -42,7 +42,7 @@ namespace EscapeRoom.Video
                 videoPlayer.Play();
             }
             UpdateIcon();
-            ResetHideTimer();
+            //ResetHideTimer();
         }
 
         public void ShowControls()
@@ -59,7 +59,7 @@ namespace EscapeRoom.Video
             {
                 StopCoroutine(hideCoroutine);
             }
-            hideCoroutine = StartCoroutine(HideAfterDelay());
+            //hideCoroutine = StartCoroutine(HideAfterDelay());
         }
 
         private IEnumerator HideAfterDelay()
