@@ -32,7 +32,7 @@ public class MummyHintSystem : MonoBehaviour
         "Use the Rosetta Stone Card to unlock the symbols and find the hint sentence.",
         "Balance the Scale of Ma'at: Hearts on the left, feathers on the right... pure hearts are lighter than they appear.",
         "Mathematical tablet: Count the base blocks of all 4 sides, then divide by the pyramids on the plateau...",
-        "The Soul of Osiris (Orion) points the way... count the stars in his belt to find the direction.",
+        "The Star Sirius was very important to the ancient Egyptians. How many stars make up the section of a nearby constellation that points to Sirius",
         "The embalmers had a sacred order: Liver, Lungs, Stomach, then Intestines. Sequence them correctly."
     };
 

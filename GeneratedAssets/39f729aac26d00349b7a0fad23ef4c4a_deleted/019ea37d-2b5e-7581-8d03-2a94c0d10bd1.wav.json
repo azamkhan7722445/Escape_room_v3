@@ -1,0 +1,15 @@
+{
+    "asset": "39f729aac26d00349b7a0fad23ef4c4a",
+    "fileName": "019ea37d-2b5e-7581-8d03-2a94c0d10bd1.wav",
+    "prompt": "The Star Sirius was very important to the ancient Egyptians. How many stars make up the section of a nearby constellation that points to Sirius",
+    "negativePrompt": "",
+    "model": "elevenlabs-multilingual-v2",
+    "modelName": "ElevenLabs Multilingual V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": "Bill"
+}
