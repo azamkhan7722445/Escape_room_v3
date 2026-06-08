@@ -1,14 +1,21 @@
 using UnityEngine;
 using Fusion;
 using Fusion.XR.Shared.Grabbing;
+using Fusion.XR.Shared.Rig;
 
 public class LargeChestKnob : NetworkBehaviour
 {
     [Header("Settings")]
     public int maxDigits = 10;
-    public Vector3 rotationAxis = Vector3.right;
+    public Vector3 rotationAxis = Vector3.forward;
     public Transform visualTransform;
     
+    [Header("Grab Settings")]
+    public float grabSensitivity = 1.0f;
+    public float minGrabDistance = 0.05f;
+    public float hapticAmplitude = 0.1f;
+    public float hapticDuration = 0.05f;
+
     [Header("Networking")]
     [Networked]
     public int CurrentDigit { get; set; }
@@ -16,7 +23,8 @@ public class LargeChestKnob : NetworkBehaviour
     private Grabbable _grabbable;
     private NetworkGrabbable _networkGrabbable;
     
-    private float _startHandAngle;
+    private float _lastHandAngle;
+    private float _cumulativeAngleDelta;
     private int _startDigit;
     private bool _isLocalGrabbing;
     private Quaternion _initialLocalRotation;
@@ -63,7 +71,8 @@ public class LargeChestKnob : NetworkBehaviour
         {
             _isLocalGrabbing = true;
             _startDigit = CurrentDigit;
-            _startHandAngle = GetHandAngle();
+            _lastHandAngle = GetHandAngle();
+            _cumulativeAngleDelta = 0;
         }
     }
 
@@ -77,17 +86,36 @@ public class LargeChestKnob : NetworkBehaviour
         if (_isLocalGrabbing)
         {
             float currentAngle = GetHandAngle();
-            float angleDelta = currentAngle - _startHandAngle;
+            float delta = Mathf.DeltaAngle(_lastHandAngle, currentAngle);
             
-            // Convert angle delta to digit change
-            // A positive angle delta (counter-clockwise) should decrement the visual digit on a clockwise mesh
-            int digitDelta = Mathf.RoundToInt(angleDelta / (360f / maxDigits));
-            int newDigit = (_startDigit - digitDelta + maxDigits) % maxDigits;
-            
-            if (newDigit != CurrentDigit)
+            // Check for min distance to avoid wild spinning when hand is at pivot
+            if (GetHandDistance() > minGrabDistance)
             {
-                CurrentDigit = newDigit;
+                _cumulativeAngleDelta += delta;
+                _lastHandAngle = currentAngle;
+
+                // Convert angle delta to digit change
+                int digitDelta = Mathf.RoundToInt((_cumulativeAngleDelta * grabSensitivity) / (360f / maxDigits));
+                int newDigit = (_startDigit - digitDelta + (maxDigits * 100)) % maxDigits;
+                
+                if (newDigit != CurrentDigit)
+                {
+                    CurrentDigit = newDigit;
+                    SendHapticFeedback();
+                }
             }
+        }
+    }
+
+    private void SendHapticFeedback()
+    {
+        if (_grabbable == null || _grabbable.currentGrabber == null) return;
+        
+        // Find hardware hand to send haptics
+        var hand = _grabbable.currentGrabber.GetComponentInParent<HardwareHand>();
+        if (hand != null)
+        {
+            hand.SendHapticImpulse(hapticAmplitude, hapticDuration);
         }
     }
 
@@ -125,12 +153,34 @@ public class LargeChestKnob : NetworkBehaviour
         Vector3 handPos = _grabbable.currentGrabber.transform.position;
         Vector3 localHandPos = transform.InverseTransformPoint(handPos);
         
-        // Project onto the plane perpendicular to rotationAxis (assuming rotationAxis is Z)
-        // We use Vector3.right and Vector3.up for the projection plane
-        float x = Vector3.Dot(localHandPos, Vector3.right);
-        float y = Vector3.Dot(localHandPos, Vector3.up);
+        // Use a robust projection based on rotationAxis
+        Vector3 projected = Vector3.ProjectOnPlane(localHandPos, rotationAxis);
+        
+        // Define coordinate system on the plane
+        Vector3 right, up;
+        if (Mathf.Abs(Vector3.Dot(rotationAxis, Vector3.up)) < 0.9f)
+        {
+            right = Vector3.Cross(rotationAxis, Vector3.up).normalized;
+            up = Vector3.Cross(right, rotationAxis).normalized;
+        }
+        else
+        {
+            right = Vector3.Cross(rotationAxis, Vector3.forward).normalized;
+            up = Vector3.Cross(right, rotationAxis).normalized;
+        }
+
+        float x = Vector3.Dot(projected, right);
+        float y = Vector3.Dot(projected, up);
 
         return Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+    }
+
+    private float GetHandDistance()
+    {
+        if (_grabbable == null || _grabbable.currentGrabber == null) return 0;
+        Vector3 handPos = _grabbable.currentGrabber.transform.position;
+        Vector3 localHandPos = transform.InverseTransformPoint(handPos);
+        return Vector3.ProjectOnPlane(localHandPos, rotationAxis).magnitude;
     }
 
     // PC Interaction
@@ -143,6 +193,7 @@ public class LargeChestKnob : NetworkBehaviour
         }
         else
         {
+            // If we don't have authority, request it via RPC
             RPC_RequestRotation(1);
         }
     }
@@ -156,6 +207,7 @@ public class LargeChestKnob : NetworkBehaviour
         }
         else
         {
+            // If we don't have authority, request it via RPC
             RPC_RequestRotation(-1);
         }
     }
@@ -166,3 +218,4 @@ public class LargeChestKnob : NetworkBehaviour
         CurrentDigit = (CurrentDigit + direction + maxDigits) % maxDigits;
     }
 }
+

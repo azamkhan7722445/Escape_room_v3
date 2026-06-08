@@ -11767,6 +11767,10 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 1898693722940283601, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1959970317619841385, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11859,10 +11863,18 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 3112830673140351876, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3112830673140351878, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1528925592}
+    - target: {fileID: 3112830673140351880, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3112830673140351881, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_Mesh
       value: 
