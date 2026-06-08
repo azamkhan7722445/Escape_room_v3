@@ -3,6 +3,7 @@ using Fusion;
 using Fusion.XR.Shared.Grabbing;
 using Fusion.XR.Shared.Rig;
 
+[DefaultExecutionOrder(30000)]
 public class LargeChestKnob : NetworkBehaviour
 {
     [Header("Settings")]
@@ -15,14 +16,14 @@ public class LargeChestKnob : NetworkBehaviour
     public float minGrabDistance = 0.01f;
     public float hapticAmplitude = 0.1f;
     public float hapticDuration = 0.05f;
+    public bool snapHandToKnob = true;
+    public bool snapToCenter = true;
 
     [Header("Networking")]
     [Networked]
     public int CurrentDigit { get; set; }
 
     private Grabbable _grabbable;
-    private NetworkGrabbable _networkGrabbable;
-    
     private float _lastHandAngle;
     private float _cumulativeAngleDelta;
     private int _startDigit;
@@ -30,16 +31,21 @@ public class LargeChestKnob : NetworkBehaviour
     private Quaternion _initialLocalRotation;
     private bool _initialRotationCaptured = false;
 
+    // Hand Snapping
+    private Transform _localHandVisual;
+    private Vector3 _handVisualInitialLocalPos;
+    private Quaternion _handVisualInitialLocalRot;
+    private Vector3 _grabPointOffset;
+    private Quaternion _grabPointRotationOffset;
+
     [Header("Audio")]
     public AudioClip rotateSound;
     private AudioSource _audioSource;
-
     private ChangeDetector _changeDetector;
 
     public override void Spawned()
     {
         _grabbable = GetComponent<Grabbable>();
-        _networkGrabbable = GetComponent<NetworkGrabbable>();
         _audioSource = GetComponent<AudioSource>();
         _changeDetector = GetChangeDetector(ChangeDetector.Source.SimulationState);
 
@@ -48,7 +54,11 @@ public class LargeChestKnob : NetworkBehaviour
             _initialLocalRotation = visualTransform.localRotation;
             _initialRotationCaptured = true;
         }
+    }
 
+    private void Start()
+    {
+        if (_grabbable == null) _grabbable = GetComponent<Grabbable>();
         if (_grabbable != null)
         {
             _grabbable.onGrab.AddListener(OnGrab);
@@ -67,25 +77,72 @@ public class LargeChestKnob : NetworkBehaviour
 
     private void OnGrab()
     {
-        // onGrab is only called for the local player who performs the grab.
-        // We set _isLocalGrabbing to true to start tracking hand movement.
         _isLocalGrabbing = true;
         _lastHandAngle = GetHandAngle();
         _cumulativeAngleDelta = 0;
-        _startDigit = CurrentDigit;
+        
+        if (Object != null) _startDigit = CurrentDigit;
+        else _startDigit = 0;
+
+        if (snapHandToKnob && _grabbable != null && _grabbable.currentGrabber != null)
+        {
+            var hand = _grabbable.currentGrabber.GetComponentInParent<HardwareHand>();
+            if (hand != null && hand.localRepresentation != null)
+            {
+                _localHandVisual = hand.localRepresentation.gameObject.transform;
+                _handVisualInitialLocalPos = _localHandVisual.localPosition;
+                _handVisualInitialLocalRot = _localHandVisual.localRotation;
+                
+                if (visualTransform != null)
+                {
+                    if (snapToCenter)
+                    {
+                        // Snap to a fixed point on the knob (e.g. at a reasonable distance from center)
+                        Vector3 handPos = _grabbable.currentGrabber.transform.position;
+                        Vector3 localHand = visualTransform.InverseTransformPoint(handPos);
+                        // Flatten to plane and normalize to a fixed distance (e.g. 0.05 units)
+                        Vector3 projected = Vector3.ProjectOnPlane(localHand, rotationAxis);
+                        if (projected.magnitude < 0.01f) projected = Vector3.up * 0.05f;
+                        else projected = projected.normalized * 0.05f;
+                        
+                        _grabPointOffset = projected;
+                    }
+                    else
+                    {
+                        _grabPointOffset = visualTransform.InverseTransformPoint(_grabbable.currentGrabber.transform.position);
+                    }
+                    
+                    _grabPointRotationOffset = Quaternion.Inverse(visualTransform.rotation) * _grabbable.currentGrabber.transform.rotation;
+                }
+            }
+        }
     }
 
     private void OnUngrab()
     {
         _isLocalGrabbing = false;
+        
+        if (_localHandVisual != null)
+        {
+            _localHandVisual.localPosition = _handVisualInitialLocalPos;
+            _localHandVisual.localRotation = _handVisualInitialLocalRot;
+            _localHandVisual = null;
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (_isLocalGrabbing && _localHandVisual != null && visualTransform != null)
+        {
+            _localHandVisual.position = visualTransform.TransformPoint(_grabPointOffset);
+            _localHandVisual.rotation = visualTransform.rotation * _grabPointRotationOffset;
+        }
     }
 
     public override void FixedUpdateNetwork()
     {
         if (_isLocalGrabbing)
         {
-            // Even if we don't have authority yet, we track the delta.
-            // Authority is usually acquired a few frames after grab by NetworkGrabbable.
             float currentAngle = GetHandAngle();
             float delta = Mathf.DeltaAngle(_lastHandAngle, currentAngle);
             _lastHandAngle = currentAngle;
@@ -94,10 +151,8 @@ public class LargeChestKnob : NetworkBehaviour
             {
                 _cumulativeAngleDelta += delta;
 
-                // We only apply the change to the networked property if we have authority.
-                if (Object.HasStateAuthority)
+                if (Object != null && Object.HasStateAuthority)
                 {
-                    // Convert angle delta to digit change
                     int digitDelta = Mathf.RoundToInt((_cumulativeAngleDelta * grabSensitivity) / (360f / maxDigits));
                     int newDigit = (_startDigit - digitDelta + (maxDigits * 100)) % maxDigits;
                     
@@ -115,7 +170,6 @@ public class LargeChestKnob : NetworkBehaviour
     {
         if (_grabbable == null || _grabbable.currentGrabber == null) return;
         
-        // Find hardware hand to send haptics
         var hand = _grabbable.currentGrabber.GetComponentInParent<HardwareHand>();
         if (hand != null)
         {
@@ -125,28 +179,22 @@ public class LargeChestKnob : NetworkBehaviour
 
     public override void Render()
     {
-        foreach (var change in _changeDetector.DetectChanges(this))
+        if (_changeDetector != null)
         {
-            if (change == nameof(CurrentDigit))
+            foreach (var change in _changeDetector.DetectChanges(this))
             {
-                PlayRotateSound();
+                if (change == nameof(CurrentDigit))
+                {
+                    if (_audioSource != null && rotateSound != null)
+                        _audioSource.PlayOneShot(rotateSound);
+                }
             }
         }
 
         if (visualTransform != null && _initialRotationCaptured)
         {
-            // Rotate negatively so that increasing CurrentDigit (1, 2, 3) 
-            // results in clockwise rotation, showing those numbers on the mesh.
             float targetAngle = -CurrentDigit * (360f / maxDigits);
             visualTransform.localRotation = _initialLocalRotation * Quaternion.AngleAxis(targetAngle, rotationAxis);
-        }
-    }
-
-    private void PlayRotateSound()
-    {
-        if (_audioSource != null && rotateSound != null)
-        {
-            _audioSource.PlayOneShot(rotateSound);
         }
     }
 
@@ -155,24 +203,13 @@ public class LargeChestKnob : NetworkBehaviour
         if (_grabbable == null || _grabbable.currentGrabber == null) return 0;
 
         Vector3 handPos = _grabbable.currentGrabber.transform.position;
-        
-        // Use parent space to avoid feedback loop. 
-        // If we use 'transform.InverseTransformPoint', rotating the knob 
-        // would move the hand in local space, causing it to spin wildly.
         Vector3 localHandPos;
         if (transform.parent != null)
-        {
             localHandPos = transform.parent.InverseTransformPoint(handPos) - transform.localPosition;
-        }
         else
-        {
             localHandPos = transform.InverseTransformPoint(handPos);
-        }
         
-        // Use a robust projection based on rotationAxis
         Vector3 projected = Vector3.ProjectOnPlane(localHandPos, rotationAxis);
-        
-        // Define coordinate system on the plane based on initial rotation
         Vector3 right, up;
         if (Mathf.Abs(Vector3.Dot(rotationAxis, Vector3.up)) < 0.9f)
         {
@@ -195,7 +232,6 @@ public class LargeChestKnob : NetworkBehaviour
     {
         if (_grabbable == null || _grabbable.currentGrabber == null) return 0;
         Vector3 handPos = _grabbable.currentGrabber.transform.position;
-        
         Vector3 localHandPos;
         if (transform.parent != null)
             localHandPos = transform.parent.InverseTransformPoint(handPos) - transform.localPosition;
@@ -205,33 +241,20 @@ public class LargeChestKnob : NetworkBehaviour
         return Vector3.ProjectOnPlane(localHandPos, rotationAxis).magnitude;
     }
 
-    // PC Interaction
     public void RotateRight()
     {
-        if (Object.HasStateAuthority)
-        {
-            // Right button increments visual digit: 0 -> 1 -> 2
+        if (Object != null && Object.HasStateAuthority)
             CurrentDigit = (CurrentDigit + 1) % maxDigits;
-        }
         else
-        {
-            // If we don't have authority, request it via RPC
             RPC_RequestRotation(1);
-        }
     }
 
     public void RotateLeft()
     {
-        if (Object.HasStateAuthority)
-        {
-            // Left button decrements visual digit: 0 -> 9 -> 8
+        if (Object != null && Object.HasStateAuthority)
             CurrentDigit = (CurrentDigit - 1 + maxDigits) % maxDigits;
-        }
         else
-        {
-            // If we don't have authority, request it via RPC
             RPC_RequestRotation(-1);
-        }
     }
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
@@ -240,4 +263,3 @@ public class LargeChestKnob : NetworkBehaviour
         CurrentDigit = (CurrentDigit + direction + maxDigits) % maxDigits;
     }
 }
-
