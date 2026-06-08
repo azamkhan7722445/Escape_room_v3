@@ -11,13 +11,13 @@ public class CrackImageSequence
 
 public class Crack_Break_Glass : MonoBehaviour
 {
-    [Header("Crack Image Sequences  (9 groups x 3 images each)")]
+    [Header("Crack Image Sequences (9 groups x 3 images each)")]
     public CrackImageSequence[] ImageSequence = new CrackImageSequence[9];
 
     [Header("Glass Material")]
     [Tooltip("Leave blank — auto-found by name 'Crack_ImagesSequance' on intactGlassMesh renderer")]
     public Renderer glassRenderer;
-    public string crackMaterialName   = "Crack_ImagesSequance";
+    public string crackMaterialName = "Crack_ImagesSequance";
     public string crackTextureProperty = "_BaseMap";
 
     [Header("Audio")]
@@ -29,33 +29,40 @@ public class Crack_Break_Glass : MonoBehaviour
     public GameObject intactGlassMesh;
     public GameObject breakGlassMesh;
 
+    [Header("Show After Completion")]
+    public GameObject objectToShowAfterComplete;
+
     [Header("On Break Event")]
     public UnityEngine.Events.UnityEvent onBreak;
 
     [Header("Timer Settings")]
-    [Tooltip("Seconds between each crack step  (default 300 = 5 minutes real-time)")]
+    [Tooltip("Seconds between each crack step (default 300 = 5 minutes real-time)")]
     public float stepInterval = 300f;
 
     [Header("Debug Speed")]
     public Slider debugSlider;
+
     [Range(1f, 200f)]
     [Tooltip("Time multiplier — also driven by the UI Slider above")]
     public float debugSpeedMultiplier = 1f;
 
-    // ── private state ─────────────────────────────────────────────────────────
-    private float    elapsedTime;
-    private int      currentStep;
-    private Material crackedMatInstance;   // runtime instance on the renderer
+    // Private State
+    private float elapsedTime;
+    private int currentStep;
+    private Material crackedMatInstance;
 
     private const int TOTAL_STEPS = 9;
-
     private Coroutine crackSequenceCoroutine;
 
-    // ─────────────────────────────────────────────────────────────────────────
 
-    void Awake()
+    [Header("Explosion Settings")]
+    public float explosionForce = 10f;
+    public float explosionRadius = 2f;
+    public float upwardModifier = 0.5f;
+    public Transform explosionCenter;
+
+    private void Awake()
     {
-        // Stop any audio immediately — Play On Awake fires here, before Start()
         if (audioSource != null)
         {
             audioSource.playOnAwake = false;
@@ -63,23 +70,22 @@ public class Crack_Break_Glass : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
         elapsedTime = 0f;
         currentStep = 0;
 
-        // Auto-grab renderer from intactGlassMesh if not manually assigned
+        // Auto assign renderer
         if (glassRenderer == null && intactGlassMesh != null)
             glassRenderer = intactGlassMesh.GetComponent<Renderer>();
 
-        // Find the material named "Crack_ImagesSequance" on the renderer
-        // renderer.materials creates runtime instances so we are safe to modify them
+        // Find crack material
         if (glassRenderer != null)
         {
             foreach (Material m in glassRenderer.materials)
             {
-                // Unity appends " (Instance)" to instanced material names at runtime
                 string cleanName = m.name.Replace(" (Instance)", "").Trim();
+
                 if (cleanName == crackMaterialName)
                 {
                     crackedMatInstance = m;
@@ -88,11 +94,15 @@ public class Crack_Break_Glass : MonoBehaviour
             }
 
             if (crackedMatInstance == null)
-                Debug.LogWarning($"[Crack_Break_Glass] No material named '{crackMaterialName}' found on renderer. Check the name in the Inspector.");
+            {
+                Debug.LogWarning(
+                    $"[Crack_Break_Glass] No material named '{crackMaterialName}' found."
+                );
+            }
         }
         else
         {
-            Debug.LogWarning("[Crack_Break_Glass] No Renderer found. Assign intactGlassMesh or glassRenderer.");
+            Debug.LogWarning("[Crack_Break_Glass] No Renderer assigned.");
         }
 
         if (debugSlider != null)
@@ -101,12 +111,17 @@ public class Crack_Break_Glass : MonoBehaviour
             debugSpeedMultiplier = Mathf.Max(1f, debugSlider.value);
         }
 
-        if (breakGlassMesh != null) breakGlassMesh.SetActive(false);
+        if (breakGlassMesh != null)
+            breakGlassMesh.SetActive(false);
+
+        if (objectToShowAfterComplete != null)
+            objectToShowAfterComplete.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
-        if (currentStep >= TOTAL_STEPS) return;
+        if (currentStep >= TOTAL_STEPS)
+            return;
 
         elapsedTime += Time.deltaTime * debugSpeedMultiplier;
 
@@ -117,16 +132,19 @@ public class Crack_Break_Glass : MonoBehaviour
             currentStep++;
 
             if (currentStep >= TOTAL_STEPS)
+            {
                 BreakGlass();
+            }
             else
-                TriggerCrackEvent(currentStep - 1);   // 0-based group index
+            {
+                TriggerCrackEvent(currentStep - 1);
+            }
         }
     }
 
-    // ── crack event ───────────────────────────────────────────────────────────
-
-    void TriggerCrackEvent(int groupIndex)
+    private void TriggerCrackEvent(int groupIndex)
     {
+        // Play crack sound when a new crack appears
         if (audioSource != null && crackSound != null)
             audioSource.PlayOneShot(crackSound);
 
@@ -136,47 +154,115 @@ public class Crack_Break_Glass : MonoBehaviour
         crackSequenceCoroutine = StartCoroutine(PlayCrackSequence(groupIndex));
     }
 
-    System.Collections.IEnumerator PlayCrackSequence(int groupIndex)
+    private System.Collections.IEnumerator PlayCrackSequence(int groupIndex)
     {
-        if (ImageSequence == null || groupIndex >= ImageSequence.Length) yield break;
+        if (ImageSequence == null || groupIndex >= ImageSequence.Length)
+            yield break;
 
         CrackImageSequence group = ImageSequence[groupIndex];
-        Texture[] frames = { group.Child_01, group.Child_02, group.Child_03 };
+
+        Texture[] frames =
+        {
+            group.Child_01,
+            group.Child_02,
+            group.Child_03
+        };
 
         foreach (Texture tex in frames)
         {
             if (tex != null && crackedMatInstance != null)
+            {
                 crackedMatInstance.SetTexture(crackTextureProperty, tex);
+            }
 
-            yield return new WaitForSeconds(0.5f);   // 3 frames x 0.5 s = 1.5 s sequence
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
-    // ── final break ───────────────────────────────────────────────────────────
-
-    void BreakGlass()
+    private void BreakGlass()
     {
-        if (intactGlassMesh != null) intactGlassMesh.SetActive(false);
-        if (breakGlassMesh  != null) breakGlassMesh.SetActive(true);
+        if (intactGlassMesh != null)
+            intactGlassMesh.SetActive(false);
 
+       /* if (breakGlassMesh != null)
+            breakGlassMesh.SetActive(true);*/
+
+        if (breakGlassMesh != null)
+        {
+            breakGlassMesh.SetActive(true);
+            ApplyBreakForce();
+            // ApplyExplosionForce();
+        }
+
+        // Play final break sound
         if (audioSource != null && breakSound != null)
             audioSource.PlayOneShot(breakSound);
+
+        // Show completion object
+        if (objectToShowAfterComplete != null)
+            objectToShowAfterComplete.SetActive(true);
 
         onBreak?.Invoke();
 
         enabled = false;
     }
 
-    // ── slider callback ───────────────────────────────────────────────────────
-
-    void OnSliderChanged(float value)
+    private void OnSliderChanged(float value)
     {
         debugSpeedMultiplier = Mathf.Max(1f, value);
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         if (debugSlider != null)
             debugSlider.onValueChanged.RemoveListener(OnSliderChanged);
+    }
+
+
+    private void ApplyExplosionForce()
+    {
+        if (breakGlassMesh == null)
+            return;
+
+        Vector3 centerPos = explosionCenter != null
+            ? explosionCenter.position
+            : breakGlassMesh.transform.position;
+
+        Rigidbody[] rigidbodies = breakGlassMesh.GetComponentsInChildren<Rigidbody>();
+
+        foreach (Rigidbody rb in rigidbodies)
+        {
+            rb.isKinematic = false; // Ensure physics is enabled
+            rb.AddExplosionForce(
+                explosionForce,
+                centerPos,
+                explosionRadius,
+                upwardModifier,
+                ForceMode.Impulse
+            );
+        }
+    }
+    private void ApplyBreakForce()
+    {
+        Rigidbody[] rigidbodies = breakGlassMesh.GetComponentsInChildren<Rigidbody>();
+
+        foreach (Rigidbody rb in rigidbodies)
+        {
+            rb.isKinematic = false;
+
+            // Backward direction relative to the glass
+            Vector3 forceDir = -breakGlassMesh.transform.right;
+
+            // Add some randomness so pieces don't move identically
+            forceDir += Random.insideUnitSphere * 0.5f;
+
+            // Slight upward push
+            forceDir += Vector3.up * 0.2f;
+
+            rb.AddForce(forceDir.normalized * 8f, ForceMode.Impulse);
+
+            // Optional rotation for better effect
+            rb.AddTorque(Random.insideUnitSphere * 5f, ForceMode.Impulse);
+        }
     }
 }

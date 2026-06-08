@@ -10783,29 +10783,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1534249229218603721, guid: abca6635694e7dd48a167a5f30020848, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780041601648662896, guid: abca6635694e7dd48a167a5f30020848, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2072097196137071504, guid: abca6635694e7dd48a167a5f30020848, type: 3}
       propertyPath: stepInterval
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 2072097196137071504, guid: abca6635694e7dd48a167a5f30020848, type: 3}
-      propertyPath: explosionForce
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2072097196137071504, guid: abca6635694e7dd48a167a5f30020848, type: 3}
-      propertyPath: explosionCenter
-      value: 
-      objectReference: {fileID: 663351060}
-    - target: {fileID: 2072097196137071504, guid: abca6635694e7dd48a167a5f30020848, type: 3}
-      propertyPath: explosionRadius
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2072097196137071504, guid: abca6635694e7dd48a167a5f30020848, type: 3}
       propertyPath: objectToShowAfterComplete
@@ -10842,14 +10822,6 @@ PrefabInstance:
     - target: {fileID: 2072097196137071504, guid: abca6635694e7dd48a167a5f30020848, type: 3}
       propertyPath: onBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3339881325389806651, guid: abca6635694e7dd48a167a5f30020848, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7521300995282904662, guid: abca6635694e7dd48a167a5f30020848, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7767956291931790598, guid: abca6635694e7dd48a167a5f30020848, type: 3}
       propertyPath: m_Name
@@ -10897,7 +10869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8844433150230576626, guid: abca6635694e7dd48a167a5f30020848, type: 3}
       propertyPath: maxY
-      value: 6.4
+      value: 1.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21868,10 +21840,6 @@ MonoBehaviour:
   stepInterval: 300
   debugSlider: {fileID: 0}
   debugSpeedMultiplier: 1
-  explosionForce: 10
-  explosionRadius: 2
-  upwardModifier: 0.5
-  explosionCenter: {fileID: 0}
 --- !u!4 &391339389
 Transform:
   m_ObjectHideFlags: 0
@@ -43133,11 +43101,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651088611}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &663351060 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2671326112476407425, guid: abca6635694e7dd48a167a5f30020848, type: 3}
-  m_PrefabInstance: {fileID: 185306983}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &671521447
 GameObject:
   m_ObjectHideFlags: 0
