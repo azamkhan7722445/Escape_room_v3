@@ -15,18 +15,10 @@ public class MechScaler : MonoBehaviour
     [Tooltip("Drag the GlassCrack_Manager here — MechScaler uses its Debug Speed Multiplier")]
     public Crack_Break_Glass glassScript;
 
-    // ── private state ─────────────────────────────────────────────────────────
-    private float elapsedTime;
-    private bool  active = true;
-
-    // Total duration is read from glassScript (stepInterval x 9 steps) so both are always in sync
-
-    // ─────────────────────────────────────────────────────────────────────────
+    private bool active = true;
 
     void Start()
     {
-        elapsedTime = 0f;
-
         if (mechObject != null)
         {
             Vector3 pos = mechObject.transform.localPosition;
@@ -39,12 +31,9 @@ public class MechScaler : MonoBehaviour
     {
         if (!active || mechObject == null) return;
 
-        float multiplier = glassScript != null ? glassScript.debugSpeedMultiplier : 1f;
-
-        elapsedTime += Time.deltaTime * multiplier;
-
+        float elapsed = glassScript != null ? glassScript.SyncedElapsedTime : 0f;
         float totalDuration = glassScript != null ? glassScript.stepInterval * 9f : 2700f;
-        float t = Mathf.Clamp01(elapsedTime / totalDuration);
+        float t = Mathf.Clamp01(elapsed / totalDuration);
 
         Vector3 pos = mechObject.transform.localPosition;
         pos.y = Mathf.Lerp(minY, maxY, t);
