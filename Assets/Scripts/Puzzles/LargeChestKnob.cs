@@ -3,7 +3,7 @@ using Fusion;
 using Fusion.XR.Shared.Grabbing;
 using Fusion.XR.Shared.Rig;
 
-[DefaultExecutionOrder(30000)]
+[DefaultExecutionOrder(30000)] // Run very late to override XR Rig updates
 public class LargeChestKnob : NetworkBehaviour
 {
     [Header("Settings")]
@@ -13,7 +13,7 @@ public class LargeChestKnob : NetworkBehaviour
     
     [Header("Grab Settings")]
     public float grabSensitivity = 1.0f;
-    public float minGrabDistance = 0.01f;
+    public float minGrabDistance = 0.001f;
     public float hapticAmplitude = 0.1f;
     public float hapticDuration = 0.05f;
     public bool snapHandToKnob = true;
@@ -97,10 +97,9 @@ public class LargeChestKnob : NetworkBehaviour
                 {
                     if (snapToCenter)
                     {
-                        // Snap to a fixed point on the knob (e.g. at a reasonable distance from center)
+                        // Snap to a fixed point on the knob
                         Vector3 handPos = _grabbable.currentGrabber.transform.position;
                         Vector3 localHand = visualTransform.InverseTransformPoint(handPos);
-                        // Flatten to plane and normalize to a fixed distance (e.g. 0.05 units)
                         Vector3 projected = Vector3.ProjectOnPlane(localHand, rotationAxis);
                         if (projected.magnitude < 0.01f) projected = Vector3.up * 0.05f;
                         else projected = projected.normalized * 0.05f;
@@ -130,6 +129,22 @@ public class LargeChestKnob : NetworkBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (_isLocalGrabbing)
+        {
+            // Update rotation smoothly every frame for responsiveness
+            float currentAngle = GetHandAngle();
+            float delta = Mathf.DeltaAngle(_lastHandAngle, currentAngle);
+            
+            if (GetHandDistance() > minGrabDistance)
+            {
+                _cumulativeAngleDelta += delta;
+                _lastHandAngle = currentAngle;
+            }
+        }
+    }
+
     private void LateUpdate()
     {
         if (_isLocalGrabbing && _localHandVisual != null && visualTransform != null)
@@ -143,24 +158,16 @@ public class LargeChestKnob : NetworkBehaviour
     {
         if (_isLocalGrabbing)
         {
-            float currentAngle = GetHandAngle();
-            float delta = Mathf.DeltaAngle(_lastHandAngle, currentAngle);
-            _lastHandAngle = currentAngle;
-
-            if (GetHandDistance() > minGrabDistance)
+            if (Object != null && Object.HasStateAuthority)
             {
-                _cumulativeAngleDelta += delta;
-
-                if (Object != null && Object.HasStateAuthority)
+                // Update network state based on accumulated delta
+                int digitDelta = Mathf.RoundToInt((_cumulativeAngleDelta * grabSensitivity) / (360f / maxDigits));
+                int newDigit = (_startDigit - digitDelta + (maxDigits * 100)) % maxDigits;
+                
+                if (newDigit != CurrentDigit)
                 {
-                    int digitDelta = Mathf.RoundToInt((_cumulativeAngleDelta * grabSensitivity) / (360f / maxDigits));
-                    int newDigit = (_startDigit - digitDelta + (maxDigits * 100)) % maxDigits;
-                    
-                    if (newDigit != CurrentDigit)
-                    {
-                        CurrentDigit = newDigit;
-                        SendHapticFeedback();
-                    }
+                    CurrentDigit = newDigit;
+                    SendHapticFeedback();
                 }
             }
         }
@@ -193,7 +200,17 @@ public class LargeChestKnob : NetworkBehaviour
 
         if (visualTransform != null && _initialRotationCaptured)
         {
-            float targetAngle = -CurrentDigit * (360f / maxDigits);
+            float targetAngle;
+            if (_isLocalGrabbing)
+            {
+                // Smooth rotation following the hand for the local player
+                targetAngle = -_startDigit * (360f / maxDigits) - (_cumulativeAngleDelta * grabSensitivity);
+            }
+            else
+            {
+                // Snap to current digit for everyone else or when not grabbing
+                targetAngle = -CurrentDigit * (360f / maxDigits);
+            }
             visualTransform.localRotation = _initialLocalRotation * Quaternion.AngleAxis(targetAngle, rotationAxis);
         }
     }
@@ -202,43 +219,62 @@ public class LargeChestKnob : NetworkBehaviour
     {
         if (_grabbable == null || _grabbable.currentGrabber == null) return 0;
 
+        // 1. Use the knob's actual world position as the center.
+        Vector3 center = transform.position;
         Vector3 handPos = _grabbable.currentGrabber.transform.position;
-        Vector3 localHandPos;
-        if (transform.parent != null)
-            localHandPos = transform.parent.InverseTransformPoint(handPos) - transform.localPosition;
-        else
-            localHandPos = transform.InverseTransformPoint(handPos);
-        
-        Vector3 projected = Vector3.ProjectOnPlane(localHandPos, rotationAxis);
-        Vector3 right, up;
-        if (Mathf.Abs(Vector3.Dot(rotationAxis, Vector3.up)) < 0.9f)
+        Vector3 directionToHand = handPos - center;
+
+        // 2. Use the knob's world-space rotation axis.
+        Vector3 worldAxis = transform.TransformDirection(rotationAxis);
+
+        // 3. Use stable world-space vectors for the projection plane (derived from parent).
+        // Using transform.parent ensures these vectors don't rotate with the knob itself.
+        Vector3 parentUp = transform.parent != null ? transform.parent.up : Vector3.up;
+        Vector3 parentForward = transform.parent != null ? transform.parent.forward : Vector3.forward;
+
+        Vector3 right = Vector3.Cross(worldAxis, parentUp).normalized;
+        if (right.sqrMagnitude < 0.001f)
         {
-            right = Vector3.Cross(rotationAxis, Vector3.up).normalized;
-            up = Vector3.Cross(right, rotationAxis).normalized;
+            right = Vector3.Cross(worldAxis, parentForward).normalized;
         }
-        else
+        Vector3 up = Vector3.Cross(right, worldAxis).normalized;
+
+        // 4. Circular hand movement logic (Position-based angle)
+        Vector3 projectedPos = Vector3.ProjectOnPlane(directionToHand, worldAxis);
+        float planeAngle = 0;
+        if (projectedPos.sqrMagnitude > 0.0001f)
         {
-            right = Vector3.Cross(rotationAxis, Vector3.forward).normalized;
-            up = Vector3.Cross(right, rotationAxis).normalized;
+            planeAngle = Mathf.Atan2(Vector3.Dot(projectedPos, up), Vector3.Dot(projectedPos, right)) * Mathf.Rad2Deg;
         }
 
-        float x = Vector3.Dot(projected, right);
-        float y = Vector3.Dot(projected, up);
+        // 7. Hand's rotation delta (twist) around the axis.
+        // This adds a more natural feel by allowing the knob to respond to wrist rotation as well.
+        Vector3 handUp = _grabbable.currentGrabber.transform.up;
+        Vector3 projectedHandUp = Vector3.ProjectOnPlane(handUp, worldAxis);
+        float twistAngle = 0;
+        if (projectedHandUp.sqrMagnitude > 0.0001f)
+        {
+            twistAngle = Mathf.Atan2(Vector3.Dot(projectedHandUp, up), Vector3.Dot(projectedHandUp, right)) * Mathf.Rad2Deg;
+        }
 
-        return Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+        // 6. Debugging lines (commented out)
+        /*
+        Debug.DrawRay(center, worldAxis * 0.2f, Color.blue);
+        Debug.DrawRay(center, right * 0.2f, Color.red);
+        Debug.DrawRay(center, up * 0.2f, Color.green);
+        Debug.DrawLine(center, handPos, Color.yellow);
+        */
+
+        return planeAngle + twistAngle;
     }
 
     private float GetHandDistance()
     {
         if (_grabbable == null || _grabbable.currentGrabber == null) return 0;
-        Vector3 handPos = _grabbable.currentGrabber.transform.position;
-        Vector3 localHandPos;
-        if (transform.parent != null)
-            localHandPos = transform.parent.InverseTransformPoint(handPos) - transform.localPosition;
-        else
-            localHandPos = transform.InverseTransformPoint(handPos);
-            
-        return Vector3.ProjectOnPlane(localHandPos, rotationAxis).magnitude;
+        
+        Vector3 worldAxis = transform.TransformDirection(rotationAxis);
+        Vector3 directionToHand = _grabbable.currentGrabber.transform.position - transform.position;
+        return Vector3.ProjectOnPlane(directionToHand, worldAxis).magnitude;
     }
 
     public void RotateRight()
