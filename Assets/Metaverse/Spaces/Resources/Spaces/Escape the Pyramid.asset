@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spaceId: EscapethePyramidid
   sceneName: Escape the Pyramid
-  spaceName: Escape the Pyramid
-  spaceDescription: 'You are the DJ !
-
-    Use the music & light mixers and have
-    fun with your friends '
+  spaceName: PHARAOH'S VAULT         E S C A P E
+  spaceDescription: The flood gates have opened. Solve 7 ancient puzzles, scarabs,
+    star maps, hieroglyphs, and the sacred scales of Ma'at,  before the Nile swallows
+    the chamber. Only the worthy escape.
   spaceParam: 
   spaceSecondaryParam: 

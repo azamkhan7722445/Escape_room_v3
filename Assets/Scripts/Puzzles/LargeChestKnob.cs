@@ -12,7 +12,7 @@ public class LargeChestKnob : NetworkBehaviour
     
     [Header("Grab Settings")]
     public float grabSensitivity = 1.0f;
-    public float minGrabDistance = 0.05f;
+    public float minGrabDistance = 0.01f;
     public float hapticAmplitude = 0.1f;
     public float hapticDuration = 0.05f;
 
@@ -67,13 +67,12 @@ public class LargeChestKnob : NetworkBehaviour
 
     private void OnGrab()
     {
-        if (_networkGrabbable != null && _networkGrabbable.Object.HasStateAuthority)
-        {
-            _isLocalGrabbing = true;
-            _startDigit = CurrentDigit;
-            _lastHandAngle = GetHandAngle();
-            _cumulativeAngleDelta = 0;
-        }
+        // onGrab is only called for the local player who performs the grab.
+        // We set _isLocalGrabbing to true to start tracking hand movement.
+        _isLocalGrabbing = true;
+        _lastHandAngle = GetHandAngle();
+        _cumulativeAngleDelta = 0;
+        _startDigit = CurrentDigit;
     }
 
     private void OnUngrab()
@@ -85,23 +84,28 @@ public class LargeChestKnob : NetworkBehaviour
     {
         if (_isLocalGrabbing)
         {
+            // Even if we don't have authority yet, we track the delta.
+            // Authority is usually acquired a few frames after grab by NetworkGrabbable.
             float currentAngle = GetHandAngle();
             float delta = Mathf.DeltaAngle(_lastHandAngle, currentAngle);
-            
-            // Check for min distance to avoid wild spinning when hand is at pivot
+            _lastHandAngle = currentAngle;
+
             if (GetHandDistance() > minGrabDistance)
             {
                 _cumulativeAngleDelta += delta;
-                _lastHandAngle = currentAngle;
 
-                // Convert angle delta to digit change
-                int digitDelta = Mathf.RoundToInt((_cumulativeAngleDelta * grabSensitivity) / (360f / maxDigits));
-                int newDigit = (_startDigit - digitDelta + (maxDigits * 100)) % maxDigits;
-                
-                if (newDigit != CurrentDigit)
+                // We only apply the change to the networked property if we have authority.
+                if (Object.HasStateAuthority)
                 {
-                    CurrentDigit = newDigit;
-                    SendHapticFeedback();
+                    // Convert angle delta to digit change
+                    int digitDelta = Mathf.RoundToInt((_cumulativeAngleDelta * grabSensitivity) / (360f / maxDigits));
+                    int newDigit = (_startDigit - digitDelta + (maxDigits * 100)) % maxDigits;
+                    
+                    if (newDigit != CurrentDigit)
+                    {
+                        CurrentDigit = newDigit;
+                        SendHapticFeedback();
+                    }
                 }
             }
         }
@@ -151,12 +155,24 @@ public class LargeChestKnob : NetworkBehaviour
         if (_grabbable == null || _grabbable.currentGrabber == null) return 0;
 
         Vector3 handPos = _grabbable.currentGrabber.transform.position;
-        Vector3 localHandPos = transform.InverseTransformPoint(handPos);
+        
+        // Use parent space to avoid feedback loop. 
+        // If we use 'transform.InverseTransformPoint', rotating the knob 
+        // would move the hand in local space, causing it to spin wildly.
+        Vector3 localHandPos;
+        if (transform.parent != null)
+        {
+            localHandPos = transform.parent.InverseTransformPoint(handPos) - transform.localPosition;
+        }
+        else
+        {
+            localHandPos = transform.InverseTransformPoint(handPos);
+        }
         
         // Use a robust projection based on rotationAxis
         Vector3 projected = Vector3.ProjectOnPlane(localHandPos, rotationAxis);
         
-        // Define coordinate system on the plane
+        // Define coordinate system on the plane based on initial rotation
         Vector3 right, up;
         if (Mathf.Abs(Vector3.Dot(rotationAxis, Vector3.up)) < 0.9f)
         {
@@ -179,7 +195,13 @@ public class LargeChestKnob : NetworkBehaviour
     {
         if (_grabbable == null || _grabbable.currentGrabber == null) return 0;
         Vector3 handPos = _grabbable.currentGrabber.transform.position;
-        Vector3 localHandPos = transform.InverseTransformPoint(handPos);
+        
+        Vector3 localHandPos;
+        if (transform.parent != null)
+            localHandPos = transform.parent.InverseTransformPoint(handPos) - transform.localPosition;
+        else
+            localHandPos = transform.InverseTransformPoint(handPos);
+            
         return Vector3.ProjectOnPlane(localHandPos, rotationAxis).magnitude;
     }
 
