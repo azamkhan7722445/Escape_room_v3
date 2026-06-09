@@ -95,15 +95,21 @@ namespace Fusion.XR.Shared.Locomotion
                 return;
             }
 
-            var leftStickTurn = leftControllerTurnAction.action.ReadValue<Vector2>().x;
-            var rightStickTurn = rightControllerTurnAction.action.ReadValue<Vector2>().x;
+            float leftStickTurn = 0;
+            float rightStickTurn = 0;
 
-            if (Mathf.Abs(leftStickTurn) > rotationInputThreshold)
+            if (useLeftController)
+                leftStickTurn = leftControllerTurnAction.action.ReadValue<Vector2>().x;
+
+            if (useRightController)
+                rightStickTurn = rightControllerTurnAction.action.ReadValue<Vector2>().x;
+
+            if (useLeftController && Mathf.Abs(leftStickTurn) > rotationInputThreshold)
             {
                 timeStarted = Time.time;
                 StartCoroutine(Rotate(Mathf.Sign(leftStickTurn) * snapDegree));
             }
-            else if (Mathf.Abs(rightStickTurn) > rotationInputThreshold)
+            else if (useRightController && Mathf.Abs(rightStickTurn) > rotationInputThreshold)
             {
                 timeStarted = Time.time;
                 StartCoroutine(Rotate(Mathf.Sign(rightStickTurn) * snapDegree));
