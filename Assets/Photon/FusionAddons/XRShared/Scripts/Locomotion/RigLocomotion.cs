@@ -29,6 +29,9 @@ namespace Fusion.XR.Shared.Locomotion
         public InputActionProperty rightControllerTurnAction;
 #endif
 
+        public bool useLeftController = true;
+        public bool useRightController = true;
+
         public float debounceTime = 0.5f;
         public float snapDegree = 45f;
         public float rotationInputThreshold = 0.5f;

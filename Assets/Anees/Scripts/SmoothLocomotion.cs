@@ -55,29 +55,32 @@ namespace Fusion.XR.Shared.Locomotion
         void Update()
         {
 #if ENABLE_INPUT_SYSTEM
-            float forwardInput = 0f;
+            Vector2 input = Vector2.zero;
 
             if (useLeftController)
-                forwardInput += leftControllerMove.action.ReadValue<Vector2>().y;
+                input += leftControllerMove.action.ReadValue<Vector2>();
 
             if (useRightController)
-                forwardInput += rightControllerMove.action.ReadValue<Vector2>().y;
+                input += rightControllerMove.action.ReadValue<Vector2>();
 
-            if (Mathf.Abs(forwardInput) < deadZone)
+            if (input.magnitude < deadZone)
                 return;
 
-            TryMove(forwardInput);
+            TryMove(input);
 #endif
         }
 
-        void TryMove(float forwardInput)
+        void TryMove(Vector2 input)
         {
             Vector3 forward = rig.headset.transform.forward;
             forward.y = 0;
             forward.Normalize();
 
-            Vector3 delta =
-                forward * forwardInput * moveSpeed * Time.deltaTime;
+            Vector3 right = rig.headset.transform.right;
+            right.y = 0;
+            right.Normalize();
+
+            Vector3 delta = (forward * input.y + right * input.x) * moveSpeed * Time.deltaTime;
 
             Vector3 targetPosition = rig.transform.position + delta;
 
