@@ -1,0 +1,15 @@
+{
+    "asset": "f2661ca0e7d1ce743aad821c6d3b54b0",
+    "fileName": "019eb0f9-79d8-7ac7-a5a6-e140aeefe5ab.wav",
+    "prompt": "parchment paper light thud impact sound, landing on a hard surface",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

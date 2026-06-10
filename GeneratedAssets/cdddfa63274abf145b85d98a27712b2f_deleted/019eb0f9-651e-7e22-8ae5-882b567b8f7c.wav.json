@@ -1,0 +1,15 @@
+{
+    "asset": "cdddfa63274abf145b85d98a27712b2f",
+    "fileName": "019eb0f9-651e-7e22-8ae5-882b567b8f7c.wav",
+    "prompt": "parchment paper crinkling grab sound, tactile and crisp",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 10.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}
