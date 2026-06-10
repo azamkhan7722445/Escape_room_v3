@@ -43,6 +43,11 @@ namespace Fusion.Addons.VirtualKeyboard
         private float lastTouchTime;
         private float timeSinceLastTouch;
 
+        // Per-source debounce: each physical key (and each special key) is tracked independently,
+        // so quickly pressing two DIFFERENT keys never drops a character. The debounce only
+        // prevents the SAME key from re-triggering due to the finger staying inside its collider.
+        private readonly Dictionary<object, float> lastTouchTimePerSource = new Dictionary<object, float>();
+
         // Start is called before the first frame update
         void Start()
         {
@@ -72,7 +77,7 @@ namespace Fusion.Addons.VirtualKeyboard
         }
         public void KeyTouch(TextMeshProUGUI key)
         {
-            var isTouchTimerExpired = IsTouchTimerExpired();
+            var isTouchTimerExpired = IsTouchTimerExpired(key);
             if (isTouchTimerExpired)
             {
                 buffer += key.text;
@@ -82,7 +87,7 @@ namespace Fusion.Addons.VirtualKeyboard
 
         public void KeyTouchSpace()
         {
-            if (IsTouchTimerExpired())
+            if (IsTouchTimerExpired("space"))
             {
                 buffer = buffer + " ";
                 BufferChanged();
@@ -91,7 +96,7 @@ namespace Fusion.Addons.VirtualKeyboard
 
         public void KeyTouchReturn()
         {
-            if (IsTouchTimerExpired())
+            if (IsTouchTimerExpired("return"))
             {
                 buffer = buffer + Environment.NewLine;
                 BufferChanged();
@@ -101,7 +106,7 @@ namespace Fusion.Addons.VirtualKeyboard
 
         public void KeyTouchBackSpace()
         {
-            if (IsTouchTimerExpired())
+            if (IsTouchTimerExpired("backspace"))
             {
                 if (buffer.Length > 0)
                 {
@@ -113,7 +118,7 @@ namespace Fusion.Addons.VirtualKeyboard
 
         public void LettersAndNumbersToggle()
         {
-            if (IsTouchTimerExpired())
+            if (IsTouchTimerExpired("toggle"))
             {
                 if (LettersKeyboard.activeSelf)
                 {
@@ -130,7 +135,7 @@ namespace Fusion.Addons.VirtualKeyboard
 
         public void CapsLockToggle()
         {
-            if (IsTouchTimerExpired())
+            if (IsTouchTimerExpired("caps"))
             {
                 if (capsLock)
                 {
@@ -147,14 +152,17 @@ namespace Fusion.Addons.VirtualKeyboard
             }
         }
 
-        private bool IsTouchTimerExpired()
+        private bool IsTouchTimerExpired(object source)
         {
-            timeSinceLastTouch = Time.time - lastTouchTime;
+            float previousTouchTime;
+            if (!lastTouchTimePerSource.TryGetValue(source, out previousTouchTime))
+                previousTouchTime = float.NegativeInfinity;
+
+            timeSinceLastTouch = Time.time - previousTouchTime;
+            lastTouchTimePerSource[source] = Time.time;
             lastTouchTime = Time.time;
-            if (timeSinceLastTouch > timeBetweenTouchTrigger)
-                return true;
-            else
-                return false;
+
+            return timeSinceLastTouch > timeBetweenTouchTrigger;
         }
 
         public void UpdateKeyboardBuffer(string newbuffer)

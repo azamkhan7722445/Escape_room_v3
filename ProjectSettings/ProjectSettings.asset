@@ -143,8 +143,10 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 1.6
-  preloadedAssets: []
+  bundleVersion: 1.7
+  preloadedAssets:
+  - {fileID: 7366564159535378782, guid: f7c99e3480555744e9a379ea516af73e, type: 2}
+  - {fileID: 1418811554966329655, guid: 556f3dfeff662654c848f4e4f84449fc, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -174,7 +176,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 16
+  AndroidBundleVersionCode: 17
   AndroidMinSdkVersion: 29
   AndroidTargetSdkVersion: 34
   AndroidPreferredInstallLocation: 0
@@ -992,11 +994,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 50c42907-f41f-40a4-976b-c284f1107922
+  cloudProjectId: 5ff315a2-2736-40ad-aafb-96d64086b7c3
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Pharaoh's Vault Escape (1)
-  organizationId: ma-studio2
+  projectName: Pharaoh's Vault Escape
+  organizationId: june10_2026
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
