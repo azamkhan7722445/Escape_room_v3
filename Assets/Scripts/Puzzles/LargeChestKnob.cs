@@ -20,7 +20,7 @@ public class LargeChestKnob : NetworkBehaviour
     public bool snapToCenter = true;
 
     [Header("Networking")]
-    [Networked]
+    [Networked, OnChangedRender(nameof(OnDigitChanged))]
     public int CurrentDigit { get; set; }
 
     private Grabbable _grabbable;
@@ -41,19 +41,23 @@ public class LargeChestKnob : NetworkBehaviour
     [Header("Audio")]
     public AudioClip rotateSound;
     private AudioSource _audioSource;
-    private ChangeDetector _changeDetector;
 
     public override void Spawned()
     {
         _grabbable = GetComponent<Grabbable>();
         _audioSource = GetComponent<AudioSource>();
-        _changeDetector = GetChangeDetector(ChangeDetector.Source.SimulationState);
 
         if (visualTransform != null && !_initialRotationCaptured)
         {
             _initialLocalRotation = visualTransform.localRotation;
             _initialRotationCaptured = true;
         }
+    }
+
+    void OnDigitChanged()
+    {
+        if (_audioSource != null && rotateSound != null)
+            _audioSource.PlayOneShot(rotateSound);
     }
 
     private void Start()
@@ -186,18 +190,6 @@ public class LargeChestKnob : NetworkBehaviour
 
     public override void Render()
     {
-        if (_changeDetector != null)
-        {
-            foreach (var change in _changeDetector.DetectChanges(this))
-            {
-                if (change == nameof(CurrentDigit))
-                {
-                    if (_audioSource != null && rotateSound != null)
-                        _audioSource.PlayOneShot(rotateSound);
-                }
-            }
-        }
-
         if (visualTransform != null && _initialRotationCaptured)
         {
             float targetAngle;

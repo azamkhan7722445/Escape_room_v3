@@ -6,13 +6,17 @@ public class LargeChestController : NetworkBehaviour
     [Header("Components")]
     public LargeChestKnob[] knobs;
     public Transform chestLid;
+    public AudioSource audioSource;
+
+    [Header("Sounds")]
+    public AudioClip chestOpenSound;
     
     [Header("Settings")]
     public int[] correctCombination = new int[6];
     public Vector3 openRotation = new Vector3(-90, 0, 0);
     public float openSpeed = 2f;
 
-    [Networked]
+    [Networked, OnChangedRender(nameof(OnIsOpenChanged))]
     public NetworkBool IsOpen { get; set; }
 
     private Quaternion _closedRotation;
@@ -22,6 +26,14 @@ public class LargeChestController : NetworkBehaviour
         if (chestLid != null)
         {
             _closedRotation = chestLid.localRotation;
+        }
+    }
+
+    void OnIsOpenChanged()
+    {
+        if (IsOpen && audioSource != null && chestOpenSound != null)
+        {
+            audioSource.PlayOneShot(chestOpenSound);
         }
     }
 
