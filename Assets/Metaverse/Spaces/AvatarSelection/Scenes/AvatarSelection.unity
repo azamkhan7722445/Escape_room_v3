@@ -10056,7 +10056,7 @@ MonoBehaviour:
   tabButtonRPMAvatar: {fileID: 1371410543}
   latestSimpleAvatarURL: 
   latestRPMAvatarURL: 
-  defaultVRMode: 1
+  defaultVRMode: 0
 --- !u!4 &1763058680
 Transform:
   m_ObjectHideFlags: 0
