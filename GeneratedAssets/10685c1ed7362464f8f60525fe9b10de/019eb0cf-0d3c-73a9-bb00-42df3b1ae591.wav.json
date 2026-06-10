@@ -1,0 +1,15 @@
+{
+    "asset": "10685c1ed7362464f8f60525fe9b10de",
+    "fileName": "019eb0cf-0d3c-73a9-bb00-42df3b1ae591.wav",
+    "prompt": "A steady mechanical clock ticking sound, rhythmic tick-tock of a countdown timer, clean and consistent, no music, seamless loop",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 5.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

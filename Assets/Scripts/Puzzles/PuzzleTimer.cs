@@ -12,6 +12,63 @@ public class PuzzleTimer : NetworkBehaviour
     public TextMeshProUGUI timerTextUGUI;
     public TextMeshPro timerTextWorld;
 
+    [Header("Timer 3D Audio")]
+    [Tooltip("Looping ticking sound. Plays as 3D spatial audio so it is only heard when a player is near the timer.")]
+    public AudioClip tickClip;
+    [Tooltip("AudioSource used for the ticking sound. If left empty, one is created automatically on this GameObject.")]
+    public AudioSource tickAudioSource;
+    [Tooltip("How loud the ticking sound is.")]
+    [Range(0f, 1f)] public float tickVolume = 1f;
+    [Tooltip("Distance (in meters) at which the ticking sound starts to fade out.")]
+    public float tickMinDistance = 1.5f;
+    [Tooltip("Distance (in meters) beyond which the ticking sound can no longer be heard.")]
+    public float tickMaxDistance = 12f;
+
+    public override void Spawned()
+    {
+        SetupTickAudio();
+    }
+
+    private void SetupTickAudio()
+    {
+        if (tickAudioSource == null)
+            tickAudioSource = GetComponent<AudioSource>();
+        if (tickAudioSource == null)
+            tickAudioSource = gameObject.AddComponent<AudioSource>();
+
+        // Prefer the explicitly assigned clip; otherwise keep whatever is already on the AudioSource.
+        if (tickClip != null)
+            tickAudioSource.clip = tickClip;
+        tickAudioSource.loop = true;
+        tickAudioSource.playOnAwake = false;
+        tickAudioSource.volume = tickVolume;
+
+        // 3D spatial sound: only audible when a player is near the timer.
+        tickAudioSource.spatialBlend = 1f;
+        tickAudioSource.rolloffMode = AudioRolloffMode.Linear;
+        tickAudioSource.minDistance = tickMinDistance;
+        tickAudioSource.maxDistance = tickMaxDistance;
+        tickAudioSource.dopplerLevel = 0f;
+    }
+
+    private void UpdateTickAudio()
+    {
+        if (tickAudioSource == null) return;
+
+        bool shouldPlay = IsTimerRunning && !IsGameOver && RemainingTime > 0;
+
+        if (shouldPlay)
+        {
+            if (!tickAudioSource.isPlaying && tickAudioSource.clip != null)
+                tickAudioSource.Play();
+        }
+        else
+        {
+            if (tickAudioSource.isPlaying)
+                tickAudioSource.Stop();
+        }
+    }
+
     public override void FixedUpdateNetwork()
     {
         if (IsGameOver) return;
@@ -43,6 +100,8 @@ public class PuzzleTimer : NetworkBehaviour
         string timeStr = FormatTime(RemainingTime);
         if (timerTextUGUI != null) timerTextUGUI.text = timeStr;
         if (timerTextWorld != null) timerTextWorld.text = timeStr;
+
+        UpdateTickAudio();
     }
 
     private string FormatTime(float time)
