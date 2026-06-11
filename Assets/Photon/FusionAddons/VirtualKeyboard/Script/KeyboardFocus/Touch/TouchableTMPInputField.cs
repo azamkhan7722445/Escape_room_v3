@@ -234,6 +234,15 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
             if (!this || !inputfield)
                 yield break;
 
+            // On Android/Quest, TouchScreenKeyboard.isSupported is true.
+            // SetSelectedGameObject triggers TMP_InputField.OnSelect → ActivateInputField,
+            // which opens a system keyboard session. TMP's LateUpdate then syncs
+            // inputfield.text from that session's empty buffer every frame, wiping
+            // characters typed on Photon's VirtualKeyboard.
+            // Photon writes text directly via the Text property setter — no activation needed.
+            if (TouchScreenKeyboard.isSupported)
+                yield break;
+
             if (UnityEngine.EventSystems.EventSystem.current != null)
             {
                 UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(inputfield.gameObject);
