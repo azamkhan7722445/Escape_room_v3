@@ -13,10 +13,28 @@ public class PuzzleSevenController : NetworkBehaviour
     public AudioClip alarmSound;
     public AudioClip announcementSound;
 
-    [Networked] public NetworkBool isCompleted { get; set; }
+    [Networked, OnChangedRender(nameof(UpdatePuzzleElements))] public NetworkBool isCompleted { get; set; }
+    [Networked, OnChangedRender(nameof(UpdatePuzzleElements))] public NetworkBool isChestOpened { get; set; }
 
     public ZAxisDoor leftSideDoor;
     public ZAxisDoor rightSideDoor;
+
+    public override void Spawned()
+    {
+        UpdatePuzzleElements();
+    }
+
+    private void UpdatePuzzleElements()
+    {
+        // These elements should be active only if chest is opened AND puzzle not yet completed
+        bool shouldBeActive = isChestOpened && !isCompleted;
+        
+        if (finalDoor != null) finalDoor.SetActive(shouldBeActive);
+        if (apoint != null) apoint.SetActive(shouldBeActive);
+        if (npoint != null) npoint.SetActive(shouldBeActive);
+        if (kpoint != null) kpoint.SetActive(shouldBeActive);
+        if (hpoint != null) hpoint.SetActive(shouldBeActive);
+    }
 
     public override void FixedUpdateNetwork()
     {

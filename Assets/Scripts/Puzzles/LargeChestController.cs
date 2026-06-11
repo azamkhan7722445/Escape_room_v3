@@ -45,6 +45,13 @@ public class LargeChestController : NetworkBehaviour
             {
                 IsOpen = true;
                 Debug.Log("Chest Unlocked!");
+
+                // Trigger Puzzle Seven elements
+                var p7 = UnityEngine.Object.FindAnyObjectByType<PuzzleSevenController>();
+                if (p7 != null)
+                {
+                    p7.isChestOpened = true;
+                }
             }
         }
     }
