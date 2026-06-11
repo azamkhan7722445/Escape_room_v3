@@ -2378,6 +2378,10 @@ PrefabInstance:
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
+    - target: {fileID: 3960580522342499023, guid: e239d9112f09a94469deb4400a85708d, type: 3}
+      propertyPath: m_OnFocusSelectAll
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3960580522845641402, guid: e239d9112f09a94469deb4400a85708d, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542

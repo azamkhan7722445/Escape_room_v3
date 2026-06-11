@@ -29,7 +29,7 @@ public class PuzzleSevenController : NetworkBehaviour
         // These elements should be active only if chest is opened AND puzzle not yet completed
         bool shouldBeActive = isChestOpened && !isCompleted;
         
-        if (finalDoor != null) finalDoor.SetActive(shouldBeActive);
+        //if (finalDoor != null) finalDoor.SetActive(shouldBeActive);
         if (apoint != null) apoint.SetActive(shouldBeActive);
         if (npoint != null) npoint.SetActive(shouldBeActive);
         if (kpoint != null) kpoint.SetActive(shouldBeActive);
