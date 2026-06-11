@@ -2380,7 +2380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3960580522342499023, guid: e239d9112f09a94469deb4400a85708d, type: 3}
       propertyPath: m_OnFocusSelectAll
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3960580522845641402, guid: e239d9112f09a94469deb4400a85708d, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -12009,7 +12009,7 @@ PrefabInstance:
       objectReference: {fileID: 1528925592}
     - target: {fileID: 3112830673140351881, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_VersionIndex
-      value: 4801
+      value: 4804
       objectReference: {fileID: 0}
     - target: {fileID: 3112830673429107874, guid: 9684c61ebcf744a40ba7a2a027cc9163, type: 3}
       propertyPath: m_AnchorMax.y
@@ -14826,7 +14826,7 @@ MonoBehaviour:
   m_ReadOnly: 0
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: 551d66d1ef951614b908e8103b986ec4, type: 2}
-  m_OnFocusSelectAll: 1
+  m_OnFocusSelectAll: 0
   m_ResetOnDeActivation: 1
   m_KeepTextSelectionVisible: 0
   m_RestoreOriginalTextOnEscape: 1
