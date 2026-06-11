@@ -7,7 +7,7 @@ public class PuzzleSevenController : NetworkBehaviour
 {
     public List<SymbolSlot> slots;
     public string correctWord = "ANKH";
-    public GameObject finalDoor,slot1,slot2,slot3,slot4,apoint,npoint,kpoint,hpoint;
+    public GameObject finalDoor,slot1,slot2,slot3,slot4,apoint,npoint,kpoint,hpoint,endportal;
     public List<Light> roomLights;
     public AudioSource successAudioSource;
     public AudioClip alarmSound;
@@ -64,11 +64,12 @@ public class PuzzleSevenController : NetworkBehaviour
         return true;
     }
 
-    [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    [Rpc(RpcSources.All, RpcTargets.All)]
     private void RPC_OnSuccess()
     {
         if (finalDoor != null)
         {
+            endportal.SetActive(true);
             //finalDoor.SetActive(false); 
             slot1.SetActive(false);
             slot2.SetActive(false);
@@ -78,6 +79,7 @@ public class PuzzleSevenController : NetworkBehaviour
             npoint.SetActive(false);
             kpoint.SetActive(false);
             hpoint.SetActive(false);
+            
         }
 
         foreach (var light in roomLights)
