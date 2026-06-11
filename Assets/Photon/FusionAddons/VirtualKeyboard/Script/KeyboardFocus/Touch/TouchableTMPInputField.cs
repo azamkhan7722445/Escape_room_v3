@@ -7,16 +7,16 @@ using UnityEngine.Events;
 
 namespace Fusion.Addons.VirtualKeyboard.Touch
 {
-/**
-* 
-* TouchableTMPInputField is used for VR 3D interaction.
-* When the player touches the 3D box collider :
-* - the keyboard visibility is toggled,
-* - KeyboardFocusManager is informed
-*
-* KeyboardFocusManager is also informed when the text field is updated
-* 
-**/
+    /**
+    * 
+    * TouchableTMPInputField is used for VR 3D interaction.
+    * When the player touches the 3D box collider :
+    * - the keyboard visibility is toggled,
+    * - KeyboardFocusManager is informed
+    *
+    * KeyboardFocusManager is also informed when the text field is updated
+    * 
+    **/
 
     public class TouchableTMPInputField : MonoBehaviour, ITextFocusable, ITouchableUIExtension
     {
@@ -138,16 +138,10 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
         #region TMP_InputField callbacks
         private void OnInputFieldDeSelect(string text)
         {
-            // In VR, we often lose EventSystem focus when touching keyboard buttons.
-            // We should only lose focus if the keyboard itself is closed or if we explicitly deselect.
-            if (hasFocus == false) return;
-            
-            // Only lose focus if we are NOT in VR or if the KeyboardFocusManager says so
-            if (KeyboardFocusManager.Instance != null && KeyboardFocusManager.Instance.IsInDesktopMode)
-            {
-                hasFocus = false;
-                OnFocusChanged();
-            }
+            // if (hasFocus == false) return;
+            //hasFocus = false;
+            // OnFocusChanged();
+            return;   //anees
         }
 
         private void LateUpdate()
@@ -196,8 +190,8 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
             touchable.onTouch.RemoveListener(OnTouch);
             inputfield.onSelect.RemoveListener(OnInputFieldSelect);
             inputfield.onSubmit.RemoveListener(OnSubmit);
-            inputfield.onDeselect.RemoveListener(OnInputFieldDeSelect);
-            inputfield.onDeselect.RemoveListener(OnInputFieldDeSelect);
+            inputfield.onDeselect.RemoveListener(OnInputFieldDeSelect);//Anees
+                                                                       // inputfield.onDeselect.RemoveListener(OnInputFieldDeSelect);
         }
 
         // Adapt the size of the 3D button collider according to the UI
@@ -214,30 +208,73 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
         // OnTouch event triggered when the player touches the 3D button is forwarded to the UI button 
         private void OnTouch()
         {
-            //Debug.LogError($"OnTouch (prev: {hasFocus})");
-            if (hasFocus && lastTMPSelect != -1 && (Time.time - lastTMPSelect) < lastTMPSelectBounceProtectionduration)
+
+
+
+
+            // Bounce protection (yeh rehne do)
+            if (hasFocus && lastTMPSelect != -1 &&
+                (Time.time - lastTMPSelect) < lastTMPSelectBounceProtectionduration)
             {
-                //Debug.LogError("Avoid double focus change due to touch/pointer");
                 return;
             }
 
-            hasFocus = !hasFocus;
-
+            // Quest rule: touch sirf focus ON kare
             if (hasFocus)
-            {
-                //Debug.LogError("Force activate input field");
-                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(inputfield.gameObject);
-                inputfield.ActivateInputField();
-            }
-            if (hasFocus == false)
-            {
-                //Debug.LogError("Force deactivate input field");
-                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
-                inputfield.DeactivateInputField();
-            }
+                return;
+
+            hasFocus = true;
+
+            //  SAME FRAME me activate mat karo (Quest fix)
+            StartCoroutine(DelayedActivate());
 
             OnFocusChanged();
+
+
+
+
+
+
+            //Debug.LogError($"OnTouch (prev: {hasFocus})");
+            //if (hasFocus && lastTMPSelect != -1 && (Time.time - lastTMPSelect) < lastTMPSelectBounceProtectionduration)
+            //{
+            //    //Debug.LogError("Avoid double focus change due to touch/pointer");
+            //    return;
+            //}
+
+            //hasFocus = !hasFocus;
+
+            //if (hasFocus)
+            //{
+            //    //Debug.LogError("Force activate input field");
+            //    UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(inputfield.gameObject);
+            //    inputfield.ActivateInputField();
+            //}
+            //if (hasFocus == false)
+            //{
+            //    //Debug.LogError("Force deactivate input field");
+            //    UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
+            //    inputfield.DeactivateInputField();
+            //}
+
+            //OnFocusChanged();
         }
+
+        IEnumerator DelayedActivate()
+        {
+            // QUEST FIX: 1 frame wait
+            yield return null;
+
+            if (!this || !inputfield)
+                yield break;
+
+            UnityEngine.EventSystems.EventSystem.current
+                .SetSelectedGameObject(inputfield.gameObject);
+
+            inputfield.ActivateInputField();
+        }
+
+
 
         private void OnFocusChanged()
         {
