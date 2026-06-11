@@ -208,56 +208,22 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
         // OnTouch event triggered when the player touches the 3D button is forwarded to the UI button 
         private void OnTouch()
         {
-
-
-
-
-            // Bounce protection (yeh rehne do)
-            if (hasFocus && lastTMPSelect != -1 &&
-                (Time.time - lastTMPSelect) < lastTMPSelectBounceProtectionduration)
+            // Bounce protection
+            if (lastTMPSelect != -1 && (Time.time - lastTMPSelect) < lastTMPSelectBounceProtectionduration)
             {
                 return;
             }
 
-            // Quest rule: touch sirf focus ON kare
-            if (hasFocus)
-                return;
+            lastTMPSelect = Time.time;
 
-            hasFocus = true;
-
-            //  SAME FRAME me activate mat karo (Quest fix)
+            // Always ensure the input field is activated and selected on touch/click!
             StartCoroutine(DelayedActivate());
 
-            OnFocusChanged();
-
-
-
-
-
-
-            //Debug.LogError($"OnTouch (prev: {hasFocus})");
-            //if (hasFocus && lastTMPSelect != -1 && (Time.time - lastTMPSelect) < lastTMPSelectBounceProtectionduration)
-            //{
-            //    //Debug.LogError("Avoid double focus change due to touch/pointer");
-            //    return;
-            //}
-
-            //hasFocus = !hasFocus;
-
-            //if (hasFocus)
-            //{
-            //    //Debug.LogError("Force activate input field");
-            //    UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(inputfield.gameObject);
-            //    inputfield.ActivateInputField();
-            //}
-            //if (hasFocus == false)
-            //{
-            //    //Debug.LogError("Force deactivate input field");
-            //    UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
-            //    inputfield.DeactivateInputField();
-            //}
-
-            //OnFocusChanged();
+            if (!hasFocus)
+            {
+                hasFocus = true;
+                OnFocusChanged();
+            }
         }
 
         IEnumerator DelayedActivate()
@@ -268,8 +234,10 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
             if (!this || !inputfield)
                 yield break;
 
-            UnityEngine.EventSystems.EventSystem.current
-                .SetSelectedGameObject(inputfield.gameObject);
+            if (UnityEngine.EventSystems.EventSystem.current != null)
+            {
+                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(inputfield.gameObject);
+            }
 
             inputfield.ActivateInputField();
         }
