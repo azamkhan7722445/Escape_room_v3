@@ -13,11 +13,6 @@ namespace Fusion.XR.Shared.Grabbing
         public Grabber currentGrabber;
         public bool expectedIsKinematic = true;
 
-        [Header("Highlight (for RayGrabber)")]
-        public Color highlightColor = new Color(0.3f, 0.8f, 1f, 1f);
-        [Range(0f, 1f)]
-        public float highlightIntensity = 0.4f;
-
         [Tooltip("If false, it is only possible to grab a Grabbable previously hovered")]
         public bool allowedClosedHandGrabing = true;
 
@@ -25,13 +20,6 @@ namespace Fusion.XR.Shared.Grabbing
         public NetworkGrabbable networkGrabbable;
         [HideInInspector]
         public Rigidbody rb;
-
-        Renderer[] _renderers;
-        MaterialPropertyBlock _propBlock;
-        Color[] _originalColors;
-        bool _highlighted;
-        static readonly int _BaseColorId = Shader.PropertyToID("_BaseColor");
-        static readonly int _ColorId = Shader.PropertyToID("_Color");
 
         [Tooltip("For object with a rigidbody, if true, apply hand velocity on ungrab")]
         public bool applyVelocityOnRelease = false;
@@ -116,19 +104,6 @@ namespace Fusion.XR.Shared.Grabbing
             {
                 expectedIsKinematic = rb.isKinematic;
             }
-            _propBlock = new MaterialPropertyBlock();
-            _renderers = GetComponentsInChildren<Renderer>();
-            _originalColors = new Color[_renderers.Length];
-            for (int i = 0; i < _renderers.Length; i++)
-            {
-                var mat = _renderers[i].material;
-                if (mat.HasProperty(_BaseColorId))
-                    _originalColors[i] = mat.GetColor(_BaseColorId);
-                else if (mat.HasProperty(_ColorId))
-                    _originalColors[i] = mat.GetColor(_ColorId);
-                else
-                    _originalColors[i] = Color.white;
-            }
         }
 
         protected virtual void Update()
@@ -201,42 +176,6 @@ namespace Fusion.XR.Shared.Grabbing
 
             ResetVelocityTracking();
         }
-
-        #region Highlight
-        public void SetHighlight(bool on)
-        {
-            if (_highlighted == on) return;
-            _highlighted = on;
-            if (on) ApplyHighlight(highlightColor, highlightIntensity);
-            else ClearHighlight();
-        }
-
-        void ApplyHighlight(Color tint, float intensity)
-        {
-            for (int i = 0; i < _renderers.Length; i++)
-            {
-                if (_renderers[i] == null) continue;
-                _renderers[i].GetPropertyBlock(_propBlock);
-                Color target = Color.Lerp(_originalColors[i], tint, intensity);
-                _propBlock.SetColor(_BaseColorId, target);
-                _propBlock.SetColor(_ColorId, target);
-                _renderers[i].SetPropertyBlock(_propBlock);
-            }
-        }
-
-        public void ClearHighlight()
-        {
-            _highlighted = false;
-            for (int i = 0; i < _renderers.Length; i++)
-            {
-                if (_renderers[i] == null) continue;
-                _renderers[i].GetPropertyBlock(_propBlock);
-                _propBlock.SetColor(_BaseColorId, _originalColors[i]);
-                _propBlock.SetColor(_ColorId, _originalColors[i]);
-                _renderers[i].SetPropertyBlock(_propBlock);
-            }
-        }
-        #endregion
 
         public virtual void Follow(Transform followedTransform, Vector3 localPositionOffsetToFollowed, Quaternion localRotationOffsetTofollowed)
         {

@@ -1,4 +1,3 @@
-using Fusion.XR.Shared.Grabbing;
 using Fusion.XR.Shared.Rig;
 using System.Collections.Generic;
 using UnityEngine;
@@ -54,22 +53,6 @@ namespace Fusion.XR.Shared.Locomotion
         public Color hitColor = Color.green;
         public Color noHitColor = Color.red;
 
-        [Header("Distance Grab")]
-        [Tooltip("Beam color when pointing at a grabbable object")]
-        public Color grabColor = Color.cyan;
-        [Tooltip("Seconds for the object to fly to the hand")]
-        public float flyDuration = 0.3f;
-        [Tooltip("Distance threshold to hand off to near grabber")]
-        public float grabHandoffDistance = 0.15f;
-
-        Grabbable _targetGrabbable;
-        Grabbable _grabbingGrabbable;
-        Grabber _grabber;
-        bool _isFlying;
-        float _flyTimer;
-        Vector3 _flyStartPos;
-        Quaternion _flyStartRot;
-
 
         public UnityEvent<Collider, Vector3> onHitEnter = new UnityEvent<Collider, Vector3>();
         public UnityEvent<Collider, Vector3> onHitExit = new UnityEvent<Collider, Vector3>();
@@ -111,7 +94,6 @@ namespace Fusion.XR.Shared.Locomotion
 
             if (origin == null) origin = transform;
             if (hand == null) hand = GetComponentInParent<HardwareHand>();
-            if (_grabber == null) _grabber = GetComponent<Grabber>();
         }
 
         public virtual void Start()
@@ -136,12 +118,6 @@ namespace Fusion.XR.Shared.Locomotion
 
         public void Update()
         {
-            if (_isFlying)
-            {
-                UpdateFly();
-                return;
-            }
-
 #if ENABLE_INPUT_SYSTEM
             // If useRayActionInput is true, we read the rayAction to determine isRayEnabled for this frame
             //  Usefull for the mouse teleporter of the desktop mode, which disables the action reading to have its own logic to enable the beamer
@@ -158,22 +134,6 @@ namespace Fusion.XR.Shared.Locomotion
                 ray.origin = origin.position;
                 if (BeamCast(out RaycastHit hit))
                 {
-                    // Check if we hit a grabbable for distance grab
-                    var grabbable = hit.collider.GetComponentInParent<Grabbable>();
-                    bool canDistanceGrab = grabbable != null
-                        && grabbable != _grabber?.grabbedObject
-                        && hand != null && hand.isGrabbing;
-
-                    if (canDistanceGrab)
-                    {
-                        // Distance grab: grip press while pointing at grabbable
-                        StartFlyToHand(grabbable);
-                        return;
-                    }
-
-                    // Highlight / unhighlight grabbable targets
-                    UpdateGrabbableTarget(grabbable);
-
                     if (status == Status.BeamHit)
                     {
                         if (lastHitCollider != hit.collider)
@@ -188,8 +148,7 @@ namespace Fusion.XR.Shared.Locomotion
                     }
                     lastHitCollider = hit.collider;
                     ray.target = hit.point;
-                    // Change beam color if pointing at a grabbable
-                    ray.color = grabbable != null ? grabColor : hitColor;
+                    ray.color = hitColor;
                     lastHit = hit.point;
                     status = Status.BeamHit;
                     if (rayValidator != null) rayValidator.ValidateOnBeamerHit(this, hit);
@@ -200,7 +159,6 @@ namespace Fusion.XR.Shared.Locomotion
                     {
                         OnHitExit(lastHitCollider, lastHit);
                     }
-                    ClearGrabbableTarget();
                     lastHitCollider = null;
                     ray.target = ray.origin + origin.forward * maxDistance;
                     ray.color = noHitColor;
@@ -213,7 +171,6 @@ namespace Fusion.XR.Shared.Locomotion
                 {
                     OnHitRelease(lastHitCollider, lastHit);
                 }
-                ClearGrabbableTarget();
                 status = Status.NoBeam;
                 lastHitCollider = null;
             }
@@ -242,91 +199,6 @@ namespace Fusion.XR.Shared.Locomotion
         {
             status = Status.NoBeam;
         }
-
-        #region Distance Grab
-        void UpdateGrabbableTarget(Grabbable grabbable)
-        {
-            if (grabbable == _targetGrabbable) return;
-            ClearGrabbableTarget();
-            if (grabbable != null)
-            {
-                _targetGrabbable = grabbable;
-                _targetGrabbable.SetHighlight(true);
-            }
-        }
-
-        void ClearGrabbableTarget()
-        {
-            if (_targetGrabbable != null)
-            {
-                _targetGrabbable.ClearHighlight();
-                _targetGrabbable = null;
-            }
-        }
-
-        void StartFlyToHand(Grabbable grabbable)
-        {
-            _grabbingGrabbable = grabbable;
-            ClearGrabbableTarget();
-
-            // Disable beam during fly
-            lineRenderer.enabled = false;
-
-            grabbable.SetHighlight(true);
-
-            _flyStartPos = grabbable.transform.position;
-            _flyStartRot = grabbable.transform.rotation;
-            _flyTimer = 0f;
-            _isFlying = true;
-        }
-
-        void UpdateFly()
-        {
-            if (_grabbingGrabbable == null)
-            {
-                FinishFly();
-                return;
-            }
-
-            _flyTimer += Time.deltaTime;
-            float t = Mathf.Clamp01(_flyTimer / flyDuration);
-            // Smoothstep easing
-            t = t * t * (3f - 2f * t);
-
-            Vector3 targetPos = hand.transform.position;
-            _grabbingGrabbable.transform.position = Vector3.Lerp(_flyStartPos, targetPos, t);
-            _grabbingGrabbable.transform.rotation = Quaternion.Slerp(_flyStartRot, hand.transform.rotation, t);
-
-            if (t >= 1f || Vector3.Distance(_grabbingGrabbable.transform.position, targetPos) < grabHandoffDistance)
-            {
-                FinishFly();
-            }
-        }
-
-        void FinishFly()
-        {
-            _isFlying = false;
-            var grabbable = _grabbingGrabbable;
-            _grabbingGrabbable = null;
-
-            if (grabbable == null)
-            {
-                isRayEnabled = false;
-                return;
-            }
-
-            grabbable.ClearHighlight();
-
-            // Hand off to the near grabber
-            if (_grabber != null && _grabber.grabbedObject == null)
-            {
-                _grabber.Grab(grabbable);
-            }
-
-            // Turn off ray after grab
-            isRayEnabled = false;
-        }
-        #endregion
 
         void UpdateRay()
         {
