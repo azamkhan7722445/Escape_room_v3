@@ -134,7 +134,8 @@ public class PuzzleTimer : NetworkBehaviour
         }
         else
         {
-            Application.Quit();
+            Runner.LoadScene(SceneRef.FromIndex(1));
+            // Application.Quit();
         }
     }
 }
