@@ -147,5 +147,62 @@ namespace Fusion.Addons.Touch
                 continuousSliderTouch = false;
             }
         }
+
+        // WebXR Helper Methods for direct invocation from WebXRFusionBridge
+        public bool HasHitTarget => latestHitCollider != null;
+
+        public void ExecuteTouch()
+        {
+            if (!latestHitCollider) return;
+
+            if (ShouldTouchTouchable && noTouchableFound == false)
+            {
+                if (!uiTouchButton) uiTouchButton = latestHitCollider.GetComponentInParent<UITouchButton>();
+
+                if (!uiTouchButton)
+                {
+                    if (!touchable) touchable = latestHitCollider.GetComponentInParent<Touchable>();
+
+                    if (touchable)
+                        touchable.TryInstantTouch();
+                    else
+                        noTouchableFound = true;
+                }
+            }
+
+            if (ShouldTouchUITouchButton && noUITouchableFound == false)
+            {
+                if (!uiTouchButton) uiTouchButton = latestHitCollider.GetComponentInParent<UITouchButton>();
+                if (uiTouchButton)
+                    uiTouchButton.touchable.TryInstantTouch();
+                else
+                    noUITouchableFound = true;
+            }
+        }
+
+        public void UpdateSlider(Vector3 hitPoint)
+        {
+            if (!latestHitCollider) return;
+
+            if (noSliderFound == false)
+            {
+                if (ShouldTouchTouchableSlider)
+                {
+                    bool isANewSliderTouch = continuousSliderTouch == false;
+                    continuousSliderTouch = true;
+
+                    if (!slider) slider = latestHitCollider.GetComponentInParent<TouchableSlider>();
+                    if (slider)
+                        slider.MoveSliderToPosition(hitPoint, instantMove: isANewSliderTouch);
+                    else
+                        noSliderFound = true;
+                }
+            }
+        }
+
+        public void ReleaseSlider()
+        {
+            continuousSliderTouch = false;
+        }
     }
 }

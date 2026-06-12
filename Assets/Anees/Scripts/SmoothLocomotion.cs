@@ -54,20 +54,27 @@ namespace Fusion.XR.Shared.Locomotion
 
         void Update()
         {
-#if ENABLE_INPUT_SYSTEM
             Vector2 input = Vector2.zero;
 
-            if (useLeftController)
-                input += leftControllerMove.action.ReadValue<Vector2>();
+            if (WebXR.FusionBridge.WebXRFusionBridge.Active)
+            {
+                input = WebXR.FusionBridge.WebXRFusionBridge.GetMoveInput(useLeftController, useRightController);
+            }
+            else
+            {
+#if ENABLE_INPUT_SYSTEM
+                if (useLeftController)
+                    input += leftControllerMove.action.ReadValue<Vector2>();
 
-            if (useRightController)
-                input += rightControllerMove.action.ReadValue<Vector2>();
+                if (useRightController)
+                    input += rightControllerMove.action.ReadValue<Vector2>();
+#endif
+            }
 
             if (input.magnitude < deadZone)
                 return;
 
             TryMove(input);
-#endif
         }
 
         void TryMove(Vector2 input)

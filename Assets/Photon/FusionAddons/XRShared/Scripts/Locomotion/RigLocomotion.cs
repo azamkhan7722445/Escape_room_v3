@@ -83,7 +83,6 @@ namespace Fusion.XR.Shared.Locomotion
 
         protected virtual void CheckSnapTurn()
         {
-#if ENABLE_INPUT_SYSTEM
             if (rotating) return;
             if (timeStarted > 0f)
             {
@@ -98,11 +97,23 @@ namespace Fusion.XR.Shared.Locomotion
             float leftStickTurn = 0;
             float rightStickTurn = 0;
 
-            if (useLeftController)
-                leftStickTurn = leftControllerTurnAction.action.ReadValue<Vector2>().x;
+            if (WebXR.FusionBridge.WebXRFusionBridge.Active)
+            {
+                leftStickTurn = WebXR.FusionBridge.WebXRFusionBridge.GetTurnInput(useLeftController, false);
+                rightStickTurn = WebXR.FusionBridge.WebXRFusionBridge.GetTurnInput(false, useRightController);
+            }
+            else
+            {
+#if ENABLE_INPUT_SYSTEM
+                if (useLeftController)
+                    leftStickTurn = leftControllerTurnAction.action.ReadValue<Vector2>().x;
 
-            if (useRightController)
-                rightStickTurn = rightControllerTurnAction.action.ReadValue<Vector2>().x;
+                if (useRightController)
+                    rightStickTurn = rightControllerTurnAction.action.ReadValue<Vector2>().x;
+#else
+                Debug.LogError("Missing com.unity.inputsystem package");
+#endif
+            }
 
             if (useLeftController && Mathf.Abs(leftStickTurn) > rotationInputThreshold)
             {
@@ -114,9 +125,6 @@ namespace Fusion.XR.Shared.Locomotion
                 timeStarted = Time.time;
                 StartCoroutine(Rotate(Mathf.Sign(rightStickTurn) * snapDegree));
             }
-#else
-            Debug.LogError("Missing com.unity.inputsystem package");
-#endif
         }
 
         IEnumerator Rotate(float angle)

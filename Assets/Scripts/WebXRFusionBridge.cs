@@ -5,9 +5,24 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Linq.Expressions;
 using Fusion.XR.Shared.Rig;
+using Fusion.XR.Shared.Locomotion;
+using Fusion.Addons.Touch;
 
 namespace WebXR.FusionBridge
 {
+    public class ControllerInputs
+    {
+        public float trigger = 0f;
+        public float squeeze = 0f;
+        public bool thumbTouched = false;
+        public bool triggerTouched = false;
+        public bool thumbstickClicked = false;
+        public float thumbstickX = 0f;
+        public float thumbstickY = 0f;
+        public bool buttonAPressed = false;
+        public bool buttonBPressed = false;
+    }
+
     public class WebXRFusionBridge : MonoBehaviour
     {
         private HardwareRig rig;
@@ -20,6 +35,15 @@ namespace WebXR.FusionBridge
         private MonoBehaviour rightPoseDevice;
 
         private bool webXRActive = false;
+
+        // Static inputs for locomotion and other scripts to query
+        private static WebXRFusionBridge instance;
+        public static bool Active => instance != null && instance.webXRActive;
+        public static ControllerInputs LeftController { get; private set; } = new ControllerInputs();
+        public static ControllerInputs RightController { get; private set; } = new ControllerInputs();
+
+        private float prevLeftTriggerVal = 0f;
+        private float prevRightTriggerVal = 0f;
 
         // Reflection caching for WebXR types to bypass assembly definition restrictions
         private static Type managerType;
@@ -54,6 +78,58 @@ namespace WebXR.FusionBridge
         private object onControllerUpdateDelegate;
         private object onHandUpdateDelegate;
         private object onXRChangeDelegate;
+
+        public static ControllerInputs GetHandData(bool left)
+        {
+            return left ? LeftController : RightController;
+        }
+
+        public static Vector2 GetMoveInput(bool left, bool right)
+        {
+            if (instance == null || !instance.webXRActive) return Vector2.zero;
+            Vector2 input = Vector2.zero;
+            if (left) input += new Vector2(LeftController.thumbstickX, LeftController.thumbstickY);
+            if (right) input += new Vector2(RightController.thumbstickX, RightController.thumbstickY);
+            return input;
+        }
+
+        public static float GetTurnInput(bool left, bool right)
+        {
+            if (instance == null || !instance.webXRActive) return 0f;
+            float turn = 0f;
+            if (left) turn += LeftController.thumbstickX;
+            if (right) turn += RightController.thumbstickX;
+            return turn;
+        }
+
+        public static void SendHaptic(bool left, float amplitude, float durationSeconds)
+        {
+            if (managerType == null) return;
+            try
+            {
+                var inst = pr_Instance.GetValue(null);
+                if (inst != null)
+                {
+                    var hapticMethod = managerType.GetMethod("HapticPulse", new Type[] { Type.GetType("WebXR.WebXRControllerHand, WebXR"), typeof(float), typeof(float) });
+                    if (hapticMethod != null)
+                    {
+                        // WebXRControllerHand enum: LEFT = 1, RIGHT = 2
+                        int handVal = left ? 1 : 2;
+                        hapticMethod.Invoke(inst, new object[] { handVal, amplitude, durationSeconds * 1000f });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("[WebXRFusionBridge] SendHaptic failed: " + ex);
+            }
+        }
+
+        private void Awake()
+        {
+            instance = this;
+            InitializeReflection();
+        }
 
         private static void InitializeReflection()
         {
@@ -114,9 +190,9 @@ namespace WebXR.FusionBridge
             if (managerType == null) return false;
             try
             {
-                var instance = pr_Instance.GetValue(null);
-                if (instance == null) return false;
-                var state = pr_XRState.GetValue(instance);
+                var instanceVal = pr_Instance.GetValue(null);
+                if (instanceVal == null) return false;
+                var state = pr_XRState.GetValue(instanceVal);
                 return state != null && state.ToString() == "VR";
             }
             catch
@@ -251,18 +327,6 @@ namespace WebXR.FusionBridge
                 if (rightPoseDriver != null) rightPoseDriver.enabled = false;
                 if (leftXRDevice != null) leftXRDevice.enabled = false;
                 if (rightPoseDevice != null) rightPoseDevice.enabled = false;
-
-                // Disable regular input actions on HardwareHand so our manual inputs are not overwritten
-                if (leftHand != null)
-                {
-                    leftHand.updateHandCommandWithAction = false;
-                    leftHand.updateGrabWithAction = false;
-                }
-                if (rightHand != null)
-                {
-                    rightHand.updateHandCommandWithAction = false;
-                    rightHand.updateGrabWithAction = false;
-                }
             }
             else
             {
@@ -271,17 +335,6 @@ namespace WebXR.FusionBridge
                 if (rightPoseDriver != null) rightPoseDriver.enabled = true;
                 if (leftXRDevice != null) leftXRDevice.enabled = true;
                 if (rightPoseDevice != null) rightPoseDevice.enabled = true;
-
-                if (leftHand != null)
-                {
-                    leftHand.updateHandCommandWithAction = true;
-                    leftHand.updateGrabWithAction = true;
-                }
-                if (rightHand != null)
-                {
-                    rightHand.updateHandCommandWithAction = true;
-                    rightHand.updateGrabWithAction = true;
-                }
             }
         }
 
@@ -290,16 +343,52 @@ namespace WebXR.FusionBridge
             if (!webXRActive || data == null) return;
 
             bool isEnabled = (bool)fd_enabled.GetValue(data);
-            if (!isEnabled) return;
-
             int handVal = (int)fd_hand.GetValue(data);
-            if (handVal == 1 && leftHand != null) // 1 = LEFT
+
+            var inputs = (handVal == 1) ? LeftController : RightController;
+
+            if (!isEnabled)
             {
-                UpdateHandTransformAndInput(leftHand, data);
+                inputs.trigger = 0f;
+                inputs.squeeze = 0f;
+                inputs.thumbTouched = false;
+                inputs.triggerTouched = false;
+                inputs.thumbstickClicked = false;
+                inputs.thumbstickX = 0f;
+                inputs.thumbstickY = 0f;
+                inputs.buttonAPressed = false;
+                inputs.buttonBPressed = false;
+                return;
             }
-            else if (handVal == 2 && rightHand != null) // 2 = RIGHT
+
+            inputs.trigger = (float)fd_trigger.GetValue(data);
+            inputs.squeeze = (float)fd_squeeze.GetValue(data);
+            
+            bool thumbstickTouched = (bool)fd_thumbstickTouched.GetValue(data);
+            bool buttonATouched = (bool)fd_buttonATouched.GetValue(data);
+            bool buttonBTouched = (bool)fd_buttonBTouched.GetValue(data);
+            inputs.thumbTouched = thumbstickTouched || buttonATouched || buttonBTouched;
+            
+            inputs.triggerTouched = (bool)fd_triggerTouched.GetValue(data);
+            
+            // WebXRControllerData has float thumbstick click value (buttonPressed ? 1 : 0)
+            float thumbstickVal = (float)controllerDataType.GetField("thumbstick").GetValue(data);
+            inputs.thumbstickClicked = thumbstickVal > 0.5f;
+
+            inputs.thumbstickX = (float)controllerDataType.GetField("thumbstickX").GetValue(data);
+            inputs.thumbstickY = (float)controllerDataType.GetField("thumbstickY").GetValue(data);
+
+            float aVal = (float)controllerDataType.GetField("buttonA").GetValue(data);
+            float bVal = (float)controllerDataType.GetField("buttonB").GetValue(data);
+            inputs.buttonAPressed = aVal > 0.5f;
+            inputs.buttonBPressed = bVal > 0.5f;
+
+            // Update local hand transform
+            var hand = (handVal == 1) ? leftHand : rightHand;
+            if (hand != null)
             {
-                UpdateHandTransformAndInput(rightHand, data);
+                hand.transform.localPosition = (Vector3)fd_gripPosition.GetValue(data);
+                hand.transform.localRotation = (Quaternion)fd_gripRotation.GetValue(data);
             }
         }
 
@@ -308,61 +397,87 @@ namespace WebXR.FusionBridge
             if (!webXRActive || data == null) return;
 
             bool isEnabled = (bool)fd_handEnabled.GetValue(data);
-            if (!isEnabled) return;
-
             int handVal = (int)fd_handHand.GetValue(data);
-            if (handVal == 1 && leftHand != null) // 1 = LEFT
+
+            var inputs = (handVal == 1) ? LeftController : RightController;
+
+            if (!isEnabled)
             {
-                UpdateHandDataTransformAndInput(leftHand, data);
+                inputs.trigger = 0f;
+                inputs.squeeze = 0f;
+                return;
             }
-            else if (handVal == 2 && rightHand != null) // 2 = RIGHT
+
+            inputs.trigger = (float)fd_handTrigger.GetValue(data);
+            inputs.squeeze = (float)fd_handSqueeze.GetValue(data);
+
+            // Update hand position (joints)
+            var hand = (handVal == 1) ? leftHand : rightHand;
+            if (hand != null)
             {
-                UpdateHandDataTransformAndInput(rightHand, data);
+                Array joints = fd_handJoints.GetValue(data) as Array;
+                if (joints != null && joints.Length > 0)
+                {
+                    object wristJoint = joints.GetValue(0);
+                    Vector3 position = (Vector3)fd_jointPosition.GetValue(wristJoint);
+                    Quaternion rotation = (Quaternion)fd_jointRotation.GetValue(wristJoint);
+
+                    hand.transform.localPosition = position;
+                    hand.transform.localRotation = rotation;
+                }
             }
         }
 
-        private void UpdateHandTransformAndInput(HardwareHand hand, object data)
+        private void Update()
         {
-            // Apply position and rotation directly
-            hand.transform.localPosition = (Vector3)fd_gripPosition.GetValue(data);
-            hand.transform.localRotation = (Quaternion)fd_gripRotation.GetValue(data);
+            if (!webXRActive) return;
 
-            // Sync hand poses / gestures for Photon Fusion
-            float trigger = (float)fd_trigger.GetValue(data);
-            float squeeze = (float)fd_squeeze.GetValue(data);
-            bool thumbstickTouched = (bool)fd_thumbstickTouched.GetValue(data);
-            bool buttonATouched = (bool)fd_buttonATouched.GetValue(data);
-            bool buttonBTouched = (bool)fd_buttonBTouched.GetValue(data);
-            bool triggerTouched = (bool)fd_triggerTouched.GetValue(data);
-
-            hand.handCommand.triggerCommand = trigger;
-            hand.handCommand.gripCommand = squeeze;
-            hand.handCommand.thumbTouchedCommand = (thumbstickTouched || buttonATouched || buttonBTouched) ? 1f : 0f;
-            hand.handCommand.indexTouchedCommand = triggerTouched ? 1f : 0f;
-            hand.isGrabbing = squeeze > hand.grabThreshold;
-        }
-
-        private void UpdateHandDataTransformAndInput(HardwareHand hand, object data)
-        {
-            // Hand tracking (joints) updates
-            Array joints = fd_handJoints.GetValue(data) as Array;
-            if (joints != null && joints.Length > 0)
+            // 1. RayBeamer Activation & BeamToucher Click/Slider Simulation
+            if (leftHand != null)
             {
-                object wristJoint = joints.GetValue(0); // wrist/root joint
-                Vector3 position = (Vector3)fd_jointPosition.GetValue(wristJoint);
-                Quaternion rotation = (Quaternion)fd_jointRotation.GetValue(wristJoint);
+                var beamer = leftHand.GetComponentInChildren<RayBeamer>();
+                if (beamer != null)
+                {
+                    beamer.useRayActionInput = false;
+                    beamer.isRayEnabled = (LeftController.thumbstickY > 0.5f || LeftController.thumbstickClicked || LeftController.buttonAPressed || LeftController.buttonBPressed);
+                }
 
-                hand.transform.localPosition = position;
-                hand.transform.localRotation = rotation;
+                var toucher = leftHand.GetComponent<BeamToucher>();
+                if (beamer != null && toucher != null && toucher.HasHitTarget)
+                {
+                    bool wasPressed = LeftController.trigger > 0.5f && prevLeftTriggerVal <= 0.5f;
+                    bool isPressed = LeftController.trigger > 0.5f;
+
+                    if (wasPressed) toucher.ExecuteTouch();
+                    if (isPressed) toucher.UpdateSlider(beamer.lastHit);
+                    else toucher.ReleaseSlider();
+                }
             }
 
-            // Sync inputs from hand data
-            float trigger = (float)fd_handTrigger.GetValue(data);
-            float squeeze = (float)fd_handSqueeze.GetValue(data);
+            if (rightHand != null)
+            {
+                var beamer = rightHand.GetComponentInChildren<RayBeamer>();
+                if (beamer != null)
+                {
+                    beamer.useRayActionInput = false;
+                    beamer.isRayEnabled = (RightController.thumbstickY > 0.5f || RightController.thumbstickClicked || RightController.buttonAPressed || RightController.buttonBPressed);
+                }
 
-            hand.handCommand.triggerCommand = trigger;
-            hand.handCommand.gripCommand = squeeze;
-            hand.isGrabbing = squeeze > hand.grabThreshold;
+                var toucher = rightHand.GetComponent<BeamToucher>();
+                if (beamer != null && toucher != null && toucher.HasHitTarget)
+                {
+                    bool wasPressed = RightController.trigger > 0.5f && prevRightTriggerVal <= 0.5f;
+                    bool isPressed = RightController.trigger > 0.5f;
+
+                    if (wasPressed) toucher.ExecuteTouch();
+                    if (isPressed) toucher.UpdateSlider(beamer.lastHit);
+                    else toucher.ReleaseSlider();
+                }
+            }
+
+            // Store previous states at the end of the frame
+            prevLeftTriggerVal = LeftController.trigger;
+            prevRightTriggerVal = RightController.trigger;
         }
 
         private static void SubscribeStaticEvent(Type type, string eventName, Action<object[]> handler, out object delegateInstance)

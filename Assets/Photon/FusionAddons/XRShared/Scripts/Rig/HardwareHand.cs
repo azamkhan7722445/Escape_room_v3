@@ -73,6 +73,30 @@ namespace Fusion.XR.Shared.Rig
 
         protected virtual void Update()
         {
+            // WebXR Override
+            if (WebXR.FusionBridge.WebXRFusionBridge.Active)
+            {
+                bool isLeft = (side == RigPart.LeftController);
+                var data = WebXR.FusionBridge.WebXRFusionBridge.GetHandData(isLeft);
+                if (data != null)
+                {
+                    handCommand.triggerCommand = data.trigger;
+                    handCommand.gripCommand = data.squeeze;
+                    handCommand.thumbTouchedCommand = data.thumbTouched ? 1f : 0f;
+                    handCommand.indexTouchedCommand = data.triggerTouched ? 1f : 0f;
+                    handCommand.poseCommand = handPose;
+                    handCommand.pinchCommand = 0;
+
+                    isGrabbing = data.squeeze > grabThreshold;
+                }
+
+                if (localRepresentation != null)
+                {
+                    localRepresentation.SetHandCommand(handCommand);
+                }
+                return;
+            }
+
 #if ENABLE_INPUT_SYSTEM
             // update hand pose
             if (updateHandCommandWithAction)
@@ -135,6 +159,12 @@ namespace Fusion.XR.Shared.Rig
         // If a device supporting haptic feedback has been detected, send a vibration to it (here in the form of an impulse)
         public void SendHapticImpulse(float amplitude = 0.3f, float duration = 0.3f, uint channel = 0)
         {
+            if (WebXR.FusionBridge.WebXRFusionBridge.Active)
+            {
+                WebXR.FusionBridge.WebXRFusionBridge.SendHaptic(side == RigPart.LeftController, amplitude, duration);
+                return;
+            }
+
             if (Device != null)
             {
                 var inputDevice = Device.GetValueOrDefault();
