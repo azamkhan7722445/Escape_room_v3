@@ -22139,6 +22139,10 @@ PrefabInstance:
       value: -9.2385
       objectReference: {fileID: 0}
     - target: {fileID: -6252302676980425436, guid: 629056263fd4a77458dad8a10b178363, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6252302676980425436, guid: 629056263fd4a77458dad8a10b178363, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -22233,6 +22237,10 @@ PrefabInstance:
     - target: {fileID: -4105669630047978739, guid: 629056263fd4a77458dad8a10b178363, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -4002838579993872132, guid: 629056263fd4a77458dad8a10b178363, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -4002838579993872132, guid: 629056263fd4a77458dad8a10b178363, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25580,6 +25588,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1806066165, guid: 332fda1eff2cb6c48bc735d13f2565ea, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 838808352863223363, guid: 332fda1eff2cb6c48bc735d13f2565ea, type: 3}
       propertyPath: randomRadius
       value: 1
@@ -28668,7 +28680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1808930917
 MonoBehaviour:
   m_ObjectHideFlags: 0
