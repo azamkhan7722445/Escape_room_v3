@@ -9233,7 +9233,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2fadf230d1919748a9aa21d40f74619, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.XR.TrackedPoseDriver
   m_TrackingType: 0
   m_UpdateType: 0
   m_IgnoreTrackingState: 0
@@ -9243,12 +9243,12 @@ MonoBehaviour:
       m_Name: Position
       m_Type: 0
       m_ExpectedControlType: Vector3
-      m_Id: 6804f126-c0ec-4d76-b3e8-b505563631e6
+      m_Id: 3e3375c8-a4df-4a62-8898-0fe219499982
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: 40181f6e-dd95-4ac5-be78-515b231b22d0
+        m_Id: f3c9f127-aaea-4f88-b530-0019dfce2596
         m_Path: <XRController>{LeftHand}/devicePosition
         m_Interactions: 
         m_Processors: 
@@ -9263,12 +9263,12 @@ MonoBehaviour:
       m_Name: Rotation
       m_Type: 0
       m_ExpectedControlType: Quaternion
-      m_Id: f0333278-ca2f-4043-ac42-d3281d2d0741
+      m_Id: fed2207f-613d-4429-98f6-35b218685c6f
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: bcf58929-551b-456d-8103-6e4cf4ddec80
+        m_Id: 092811b0-48e6-4b60-925f-821938b35b5d
         m_Path: <XRController>{LeftHand}/deviceRotation
         m_Interactions: 
         m_Processors: 
@@ -9283,7 +9283,7 @@ MonoBehaviour:
       m_Name: Tracking State
       m_Type: 0
       m_ExpectedControlType: Integer
-      m_Id: 97ea5b7a-3b83-4258-b3a6-e509b4775fb6
+      m_Id: acad60ea-b193-4c5f-a4ae-e1622c3c669a
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -9293,7 +9293,7 @@ MonoBehaviour:
     m_Name: 
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 0eb1875b-9749-4498-9fb7-146ce56387f0
+    m_Id: 2d7b7d5f-f476-42d7-8f99-7a86a8d4b2c8
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -9302,7 +9302,7 @@ MonoBehaviour:
     m_Name: 
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: e55033b8-5591-40a7-9485-63af9c96fa52
+    m_Id: e7e65bea-089d-45b9-94b3-714b4a687d36
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
