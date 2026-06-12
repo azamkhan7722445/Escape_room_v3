@@ -2,7 +2,6 @@
   "dependencies": {
     "com.de-panther.webxr": "https://github.com/De-Panther/unity-webxr-export.git?path=/Packages/webxr",
     "com.hwaet.projectcloner": "https://github.com/hwaet/UnityProjectCloner.git",
-    "com.meta.xr.sdk.core": "203.0.0",
     "com.meta.xr.sdk.platform": "203.0.0",
     "com.readyplayerme.core": "https://github.com/readyplayerme/rpm-unity-sdk-core.git",
     "com.unity.ai.assistant": "2.11.0-pre.2",

@@ -115,27 +115,76 @@ public class PuzzleTimer : NetworkBehaviour
     private void RPC_OnTimerEnd()
     {
         Debug.Log("Time is up! Game Over.");
-        
+        StartCoroutine(TimerEndSequenceCoroutine());
+    }
+
+    private IEnumerator TimerEndSequenceCoroutine()
+    {
         var appManager = UnityEngine.Object.FindAnyObjectByType<Fusion.Samples.IndustriesComponents.ApplicationManager>();
         if (appManager != null)
         {
             var updateMethod = appManager.GetType().GetMethod("UpdateErrorMessage", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            var cleanUpMethod = appManager.GetType().GetMethod("CleanUpScene", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
 
             if (updateMethod != null)
             {
-                updateMethod.Invoke(appManager, new object[] { "Time Up! You failed to escape the pyramid." });
+                updateMethod.Invoke(appManager, new object[] { "Time Up! Returning to Hub in 5 seconds..." });
             }
 
-            if (cleanUpMethod != null)
+            if (appManager.desktopErrorMessageGO != null) appManager.desktopErrorMessageGO.SetActive(true);
+            if (appManager.hardwareRigErrorMessageGO != null) appManager.hardwareRigErrorMessageGO.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(5f);
+
+        LoadHubScene();
+    }
+
+    private async void LoadHubScene()
+    {
+        Debug.Log("Loading Hub Scene...");
+
+        var managers = Fusion.Samples.IndustriesComponents.Managers.FindInstance();
+        var soundManager = Fusion.Addons.HapticAndAudioFeedback.SoundManager.FindInstance();
+
+        if (managers != null)
+        {
+            if (managers.applicationManager != null)
             {
-                appManager.StartCoroutine((IEnumerator)cleanUpMethod.Invoke(appManager, null));
+                managers.applicationManager.isQuitting = true;
+            }
+
+            if (soundManager != null)
+            {
+                soundManager.PlayOneShot("OnSceneSwitch");
+            }
+
+            if (Runner != null)
+            {
+                await Runner.Shutdown(true);
+            }
+            else if (managers.runner != null)
+            {
+                await managers.runner.Shutdown(true);
+            }
+
+            var spaceDescription = Fusion.Addons.Spaces.SpaceDescription.FindSpaceDescription("HubSpaceId");
+            if (spaceDescription != null)
+            {
+                Fusion.Addons.Spaces.SpaceRoom.RegisterSpaceRequest(spaceDescription);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(spaceDescription.sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
+            }
+            else
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Hub", UnityEngine.SceneManagement.LoadSceneMode.Single);
             }
         }
         else
         {
-            Runner.LoadScene(SceneRef.FromIndex(1));
-            // Application.Quit();
+            if (Runner != null)
+            {
+                await Runner.Shutdown(true);
+            }
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Hub", UnityEngine.SceneManagement.LoadSceneMode.Single);
         }
     }
 }
