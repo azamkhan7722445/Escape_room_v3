@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Metaverse/Spaces/AvatarSelection/Scenes/Menu.unity
+    guid: 456a5bf125d5c794db9f86ac872a4de9
+  - enabled: 1
     path: Assets/Metaverse/Spaces/AvatarSelection/Scenes/AvatarSelection.unity
     guid: b89ebdf1b470bdd45aad24418c48162c
   - enabled: 1
@@ -15,6 +18,7 @@ EditorBuildSettings:
     path: Assets/Khan Alam Art/Escape the Pyramid.unity
     guid: 3244bb0eee07e2347bddd1915284fc67
   m_configObjects:
+    WebXR.Settings: {fileID: 11400000, guid: 2fd779dad9848ee428b277157ad8012c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f7c99e3480555744e9a379ea516af73e, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 556f3dfeff662654c848f4e4f84449fc, type: 2}
   m_UseUCBPForAssetBundles: 0
