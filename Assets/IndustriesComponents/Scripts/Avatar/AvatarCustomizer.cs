@@ -63,8 +63,16 @@ namespace Fusion.Samples.IndustriesComponents
             if (vrModeConnectButton) vrModeConnectButton.SetActive(false);
 #endif
 #if UNITY_WEBGL
-            defaultVRMode = false;
-            if (vrModeConnectButton) vrModeConnectButton.SetActive(false);
+            if (Pref_manager.Instance.vr)
+            {
+                defaultVRMode = true;
+            }
+            else if (Pref_manager.Instance.pc)
+            {
+                defaultVRMode = false;
+                if (vrModeConnectButton) vrModeConnectButton.SetActive(false);
+            }
+
 #endif
 
             fader = rig.GetComponentInChildren<Fader>();
