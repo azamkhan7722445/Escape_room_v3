@@ -110,6 +110,15 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
             inputFieldRectTransform = inputfield.GetComponent<RectTransform>();
             rectTransform = GetComponent<RectTransform>();
             touchable = GetComponent<Touchable>();
+
+            // Prevent TMP from opening a TouchScreenKeyboard session on Android/Quest.
+            // Without this, ActivateInputField() calls TouchScreenKeyboard.Open(), and
+            // TMP's LateUpdate() overwrites inputfield.text from the session's empty buffer
+            // every frame, wiping characters typed on Photon's VirtualKeyboard.
+            // shouldHideSoftKeyboard=true: skips Open() in ActivateInputFieldInternal AND
+            // makes isKeyboardUsingEvents() return true so LateUpdate exits before the sync loop.
+            if (inputfield != null)
+                inputfield.shouldHideSoftKeyboard = true;
         }
 
         private void Start()
@@ -232,15 +241,6 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
             yield return null;
 
             if (!this || !inputfield)
-                yield break;
-
-            // On Android/Quest, TouchScreenKeyboard.isSupported is true.
-            // SetSelectedGameObject triggers TMP_InputField.OnSelect → ActivateInputField,
-            // which opens a system keyboard session. TMP's LateUpdate then syncs
-            // inputfield.text from that session's empty buffer every frame, wiping
-            // characters typed on Photon's VirtualKeyboard.
-            // Photon writes text directly via the Text property setter — no activation needed.
-            if (TouchScreenKeyboard.isSupported)
                 yield break;
 
             if (UnityEngine.EventSystems.EventSystem.current != null)
