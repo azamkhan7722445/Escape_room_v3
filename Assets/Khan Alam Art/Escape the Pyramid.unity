@@ -4283,6 +4283,181 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5942786151523435473, guid: 600c61985d314214e8a34d0a9db4ad36, type: 3}
   m_PrefabInstance: {fileID: 362131948}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &364025387
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 807.3232
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 443.8577
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0017073305
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.00541862
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0077850847
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.374
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.0015638365
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0010063973
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7079679
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7062423
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.157
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.751
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 236.147
+      objectReference: {fileID: 0}
+    - target: {fileID: 104341449206879895, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -56.102
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161688378683766855, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: buttonIcon
+      value: 
+      objectReference: {fileID: 1174590657479586603}
+    - target: {fileID: 3606232458285173490, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_Name
+      value: Video Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00006997587
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00006997587
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4371509121237057381, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 364025391}
+  m_SourcePrefab: {fileID: 100100000, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+--- !u!114 &364025388 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7811644245264992492, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+  m_PrefabInstance: {fileID: 364025387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!328 &364025389 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 6426179702637514930, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+  m_PrefabInstance: {fileID: 364025387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &364025390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4371509121237057381, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+  m_PrefabInstance: {fileID: 364025387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &364025391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364025390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5e56fd57124bb4abd3a3235a49f2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 364025389}
+  buttonIcon: {fileID: 364025388}
+  playSprite: {fileID: 21300000, guid: f80f2d1e32f45c64782ec49e4e75d14f, type: 3}
+  pauseSprite: {fileID: 21300000, guid: 651b89cb72bcb2d4cb6187b88e4edf6e, type: 3}
+  playAtStart: 0
+  videoURL: "https://azamkhan7722445.github.io/Video/\u0394\u03B7\u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03AF\u03B1_\u0392\u03AF\u03BD\u03C4\u03B5\u03BF_\u03B3\u03B9\u03B1_\u03C4\u03BF_\u03A0.mp4"
 --- !u!1001 &374818157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12338,7 +12513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7197107725745000127, guid: 913a95e99f5e3e04eb71f0cd6db83f1b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7197107725745000127, guid: 913a95e99f5e3e04eb71f0cd6db83f1b, type: 3}
       propertyPath: targetLayerMask.m_Bits
@@ -33892,6 +34067,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1003682592974375483, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1376775806180148534, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -33904,6 +34083,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2011701711}
+    - target: {fileID: 6411136522207465839, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      propertyPath: m_Url
+      value: "https://azamkhan7722445.github.io/Video/\u0394\u03B7\u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03AF\u03B1_\u0392\u03AF\u03BD\u03C4\u03B5\u03BF_\u03B3\u03B9\u03B1_\u03C4\u03BF_\u03A0.mp4"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411136522207465839, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      propertyPath: m_DataSource
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6428283977459871572, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_Name
       value: video
@@ -33952,11 +34139,69 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2092408301}
+    - target: {fileID: 8986195650921479715, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1174590657479586605}
+    - target: {fileID: 8986195650921479715, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986195650921479715, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VideoPlaySimple, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986195650921479715, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6428283977459871572, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1174590657479586605}
   m_SourcePrefab: {fileID: 100100000, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+--- !u!1 &1174590657479586602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6428283977459871572, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+  m_PrefabInstance: {fileID: 1174590657479586601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1174590657479586603 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 181479227274165307, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+  m_PrefabInstance: {fileID: 1174590657479586601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!328 &1174590657479586604 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 6411136522207465839, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+  m_PrefabInstance: {fileID: 1174590657479586601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1174590657479586605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174590657479586602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5e56fd57124bb4abd3a3235a49f2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 1174590657479586604}
+  buttonIcon: {fileID: 364025388}
+  playSprite: {fileID: 21300000, guid: f80f2d1e32f45c64782ec49e4e75d14f, type: 3}
+  pauseSprite: {fileID: 21300000, guid: 651b89cb72bcb2d4cb6187b88e4edf6e, type: 3}
+  playAtStart: 0
+  videoURL: "https://azamkhan7722445.github.io/Video/\u0394\u03B7\u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03AF\u03B1_\u0392\u03AF\u03BD\u03C4\u03B5\u03BF_\u03B3\u03B9\u03B1_\u03C4\u03BF_\u03A0.mp4"
 --- !u!23 &1197199739682783270
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40288,6 +40533,7 @@ SceneRoots:
   - {fileID: 629363865}
   - {fileID: 1580997031}
   - {fileID: 1285624462}
+  - {fileID: 364025387}
   - {fileID: 1174590657479586601}
   - {fileID: 224445415}
   - {fileID: 339424105}
