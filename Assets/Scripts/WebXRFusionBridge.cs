@@ -389,6 +389,13 @@ namespace WebXR.FusionBridge
             {
                 hand.transform.localPosition = (Vector3)fd_gripPosition.GetValue(data);
                 hand.transform.localRotation = (Quaternion)fd_gripRotation.GetValue(data);
+
+                var rb = hand.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.position = hand.transform.position;
+                    rb.rotation = hand.transform.rotation;
+                }
             }
         }
 
@@ -424,7 +431,68 @@ namespace WebXR.FusionBridge
 
                     hand.transform.localPosition = position;
                     hand.transform.localRotation = rotation;
+
+                    var rb = hand.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.position = hand.transform.position;
+                        rb.rotation = hand.transform.rotation;
+                    }
                 }
+            }
+        }
+
+        private void ExecuteUIGrabClick(Collider hitCollider)
+        {
+            if (hitCollider == null) return;
+
+            Debug.Log($"[WebXRFusionBridge] ExecuteUIGrabClick on {hitCollider.gameObject.name}");
+
+            // 1. Check for TouchableTMPInputField (Fusion Addons)
+            var touchableInputField = hitCollider.GetComponentInParent<Fusion.Addons.VirtualKeyboard.Touch.TouchableTMPInputField>();
+            if (touchableInputField != null)
+            {
+                Debug.Log("[WebXRFusionBridge] Found TouchableTMPInputField, invoking touch.");
+                touchableInputField.SendMessage("OnTouch", SendMessageOptions.DontRequireReceiver);
+                return;
+            }
+
+            // 2. Check for VRUIP InputController
+            var vruipInput = hitCollider.GetComponentInParent<VRUIP.InputController>();
+            if (vruipInput != null)
+            {
+                Debug.Log("[WebXRFusionBridge] Found VRUIP InputController, selecting.");
+                vruipInput.SendMessage("OnInputSelected", SendMessageOptions.DontRequireReceiver);
+                return;
+            }
+
+            // 3. Check for standard TextMeshPro InputField
+            var tmpInput = hitCollider.GetComponentInParent<TMPro.TMP_InputField>();
+            if (tmpInput != null)
+            {
+                Debug.Log("[WebXRFusionBridge] Found standard TMP_InputField, activating.");
+                tmpInput.Select();
+                tmpInput.ActivateInputField();
+                return;
+            }
+
+            // 4. Check for VRUIP ButtonController
+            var vruipButton = hitCollider.GetComponentInParent<VRUIP.ButtonController>();
+            if (vruipButton != null)
+            {
+                Debug.Log("[WebXRFusionBridge] Found VRUIP ButtonController, clicking.");
+                var btn = vruipButton.GetComponentInChildren<UnityEngine.UI.Button>();
+                if (btn != null) btn.onClick.Invoke();
+                return;
+            }
+
+            // 5. Check for standard UI Button
+            var uiButton = hitCollider.GetComponentInParent<UnityEngine.UI.Button>();
+            if (uiButton != null)
+            {
+                Debug.Log("[WebXRFusionBridge] Found standard Button, clicking.");
+                uiButton.onClick.Invoke();
+                return;
             }
         }
 
@@ -448,7 +516,11 @@ namespace WebXR.FusionBridge
                     bool wasPressed = LeftController.trigger > 0.5f && prevLeftTriggerVal <= 0.5f;
                     bool isPressed = LeftController.trigger > 0.5f;
 
-                    if (wasPressed) toucher.ExecuteTouch();
+                    if (wasPressed)
+                    {
+                        toucher.ExecuteTouch();
+                        ExecuteUIGrabClick(toucher.GetLatestHitCollider());
+                    }
                     if (isPressed) toucher.UpdateSlider(beamer.lastHit);
                     else toucher.ReleaseSlider();
                 }
@@ -469,7 +541,11 @@ namespace WebXR.FusionBridge
                     bool wasPressed = RightController.trigger > 0.5f && prevRightTriggerVal <= 0.5f;
                     bool isPressed = RightController.trigger > 0.5f;
 
-                    if (wasPressed) toucher.ExecuteTouch();
+                    if (wasPressed)
+                    {
+                        toucher.ExecuteTouch();
+                        ExecuteUIGrabClick(toucher.GetLatestHitCollider());
+                    }
                     if (isPressed) toucher.UpdateSlider(beamer.lastHit);
                     else toucher.ReleaseSlider();
                 }
@@ -478,6 +554,9 @@ namespace WebXR.FusionBridge
             // Store previous states at the end of the frame
             prevLeftTriggerVal = LeftController.trigger;
             prevRightTriggerVal = RightController.trigger;
+
+            // Force Unity physics to sync hand transforms and trigger OnCollision/OnTrigger events in WebGL VR
+            Physics.SyncTransforms();
         }
 
         private static void SubscribeStaticEvent(Type type, string eventName, Action<object[]> handler, out object delegateInstance)

@@ -228,7 +228,7 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
             // Always ensure the input field is activated and selected on touch/click!
             StartCoroutine(DelayedActivate());
 
-            if (!hasFocus)
+            if (!hasFocus || (KeyboardFocusManager.Instance && KeyboardFocusManager.Instance.CurrentKeyboardFocus != (ITextFocusable)this))
             {
                 hasFocus = true;
                 OnFocusChanged();

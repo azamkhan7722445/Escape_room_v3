@@ -150,6 +150,7 @@ namespace Fusion.Addons.Touch
 
         // WebXR Helper Methods for direct invocation from WebXRFusionBridge
         public bool HasHitTarget => latestHitCollider != null;
+        public Collider GetLatestHitCollider() => latestHitCollider;
 
         public void ExecuteTouch()
         {
