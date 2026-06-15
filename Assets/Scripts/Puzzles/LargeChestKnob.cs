@@ -18,6 +18,10 @@ public class LargeChestKnob : NetworkBehaviour
     public float hapticDuration = 0.05f;
     public bool snapHandToKnob = true;
     public bool snapToCenter = true;
+    
+    [Header("UI Click Cooldown")]
+    public float buttonCooldown = 0.25f;
+    private float _lastRotateTime = -999f;
 
     [Header("Networking")]
     [Networked, OnChangedRender(nameof(OnDigitChanged))]
@@ -271,6 +275,9 @@ public class LargeChestKnob : NetworkBehaviour
 
     public void RotateRight()
     {
+        if (Time.time - _lastRotateTime < buttonCooldown) return;
+        _lastRotateTime = Time.time;
+
         if (Object != null && Object.HasStateAuthority)
             CurrentDigit = (CurrentDigit + 1) % maxDigits;
         else
@@ -279,6 +286,9 @@ public class LargeChestKnob : NetworkBehaviour
 
     public void RotateLeft()
     {
+        if (Time.time - _lastRotateTime < buttonCooldown) return;
+        _lastRotateTime = Time.time;
+
         if (Object != null && Object.HasStateAuthority)
             CurrentDigit = (CurrentDigit - 1 + maxDigits) % maxDigits;
         else
@@ -288,6 +298,9 @@ public class LargeChestKnob : NetworkBehaviour
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     private void RPC_RequestRotation(int direction)
     {
+        if (Time.time - _lastRotateTime < buttonCooldown) return;
+        _lastRotateTime = Time.time;
+
         CurrentDigit = (CurrentDigit + direction + maxDigits) % maxDigits;
     }
 }

@@ -2869,7 +2869,7 @@ PrefabInstance:
       objectReference: {fileID: 540055587}
     - target: {fileID: 1376775806180148534, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_VersionIndex
-      value: 1209
+      value: 1218
       objectReference: {fileID: 0}
     - target: {fileID: 5084065837497691750, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_Camera
@@ -4358,6 +4358,10 @@ PrefabInstance:
     - target: {fileID: 3606232458285173490, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
       propertyPath: m_Name
       value: Video Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3606232458285173490, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4547428684099945203, guid: 260a9b350dfeaef45b11995c6081cb88, type: 3}
       propertyPath: m_LocalScale.x
@@ -34067,30 +34071,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1003682592974375483, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1376775806180148534, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2092408301}
     - target: {fileID: 1376775806180148534, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_VersionIndex
-      value: 1209
+      value: 1218
       objectReference: {fileID: 0}
     - target: {fileID: 5084065837497691750, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2011701711}
-    - target: {fileID: 6411136522207465839, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
-      propertyPath: m_Url
-      value: "https://azamkhan7722445.github.io/Video/\u0394\u03B7\u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03AF\u03B1_\u0392\u03AF\u03BD\u03C4\u03B5\u03BF_\u03B3\u03B9\u03B1_\u03C4\u03BF_\u03A0.mp4"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6411136522207465839, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
-      propertyPath: m_DataSource
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6428283977459871572, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_Name
       value: video
@@ -34139,35 +34131,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2092408301}
-    - target: {fileID: 8986195650921479715, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1174590657479586605}
-    - target: {fileID: 8986195650921479715, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayVideo
-      objectReference: {fileID: 0}
-    - target: {fileID: 8986195650921479715, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: VideoPlaySimple, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8986195650921479715, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6428283977459871572, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1174590657479586605}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
---- !u!1 &1174590657479586602 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6428283977459871572, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
-  m_PrefabInstance: {fileID: 1174590657479586601}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1174590657479586603 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 181479227274165307, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
@@ -34179,29 +34147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
---- !u!328 &1174590657479586604 stripped
-VideoPlayer:
-  m_CorrespondingSourceObject: {fileID: 6411136522207465839, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
-  m_PrefabInstance: {fileID: 1174590657479586601}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1174590657479586605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174590657479586602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f5e56fd57124bb4abd3a3235a49f2f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 1174590657479586604}
-  buttonIcon: {fileID: 364025388}
-  playSprite: {fileID: 21300000, guid: f80f2d1e32f45c64782ec49e4e75d14f, type: 3}
-  pauseSprite: {fileID: 21300000, guid: 651b89cb72bcb2d4cb6187b88e4edf6e, type: 3}
-  playAtStart: 0
-  videoURL: "https://azamkhan7722445.github.io/Video/\u0394\u03B7\u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03AF\u03B1_\u0392\u03AF\u03BD\u03C4\u03B5\u03BF_\u03B3\u03B9\u03B1_\u03C4\u03BF_\u03A0.mp4"
 --- !u!23 &1197199739682783270
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35621,6 +35566,7 @@ MonoBehaviour:
   hapticDuration: 0.05
   snapHandToKnob: 1
   snapToCenter: 1
+  buttonCooldown: 0.25
   _CurrentDigit: 0
   rotateSound: {fileID: 8300000, guid: 91fd49085530b9540ad4a8ca9ee572e0, type: 3}
 --- !u!65 &4190300148913229880
@@ -36112,6 +36058,7 @@ MonoBehaviour:
   hapticDuration: 0.05
   snapHandToKnob: 1
   snapToCenter: 1
+  buttonCooldown: 0.25
   _CurrentDigit: 0
   rotateSound: {fileID: 8300000, guid: 91fd49085530b9540ad4a8ca9ee572e0, type: 3}
 --- !u!65 &5021540269558030428
@@ -36855,8 +36802,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0026645465, y: 0.0026645467, z: 0.00034693413}
-  m_Center: {x: -0.000000007507671, y: -4.0320822e-10, z: -0.00006300171}
+  m_Size: {x: 0.0027195858, y: 0.0027167485, z: 0.00070282345}
+  m_Center: {x: 0.0000012429055, y: -0.00000003024972, z: 0.000114927825}
 --- !u!114 &5666768856803238367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37183,8 +37130,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.002719585, y: 0.0027167485, z: 0.0003469342}
-  m_Center: {x: -0.0000012315567, y: 0.000000029340855, z: -0.00006300165}
+  m_Size: {x: 0.0027195858, y: 0.0027167485, z: 0.00070282345}
+  m_Center: {x: 0.0000012429055, y: -0.00000003024972, z: 0.000114927825}
 --- !u!114 &6120453604640994213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37534,6 +37481,7 @@ MonoBehaviour:
   hapticDuration: 0.05
   snapHandToKnob: 1
   snapToCenter: 1
+  buttonCooldown: 0.25
   _CurrentDigit: 0
   rotateSound: {fileID: 8300000, guid: 91fd49085530b9540ad4a8ca9ee572e0, type: 3}
 --- !u!65 &6609136499620641888
@@ -38184,8 +38132,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0026645465, y: 0.0026645467, z: 0.00034693413}
-  m_Center: {x: 0.000000006986039, y: -0.000000030787607, z: -0.00006300909}
+  m_Size: {x: 0.0027195858, y: 0.0027167485, z: 0.00070282345}
+  m_Center: {x: 0.0000012429055, y: -0.00000003024972, z: 0.000114927825}
 --- !u!114 &7397016291146405901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39361,6 +39309,7 @@ MonoBehaviour:
   hapticDuration: 0.05
   snapHandToKnob: 1
   snapToCenter: 1
+  buttonCooldown: 0.25
   _CurrentDigit: 0
   rotateSound: {fileID: 8300000, guid: 91fd49085530b9540ad4a8ca9ee572e0, type: 3}
 --- !u!65 &8495271409467889186
@@ -39854,6 +39803,7 @@ MonoBehaviour:
   hapticDuration: 0.05
   snapHandToKnob: 1
   snapToCenter: 1
+  buttonCooldown: 0.25
   _CurrentDigit: 0
   rotateSound: {fileID: 8300000, guid: 91fd49085530b9540ad4a8ca9ee572e0, type: 3}
 --- !u!65 &8748711923576633134
@@ -40141,6 +40091,7 @@ MonoBehaviour:
   hapticDuration: 0.05
   snapHandToKnob: 1
   snapToCenter: 1
+  buttonCooldown: 0.25
   _CurrentDigit: 0
   rotateSound: {fileID: 8300000, guid: 91fd49085530b9540ad4a8ca9ee572e0, type: 3}
 --- !u!65 &9132318315920936950
@@ -40498,8 +40449,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0027195853, y: 0.0027167485, z: 0.0003469342}
-  m_Center: {x: 0.0000012429094, y: -0.00000003026369, z: -0.00006301655}
+  m_Size: {x: 0.0027195858, y: 0.0027167485, z: 0.00070282345}
+  m_Center: {x: 0.0000012429055, y: -0.00000003024972, z: 0.000114927825}
 --- !u!114 &9193324755510698817
 MonoBehaviour:
   m_ObjectHideFlags: 0

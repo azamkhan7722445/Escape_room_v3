@@ -389,13 +389,6 @@ namespace WebXR.FusionBridge
             {
                 hand.transform.localPosition = (Vector3)fd_gripPosition.GetValue(data);
                 hand.transform.localRotation = (Quaternion)fd_gripRotation.GetValue(data);
-
-                var rb = hand.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    rb.position = hand.transform.position;
-                    rb.rotation = hand.transform.rotation;
-                }
             }
         }
 
@@ -431,13 +424,6 @@ namespace WebXR.FusionBridge
 
                     hand.transform.localPosition = position;
                     hand.transform.localRotation = rotation;
-
-                    var rb = hand.GetComponent<Rigidbody>();
-                    if (rb != null)
-                    {
-                        rb.position = hand.transform.position;
-                        rb.rotation = hand.transform.rotation;
-                    }
                 }
             }
         }
@@ -448,12 +434,53 @@ namespace WebXR.FusionBridge
 
             Debug.Log($"[WebXRFusionBridge] ExecuteUIGrabClick on {hitCollider.gameObject.name}");
 
-            // 1. Check for TouchableTMPInputField (Fusion Addons)
-            var touchableInputField = hitCollider.GetComponentInParent<Fusion.Addons.VirtualKeyboard.Touch.TouchableTMPInputField>();
-            if (touchableInputField != null)
+            // Find parent Button or InputField
+            var uiButton = hitCollider.GetComponentInParent<UnityEngine.UI.Button>();
+            var tmpInput = hitCollider.GetComponentInParent<TMPro.TMP_InputField>();
+
+            // Check if there is any VR touchable extension in children or parents of the collider
+            bool hasVRTouchable = false;
+
+            if (uiButton != null)
             {
-                Debug.Log("[WebXRFusionBridge] Found TouchableTMPInputField, invoking touch.");
-                touchableInputField.SendMessage("OnTouch", SendMessageOptions.DontRequireReceiver);
+                if (uiButton.GetComponentInChildren<Fusion.Addons.Touch.UI.UITouchButton>(true) != null ||
+                    uiButton.GetComponentInChildren<Fusion.Addons.Touch.Touchable>(true) != null)
+                {
+                    hasVRTouchable = true;
+                }
+            }
+
+            if (tmpInput != null)
+            {
+                if (tmpInput.GetComponentInChildren<Fusion.Addons.VirtualKeyboard.Touch.TouchableTMPInputField>(true) != null ||
+                    tmpInput.GetComponentInChildren<Fusion.Addons.Touch.Touchable>(true) != null)
+                {
+                    hasVRTouchable = true;
+                }
+            }
+
+            // Also check directly on the hitCollider itself (including children and parents)
+            if (hitCollider.GetComponentInChildren<Fusion.Addons.Touch.UI.UITouchButton>(true) != null ||
+                hitCollider.GetComponentInParent<Fusion.Addons.Touch.UI.UITouchButton>() != null ||
+                hitCollider.GetComponentInChildren<Fusion.Addons.Touch.Touchable>(true) != null ||
+                hitCollider.GetComponentInParent<Fusion.Addons.Touch.Touchable>() != null ||
+                hitCollider.GetComponentInChildren<Fusion.Addons.VirtualKeyboard.Touch.TouchableTMPInputField>(true) != null ||
+                hitCollider.GetComponentInParent<Fusion.Addons.VirtualKeyboard.Touch.TouchableTMPInputField>() != null)
+            {
+                hasVRTouchable = true;
+            }
+
+            if (hasVRTouchable)
+            {
+                Debug.Log("[WebXRFusionBridge] Collider has VR touchable extension, skipping manual click to prevent double trigger.");
+                return;
+            }
+
+            // 1. Check for standard UI Button (without VR touchable)
+            if (uiButton != null)
+            {
+                Debug.Log("[WebXRFusionBridge] Found standard Button (no VR extension), clicking.");
+                uiButton.onClick.Invoke();
                 return;
             }
 
@@ -466,11 +493,10 @@ namespace WebXR.FusionBridge
                 return;
             }
 
-            // 3. Check for standard TextMeshPro InputField
-            var tmpInput = hitCollider.GetComponentInParent<TMPro.TMP_InputField>();
+            // 3. Check for standard TextMeshPro InputField (without VR extension)
             if (tmpInput != null)
             {
-                Debug.Log("[WebXRFusionBridge] Found standard TMP_InputField, activating.");
+                Debug.Log("[WebXRFusionBridge] Found standard TMP_InputField (no VR extension), activating.");
                 tmpInput.Select();
                 tmpInput.ActivateInputField();
                 return;
@@ -483,15 +509,6 @@ namespace WebXR.FusionBridge
                 Debug.Log("[WebXRFusionBridge] Found VRUIP ButtonController, clicking.");
                 var btn = vruipButton.GetComponentInChildren<UnityEngine.UI.Button>();
                 if (btn != null) btn.onClick.Invoke();
-                return;
-            }
-
-            // 5. Check for standard UI Button
-            var uiButton = hitCollider.GetComponentInParent<UnityEngine.UI.Button>();
-            if (uiButton != null)
-            {
-                Debug.Log("[WebXRFusionBridge] Found standard Button, clicking.");
-                uiButton.onClick.Invoke();
                 return;
             }
         }
@@ -518,7 +535,6 @@ namespace WebXR.FusionBridge
 
                     if (wasPressed)
                     {
-                        toucher.ExecuteTouch();
                         ExecuteUIGrabClick(toucher.GetLatestHitCollider());
                     }
                     if (isPressed) toucher.UpdateSlider(beamer.lastHit);
@@ -543,7 +559,6 @@ namespace WebXR.FusionBridge
 
                     if (wasPressed)
                     {
-                        toucher.ExecuteTouch();
                         ExecuteUIGrabClick(toucher.GetLatestHitCollider());
                     }
                     if (isPressed) toucher.UpdateSlider(beamer.lastHit);
