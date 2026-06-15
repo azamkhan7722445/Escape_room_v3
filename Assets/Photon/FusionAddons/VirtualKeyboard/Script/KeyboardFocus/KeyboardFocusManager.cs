@@ -45,9 +45,9 @@ namespace Fusion.Addons.VirtualKeyboard
 
         protected ITextFocusable _currentKeyboardFocus = null;
         public ITextFocusable CurrentKeyboardFocus => _currentKeyboardFocus;
-        public virtual bool KeyboardRequired => rigInfo.localHardwareRigKind == RigInfo.RigKind.VR;
-        public virtual bool IsInDesktopMode => rigInfo.localHardwareRigKind != RigInfo.RigKind.VR;
-        public virtual bool AllowDefaultFocus => allowDefaultFocusOnDesktopContext || rigInfo.localHardwareRigKind == RigInfo.RigKind.VR;
+        public virtual bool KeyboardRequired => rigInfo.localHardwareRigKind == RigInfo.RigKind.VR || WebXR.FusionBridge.WebXRFusionBridge.Active;
+        public virtual bool IsInDesktopMode => rigInfo.localHardwareRigKind != RigInfo.RigKind.VR && !WebXR.FusionBridge.WebXRFusionBridge.Active;
+        public virtual bool AllowDefaultFocus => allowDefaultFocusOnDesktopContext || rigInfo.localHardwareRigKind == RigInfo.RigKind.VR || WebXR.FusionBridge.WebXRFusionBridge.Active;
         public virtual bool IsAvailableForDefaultFocus => AllowDefaultFocus && CurrentKeyboardFocus == null;
 
         DesktopController disabledDesktopController = null;

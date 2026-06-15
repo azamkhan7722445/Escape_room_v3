@@ -41,7 +41,7 @@ public class SetUsername : MonoBehaviour
             if (rigInfo == null) rigInfo = RigInfo.FindRigInfo(allowSceneSearch: true);
             if (rigInfo == null)
                 Debug.LogError("RigInfo not found");
-            return rigInfo.localHardwareRigKind == RigInfo.RigKind.VR;
+            return rigInfo.localHardwareRigKind == RigInfo.RigKind.VR || WebXR.FusionBridge.WebXRFusionBridge.Active;
         }
     }
 

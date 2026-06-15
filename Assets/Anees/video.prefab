@@ -241,13 +241,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1003682592974375483}
-        m_TargetAssemblyTypeName: EscapeRoom.Video.VideoController, Assembly-CSharp
-        m_MethodName: TogglePlayPause
+      - m_Target: {fileID: 7542154964491622200}
+        m_TargetAssemblyTypeName: VideoPlaySimple, Assembly-CSharp
+        m_MethodName: PlayVideo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 6411136522207465839}
   - component: {fileID: 5147039379205596554}
   - component: {fileID: 1003682592974375483}
+  - component: {fileID: 7542154964491622200}
   m_Layer: 0
   m_Name: video
   m_TagString: Untagged
@@ -1591,7 +1592,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1206
+  m_VersionIndex: 1215
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1622,7 +1623,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
@@ -1630,7 +1631,7 @@ VideoPlayer:
   - {fileID: 5147039379205596554}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: "https://azamkhan7722445.github.io/Video/\u0394\u03B7\u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03AF\u03B1_\u0392\u03AF\u03BD\u03C4\u03B5\u03BF_\u03B3\u03B9\u03B1_\u03C4\u03BF_\u03A0.mp4"
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -1744,7 +1745,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6428283977459871572}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76b632736295af84caa65f47649e530e, type: 3}
   m_Name: 
@@ -1755,6 +1756,24 @@ MonoBehaviour:
   pauseIcon: {fileID: 21300000, guid: 52c86af86b8d43c47927d7234d3372da, type: 3}
   controlsContainer: {fileID: 1846317248224693489}
   hideDelay: 3
+--- !u!114 &7542154964491622200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6428283977459871572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5e56fd57124bb4abd3a3235a49f2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 6411136522207465839}
+  buttonIcon: {fileID: 181479227274165307}
+  playSprite: {fileID: 21300000, guid: f80f2d1e32f45c64782ec49e4e75d14f, type: 3}
+  pauseSprite: {fileID: 21300000, guid: 651b89cb72bcb2d4cb6187b88e4edf6e, type: 3}
+  playAtStart: 0
+  videoURL: "https://azamkhan7722445.github.io/Video/\u0394\u03B7\u03BC\u03B9\u03BF\u03C5\u03C1\u03B3\u03AF\u03B1_\u0392\u03AF\u03BD\u03C4\u03B5\u03BF_\u03B3\u03B9\u03B1_\u03C4\u03BF_\u03A0.mp4"
 --- !u!1001 &9039787248714946220
 PrefabInstance:
   m_ObjectHideFlags: 0
