@@ -2853,15 +2853,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 330672328028849736, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 330672328028849736, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -274
+      value: 172
       objectReference: {fileID: 0}
     - target: {fileID: 330672328028849736, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5.3
+      value: 5.4
       objectReference: {fileID: 0}
     - target: {fileID: 1376775806180148534, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_Mesh
