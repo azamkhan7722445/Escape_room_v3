@@ -50,6 +50,11 @@ namespace Fusion.Addons.VirtualKeyboard
         public virtual bool AllowDefaultFocus => allowDefaultFocusOnDesktopContext || rigInfo.localHardwareRigKind == RigInfo.RigKind.VR || WebXR.FusionBridge.WebXRFusionBridge.Active;
         public virtual bool IsAvailableForDefaultFocus => AllowDefaultFocus && CurrentKeyboardFocus == null;
 
+        public bool IsKeyboardActive()
+        {
+            return keyboardManager != null && keyboardManager.IsKeyboardActive();
+        }
+
         DesktopController disabledDesktopController = null;
 
         private void Awake()
@@ -107,10 +112,23 @@ namespace Fusion.Addons.VirtualKeyboard
         // OnFocusChange is called by objects requiring the keyboard focus
         public void OnFocusChange(ITextFocusable focusable)
         {
+            var focusableGo = focusable as MonoBehaviour;
+            string goName = focusableGo != null ? focusableGo.gameObject.name : "Unknown";
+            Debug.Log($"[KeyboardFocusManager] OnFocusChange called for '{goName}'. HasFocus: {focusable.HasFocus}, CurrentFocus: {(CurrentKeyboardFocus != null ? (CurrentKeyboardFocus as MonoBehaviour).gameObject.name : "None")}, KeyboardRequired: {KeyboardRequired}, KeyboardActive: {IsKeyboardActive()}");
+
             if(focusable.HasFocus)
             {
                 // exit if the focusable is the same
-                if (focusable == CurrentKeyboardFocus) return;
+                if (focusable == CurrentKeyboardFocus)
+                {
+                    if (KeyboardRequired && !IsKeyboardActive())
+                    {
+                        Debug.Log("[KeyboardFocusManager] Same focusable touched, but keyboard is closed. Forcing open!");
+                        OnExistingCurrentFocus();
+                        OnCurrentFocusChange();
+                    }
+                    return;
+                }
 
                 // backup CurrentKeyboardFocus in previousFocus and update the CurrentKeyboardFocus
                 ITextFocusable previousFocus = null;
@@ -168,14 +186,23 @@ namespace Fusion.Addons.VirtualKeyboard
         // OnExistingCurrentFocus ask the keyboardManager to open the keyboard
         void OnExistingCurrentFocus()
         {
-            //Debug.LogError("OnExistingCurrentFocus");
+            Debug.Log($"[KeyboardFocusManager] OnExistingCurrentFocus called. KeyboardRequired: {KeyboardRequired}");
             DisableDesktopController();
 
             // Do nothing if the player is not in VR
-            if (!KeyboardRequired) return;
+            if (!KeyboardRequired)
+            {
+                Debug.Log("[KeyboardFocusManager] OnExistingCurrentFocus returned because KeyboardRequired is false.");
+                return;
+            }
 
             // else, open the keyboard
-            if (keyboardManager.IsKeyboardActive()) return;
+            if (keyboardManager.IsKeyboardActive())
+            {
+                Debug.Log("[KeyboardFocusManager] Keyboard is already active.");
+                return;
+            }
+            Debug.Log("[KeyboardFocusManager] Opening virtual keyboard!");
             keyboardManager.OpenKeyboard();
         }
 

@@ -2880,6 +2880,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8400000, guid: 3c9d34324b8939c4989159343cfd474c, type: 2}
     - target: {fileID: 6411136522207465839, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      propertyPath: m_Url
+      value: https://malikaneeskhan12-lab.github.io/Astronomy%20Guide%20Video%20(1)%20(1)%20(1).mp4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411136522207465839, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_VideoClip
       value: 
       objectReference: {fileID: 32900000, guid: 69d9fb00a5cd8d448a6e1ede508eb8ca, type: 3}
@@ -2890,6 +2894,10 @@ PrefabInstance:
     - target: {fileID: 6428283977459871572, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_Name
       value: video (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542154964491622200, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      propertyPath: videoURL
+      value: https://malikaneeskhan12-lab.github.io/Astronomy%20Guide%20Video%20(1)%20(1)%20(1).mp4
       objectReference: {fileID: 0}
     - target: {fileID: 8660446819063917355, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34083,9 +34091,17 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2011701711}
+    - target: {fileID: 6411136522207465839, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      propertyPath: m_Url
+      value: https://malikaneeskhan12-lab.github.io/Escape%20Room%20Intro%20Video%20for%20World%20(Compressed)%20(1)%20(2)%20(1).mp4
+      objectReference: {fileID: 0}
     - target: {fileID: 6428283977459871572, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_Name
       value: video
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542154964491622200, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
+      propertyPath: videoURL
+      value: https://malikaneeskhan12-lab.github.io/Escape%20Room%20Intro%20Video%20for%20World%20(Compressed)%20(1)%20(2)%20(1).mp4
       objectReference: {fileID: 0}
     - target: {fileID: 8660446819063917355, guid: c8a7bce8fe240094ca7ef70e86162e4a, type: 3}
       propertyPath: m_LocalPosition.x

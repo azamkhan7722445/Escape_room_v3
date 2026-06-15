@@ -225,13 +225,24 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
 
             lastTMPSelect = Time.time;
 
+            Debug.Log($"[TouchableTMPInputField] OnTouch triggered on '{gameObject.name}'. Current hasFocus: {hasFocus}");
+
             // Always ensure the input field is activated and selected on touch/click!
             StartCoroutine(DelayedActivate());
 
-            if (!hasFocus || (KeyboardFocusManager.Instance && KeyboardFocusManager.Instance.CurrentKeyboardFocus != (ITextFocusable)this))
+            // FORCE focus change if keyboard is not active or if we don't have focus or focusable is different!
+            bool keyboardInactive = KeyboardFocusManager.Instance != null && !KeyboardFocusManager.Instance.IsKeyboardActive();
+            bool otherFocus = KeyboardFocusManager.Instance != null && KeyboardFocusManager.Instance.CurrentKeyboardFocus != (ITextFocusable)this;
+
+            if (!hasFocus || otherFocus || keyboardInactive)
             {
+                Debug.Log($"[TouchableTMPInputField] Requesting focus change. !hasFocus: {!hasFocus}, otherFocus: {otherFocus}, keyboardInactive: {keyboardInactive}");
                 hasFocus = true;
                 OnFocusChanged();
+            }
+            else
+            {
+                Debug.Log("[TouchableTMPInputField] OnTouch ignored because hasFocus is true, focus matches, and keyboard is already active.");
             }
         }
 
