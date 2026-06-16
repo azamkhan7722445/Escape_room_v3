@@ -45,9 +45,9 @@ namespace Fusion.Addons.VirtualKeyboard
 
         protected ITextFocusable _currentKeyboardFocus = null;
         public ITextFocusable CurrentKeyboardFocus => _currentKeyboardFocus;
-        public virtual bool KeyboardRequired => rigInfo.localHardwareRigKind == RigInfo.RigKind.VR || WebXR.FusionBridge.WebXRFusionBridge.Active;
-        public virtual bool IsInDesktopMode => rigInfo.localHardwareRigKind != RigInfo.RigKind.VR && !WebXR.FusionBridge.WebXRFusionBridge.Active;
-        public virtual bool AllowDefaultFocus => allowDefaultFocusOnDesktopContext || rigInfo.localHardwareRigKind == RigInfo.RigKind.VR || WebXR.FusionBridge.WebXRFusionBridge.Active;
+        public virtual bool KeyboardRequired => rigInfo != null && (rigInfo.localHardwareRigKind == RigInfo.RigKind.VR || WebXR.FusionBridge.WebXRFusionBridge.Active);
+        public virtual bool IsInDesktopMode => rigInfo == null || (rigInfo.localHardwareRigKind != RigInfo.RigKind.VR && !WebXR.FusionBridge.WebXRFusionBridge.Active);
+        public virtual bool AllowDefaultFocus => allowDefaultFocusOnDesktopContext || rigInfo == null || rigInfo.localHardwareRigKind == RigInfo.RigKind.VR || WebXR.FusionBridge.WebXRFusionBridge.Active;
         public virtual bool IsAvailableForDefaultFocus => AllowDefaultFocus && CurrentKeyboardFocus == null;
 
         public bool IsKeyboardActive()
@@ -224,12 +224,24 @@ namespace Fusion.Addons.VirtualKeyboard
             }
             else
             {
-                // Update the keyboard position according to the hardware rig 
-                var headset = rigInfo.localHardwareRig.headset;
-                var forward = headset.transform.forward;
-                keyboardManager.grabbableKeyboard.transform.position = headset.transform.position + forward * keyboardSpawnDistance + Vector3.up * keyboardSpawnVerticalOffset;
-                var rot = Quaternion.LookRotation(keyboardManager.grabbableKeyboard.transform.position - headset.transform.position);
-                keyboardManager.grabbableKeyboard.transform.rotation = rot * computedKeyboardRotationOffset;
+                // Update the keyboard position according to the hardware rig or WebXR camera
+                Transform headsetTransform = null;
+                if (WebXR.FusionBridge.WebXRFusionBridge.Active && Camera.main != null)
+                {
+                    headsetTransform = Camera.main.transform;
+                }
+                else if (rigInfo != null && rigInfo.localHardwareRig != null && rigInfo.localHardwareRig.headset != null)
+                {
+                    headsetTransform = rigInfo.localHardwareRig.headset.transform;
+                }
+
+                if (headsetTransform != null)
+                {
+                    var forward = headsetTransform.forward;
+                    keyboardManager.grabbableKeyboard.transform.position = headsetTransform.position + forward * keyboardSpawnDistance + Vector3.up * keyboardSpawnVerticalOffset;
+                    var rot = Quaternion.LookRotation(keyboardManager.grabbableKeyboard.transform.position - headsetTransform.position);
+                    keyboardManager.grabbableKeyboard.transform.rotation = rot * computedKeyboardRotationOffset;
+                }
             }
         }
 

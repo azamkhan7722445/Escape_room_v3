@@ -2442,6 +2442,10 @@ PrefabInstance:
       propertyPath: inputfield
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8472282788715847707, guid: e239d9112f09a94469deb4400a85708d, type: 3}
+      propertyPath: preferredKeyboardSpawnPosition
+      value: 
+      objectReference: {fileID: 6155361042652346842}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

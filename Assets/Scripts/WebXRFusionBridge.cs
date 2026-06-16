@@ -61,11 +61,6 @@ namespace WebXR.FusionBridge
         private static FieldInfo fd_buttonATouched;
         private static FieldInfo fd_buttonBTouched;
         private static FieldInfo fd_triggerTouched;
-        private static FieldInfo fd_thumbstick;
-        private static FieldInfo fd_thumbstickX;
-        private static FieldInfo fd_thumbstickY;
-        private static FieldInfo fd_buttonA;
-        private static FieldInfo fd_buttonB;
 
         private static Type handDataType;
         private static FieldInfo fd_handEnabled;
@@ -109,42 +104,24 @@ namespace WebXR.FusionBridge
 
         public static void SendHaptic(bool left, float amplitude, float durationSeconds)
         {
-            if (managerType == null || pr_Instance == null) return;
+            if (managerType == null) return;
             try
             {
                 var inst = pr_Instance.GetValue(null);
-                if (inst == null) return;
-
-                Type handType = managerType.Assembly.GetType("WebXR.WebXRControllerHand");
-                if (handType == null) handType = Type.GetType("WebXR.WebXRControllerHand, WebXR");
-                
-                if (handType == null)
+                if (inst != null)
                 {
-                    Debug.LogError("[WebXRFusionBridge] Could not find WebXRControllerHand type.");
-                    return;
+                    var handEnumType = Type.GetType("WebXR.WebXRControllerHand, WebXR");
+                    var hapticMethod = managerType.GetMethod("HapticPulse", new Type[] { handEnumType, typeof(float), typeof(float) });
+                    if (hapticMethod != null && handEnumType != null)
+                    {
+                        // WebXRControllerHand enum: LEFT = 1, RIGHT = 2
+                        // Swapped haptics fix: WebXR can have LEFT/RIGHT haptic channels swapped depending on browser/controller order.
+                        // We map LEFT(1) physically to the Left controller, and RIGHT(2) physically to the Right controller by swapping indices.
+                        int handVal = left ? 2 : 1;
+                        var handEnumVal = Enum.ToObject(handEnumType, handVal);
+                        hapticMethod.Invoke(inst, new object[] { handEnumVal, amplitude, durationSeconds * 1000f });
+                    }
                 }
-
-                int handVal = left ? 1 : 2;
-                float durMs = durationSeconds * 1000f;
-
-                // Try signatures
-                MethodInfo hapticMethod = managerType.GetMethod("HapticPulse", new Type[] { handType, typeof(float), typeof(float) });
-                if (hapticMethod != null)
-                {
-                    hapticMethod.Invoke(inst, new object[] { handVal, amplitude, durMs });
-                    Debug.Log($"[WebXRFusionBridge] Haptic Sent (float): {handVal}, {amplitude}, {durMs}");
-                    return;
-                }
-
-                hapticMethod = managerType.GetMethod("HapticPulse", new Type[] { handType, typeof(float), typeof(double) });
-                if (hapticMethod != null)
-                {
-                    hapticMethod.Invoke(inst, new object[] { handVal, amplitude, (double)durMs });
-                    Debug.Log($"[WebXRFusionBridge] Haptic Sent (double): {handVal}, {amplitude}, {durMs}");
-                    return;
-                }
-
-                Debug.LogError("[WebXRFusionBridge] HapticPulse method not found on WebXRManager.");
             }
             catch (Exception ex)
             {
@@ -169,7 +146,6 @@ namespace WebXR.FusionBridge
                 {
                     pr_Instance = managerType.GetProperty("Instance", BindingFlags.Public | BindingFlags.Static);
                     pr_XRState = managerType.GetProperty("XRState", BindingFlags.Public | BindingFlags.Instance);
-                    Debug.Log($"[WebXRFusionBridge] WebXRManager found. Instance Prop: {pr_Instance != null}, XRState Prop: {pr_XRState != null}");
                 }
 
                 controllerDataType = Type.GetType("WebXR.WebXRControllerData, WebXR");
@@ -185,11 +161,6 @@ namespace WebXR.FusionBridge
                     fd_buttonATouched = controllerDataType.GetField("buttonATouched");
                     fd_buttonBTouched = controllerDataType.GetField("buttonBTouched");
                     fd_triggerTouched = controllerDataType.GetField("triggerTouched");
-                    fd_thumbstick = controllerDataType.GetField("thumbstick");
-                    fd_thumbstickX = controllerDataType.GetField("thumbstickX");
-                    fd_thumbstickY = controllerDataType.GetField("thumbstickY");
-                    fd_buttonA = controllerDataType.GetField("buttonA");
-                    fd_buttonB = controllerDataType.GetField("buttonB");
                 }
 
                 handDataType = Type.GetType("WebXR.WebXRHandData, WebXR");
@@ -226,17 +197,10 @@ namespace WebXR.FusionBridge
                 var instanceVal = pr_Instance.GetValue(null);
                 if (instanceVal == null) return false;
                 var state = pr_XRState.GetValue(instanceVal);
-                if (state == null) return false;
-                
-                string stateStr = state.ToString().ToUpper();
-                bool isVR = stateStr == "VR" || stateStr == "VR_PRESENTING" || stateStr == "ENABLED" || stateStr.Contains("VR");
-                
-                Debug.Log($"[WebXRFusionBridge] Checking WebXR State: '{stateStr}' -> isVR: {isVR}");
-                return isVR;
+                return state != null && state.ToString() == "VR";
             }
-            catch (Exception ex)
+            catch
             {
-                Debug.LogError("[WebXRFusionBridge] IsWebXRActiveVR check failed: " + ex);
                 return false;
             }
         }
@@ -403,23 +367,23 @@ namespace WebXR.FusionBridge
 
             inputs.trigger = (float)fd_trigger.GetValue(data);
             inputs.squeeze = (float)fd_squeeze.GetValue(data);
-            
+
             bool thumbstickTouched = (bool)fd_thumbstickTouched.GetValue(data);
             bool buttonATouched = (bool)fd_buttonATouched.GetValue(data);
             bool buttonBTouched = (bool)fd_buttonBTouched.GetValue(data);
             inputs.thumbTouched = thumbstickTouched || buttonATouched || buttonBTouched;
-            
+
             inputs.triggerTouched = (bool)fd_triggerTouched.GetValue(data);
-            
+
             // WebXRControllerData has float thumbstick click value (buttonPressed ? 1 : 0)
-            float thumbstickVal = (float)fd_thumbstick.GetValue(data);
+            float thumbstickVal = (float)controllerDataType.GetField("thumbstick").GetValue(data);
             inputs.thumbstickClicked = thumbstickVal > 0.5f;
 
-            inputs.thumbstickX = (float)fd_thumbstickX.GetValue(data);
-            inputs.thumbstickY = (float)fd_thumbstickY.GetValue(data);
+            inputs.thumbstickX = (float)controllerDataType.GetField("thumbstickX").GetValue(data);
+            inputs.thumbstickY = (float)controllerDataType.GetField("thumbstickY").GetValue(data);
 
-            float aVal = (float)fd_buttonA.GetValue(data);
-            float bVal = (float)fd_buttonB.GetValue(data);
+            float aVal = (float)controllerDataType.GetField("buttonA").GetValue(data);
+            float bVal = (float)controllerDataType.GetField("buttonB").GetValue(data);
             inputs.buttonAPressed = aVal > 0.5f;
             inputs.buttonBPressed = bVal > 0.5f;
 
@@ -468,92 +432,6 @@ namespace WebXR.FusionBridge
             }
         }
 
-        private void ExecuteUIGrabClick(Collider hitCollider, BeamToucher toucher)
-        {
-            if (hitCollider == null) return;
-
-            Debug.Log($"[WebXRFusionBridge] ExecuteUIGrabClick on {hitCollider.gameObject.name}");
-
-            // Find parent Button or InputField
-            var uiButton = hitCollider.GetComponentInParent<UnityEngine.UI.Button>();
-            var tmpInput = hitCollider.GetComponentInParent<TMPro.TMP_InputField>();
-
-            // Check if there is any VR touchable extension in children or parents of the collider
-            bool hasVRTouchable = false;
-
-            if (uiButton != null)
-            {
-                if (uiButton.GetComponentInChildren<Fusion.Addons.Touch.UI.UITouchButton>(true) != null ||
-                    uiButton.GetComponentInChildren<Fusion.Addons.Touch.Touchable>(true) != null)
-                {
-                    hasVRTouchable = true;
-                }
-            }
-
-            if (tmpInput != null)
-            {
-                if (tmpInput.GetComponentInChildren<Fusion.Addons.VirtualKeyboard.Touch.TouchableTMPInputField>(true) != null ||
-                    tmpInput.GetComponentInChildren<Fusion.Addons.Touch.Touchable>(true) != null)
-                {
-                    hasVRTouchable = true;
-                }
-            }
-
-            // Also check directly on the hitCollider itself (including children and parents)
-            if (hitCollider.GetComponentInChildren<Fusion.Addons.Touch.UI.UITouchButton>(true) != null ||
-                hitCollider.GetComponentInParent<Fusion.Addons.Touch.UI.UITouchButton>() != null ||
-                hitCollider.GetComponentInChildren<Fusion.Addons.Touch.Touchable>(true) != null ||
-                hitCollider.GetComponentInParent<Fusion.Addons.Touch.Touchable>() != null ||
-                hitCollider.GetComponentInChildren<Fusion.Addons.VirtualKeyboard.Touch.TouchableTMPInputField>(true) != null ||
-                hitCollider.GetComponentInParent<Fusion.Addons.VirtualKeyboard.Touch.TouchableTMPInputField>() != null)
-            {
-                hasVRTouchable = true;
-            }
-
-            if (hasVRTouchable)
-            {
-                Debug.Log("[WebXRFusionBridge] Collider has VR touchable extension, executing touch via BeamToucher.");
-                if (toucher != null) toucher.ExecuteTouch();
-                return;
-            }
-
-            // 1. Check for standard UI Button (without VR touchable)
-            if (uiButton != null)
-            {
-                Debug.Log("[WebXRFusionBridge] Found standard Button (no VR extension), clicking.");
-                uiButton.onClick.Invoke();
-                return;
-            }
-
-            // 2. Check for VRUIP InputController
-            var vruipInput = hitCollider.GetComponentInParent<VRUIP.InputController>();
-            if (vruipInput != null)
-            {
-                Debug.Log("[WebXRFusionBridge] Found VRUIP InputController, selecting.");
-                vruipInput.SendMessage("OnInputSelected", SendMessageOptions.DontRequireReceiver);
-                return;
-            }
-
-            // 3. Check for standard TextMeshPro InputField (without VR extension)
-            if (tmpInput != null)
-            {
-                Debug.Log("[WebXRFusionBridge] Found standard TMP_InputField (no VR extension), activating.");
-                tmpInput.Select();
-                tmpInput.ActivateInputField();
-                return;
-            }
-
-            // 4. Check for VRUIP ButtonController
-            var vruipButton = hitCollider.GetComponentInParent<VRUIP.ButtonController>();
-            if (vruipButton != null)
-            {
-                Debug.Log("[WebXRFusionBridge] Found VRUIP ButtonController, clicking.");
-                var btn = vruipButton.GetComponentInChildren<UnityEngine.UI.Button>();
-                if (btn != null) btn.onClick.Invoke();
-                return;
-            }
-        }
-
         private void Update()
         {
             if (!webXRActive) return;
@@ -565,20 +443,17 @@ namespace WebXR.FusionBridge
                 if (beamer != null)
                 {
                     beamer.useRayActionInput = false;
-                    beamer.isRayEnabled = (LeftController.thumbstickY > 0.5f || LeftController.thumbstickClicked || LeftController.buttonAPressed || LeftController.buttonBPressed || LeftController.triggerTouched || LeftController.trigger > 0.05f);
+                    beamer.isRayEnabled = (LeftController.thumbstickY > 0.5f || LeftController.thumbstickClicked || LeftController.buttonAPressed || LeftController.buttonBPressed || LeftController.trigger > 0.1f || LeftController.squeeze > 0.1f);
                 }
 
                 var toucher = leftHand.GetComponent<BeamToucher>();
-                if (beamer != null && toucher != null)
+                if (beamer != null && toucher != null && toucher.HasHitTarget)
                 {
                     bool wasPressed = LeftController.trigger > 0.5f && prevLeftTriggerVal <= 0.5f;
                     bool isPressed = LeftController.trigger > 0.5f;
 
-                    if (wasPressed && toucher.HasHitTarget)
-                    {
-                        ExecuteUIGrabClick(toucher.GetLatestHitCollider(), toucher);
-                    }
-                    if (isPressed && toucher.HasHitTarget) toucher.UpdateSlider(beamer.lastHit);
+                    if (wasPressed) toucher.ExecuteTouch();
+                    if (isPressed) toucher.UpdateSlider(beamer.lastHit);
                     else toucher.ReleaseSlider();
                 }
             }
@@ -589,20 +464,17 @@ namespace WebXR.FusionBridge
                 if (beamer != null)
                 {
                     beamer.useRayActionInput = false;
-                    beamer.isRayEnabled = (RightController.thumbstickY > 0.5f || RightController.thumbstickClicked || RightController.buttonAPressed || RightController.buttonBPressed || RightController.triggerTouched || RightController.trigger > 0.05f);
+                    beamer.isRayEnabled = (RightController.thumbstickY > 0.5f || RightController.thumbstickClicked || RightController.buttonAPressed || RightController.buttonBPressed || RightController.trigger > 0.1f || RightController.squeeze > 0.1f);
                 }
 
                 var toucher = rightHand.GetComponent<BeamToucher>();
-                if (beamer != null && toucher != null)
+                if (beamer != null && toucher != null && toucher.HasHitTarget)
                 {
                     bool wasPressed = RightController.trigger > 0.5f && prevRightTriggerVal <= 0.5f;
                     bool isPressed = RightController.trigger > 0.5f;
 
-                    if (wasPressed && toucher.HasHitTarget)
-                    {
-                        ExecuteUIGrabClick(toucher.GetLatestHitCollider(), toucher);
-                    }
-                    if (isPressed && toucher.HasHitTarget) toucher.UpdateSlider(beamer.lastHit);
+                    if (wasPressed) toucher.ExecuteTouch();
+                    if (isPressed) toucher.UpdateSlider(beamer.lastHit);
                     else toucher.ReleaseSlider();
                 }
             }
@@ -610,9 +482,6 @@ namespace WebXR.FusionBridge
             // Store previous states at the end of the frame
             prevLeftTriggerVal = LeftController.trigger;
             prevRightTriggerVal = RightController.trigger;
-
-            // Force Unity physics to sync hand transforms and trigger OnCollision/OnTrigger events in WebGL VR
-            Physics.SyncTransforms();
         }
 
         private static void SubscribeStaticEvent(Type type, string eventName, Action<object[]> handler, out object delegateInstance)
