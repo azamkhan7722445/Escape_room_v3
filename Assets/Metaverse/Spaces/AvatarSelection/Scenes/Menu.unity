@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 979154990}
   - component: {fileID: 979154989}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Pc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1090,7 +1090,7 @@ GameObject:
   - component: {fileID: 1315864275}
   - component: {fileID: 1315864274}
   m_Layer: 5
-  m_Name: Button
+  m_Name: 'VR '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

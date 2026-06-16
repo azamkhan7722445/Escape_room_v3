@@ -234,15 +234,14 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
             bool keyboardInactive = KeyboardFocusManager.Instance != null && !KeyboardFocusManager.Instance.IsKeyboardActive();
             bool otherFocus = KeyboardFocusManager.Instance != null && KeyboardFocusManager.Instance.CurrentKeyboardFocus != (ITextFocusable)this;
 
-            if (!hasFocus || otherFocus || keyboardInactive)
+            if (!HasFocus || otherFocus || keyboardInactive)
             {
-                Debug.Log($"[TouchableTMPInputField] Requesting focus change. !hasFocus: {!hasFocus}, otherFocus: {otherFocus}, keyboardInactive: {keyboardInactive}");
-                hasFocus = true;
-                OnFocusChanged();
+                Debug.Log($"[TouchableTMPInputField] Requesting focus change. HasFocus: {HasFocus}, otherFocus: {otherFocus}, keyboardInactive: {keyboardInactive}");
+                HasFocus = true;
             }
             else
             {
-                Debug.Log("[TouchableTMPInputField] OnTouch ignored because hasFocus is true, focus matches, and keyboard is already active.");
+                Debug.Log("[TouchableTMPInputField] OnTouch ignored because HasFocus is true, focus matches, and keyboard is already active.");
             }
         }
 

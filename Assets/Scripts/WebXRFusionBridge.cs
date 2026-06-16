@@ -61,6 +61,11 @@ namespace WebXR.FusionBridge
         private static FieldInfo fd_buttonATouched;
         private static FieldInfo fd_buttonBTouched;
         private static FieldInfo fd_triggerTouched;
+        private static FieldInfo fd_thumbstick;
+        private static FieldInfo fd_thumbstickX;
+        private static FieldInfo fd_thumbstickY;
+        private static FieldInfo fd_buttonA;
+        private static FieldInfo fd_buttonB;
 
         private static Type handDataType;
         private static FieldInfo fd_handEnabled;
@@ -104,20 +109,42 @@ namespace WebXR.FusionBridge
 
         public static void SendHaptic(bool left, float amplitude, float durationSeconds)
         {
-            if (managerType == null) return;
+            if (managerType == null || pr_Instance == null) return;
             try
             {
                 var inst = pr_Instance.GetValue(null);
-                if (inst != null)
+                if (inst == null) return;
+
+                Type handType = managerType.Assembly.GetType("WebXR.WebXRControllerHand");
+                if (handType == null) handType = Type.GetType("WebXR.WebXRControllerHand, WebXR");
+                
+                if (handType == null)
                 {
-                    var hapticMethod = managerType.GetMethod("HapticPulse", new Type[] { Type.GetType("WebXR.WebXRControllerHand, WebXR"), typeof(float), typeof(float) });
-                    if (hapticMethod != null)
-                    {
-                        // WebXRControllerHand enum: LEFT = 1, RIGHT = 2
-                        int handVal = left ? 1 : 2;
-                        hapticMethod.Invoke(inst, new object[] { handVal, amplitude, durationSeconds * 1000f });
-                    }
+                    Debug.LogError("[WebXRFusionBridge] Could not find WebXRControllerHand type.");
+                    return;
                 }
+
+                int handVal = left ? 1 : 2;
+                float durMs = durationSeconds * 1000f;
+
+                // Try signatures
+                MethodInfo hapticMethod = managerType.GetMethod("HapticPulse", new Type[] { handType, typeof(float), typeof(float) });
+                if (hapticMethod != null)
+                {
+                    hapticMethod.Invoke(inst, new object[] { handVal, amplitude, durMs });
+                    Debug.Log($"[WebXRFusionBridge] Haptic Sent (float): {handVal}, {amplitude}, {durMs}");
+                    return;
+                }
+
+                hapticMethod = managerType.GetMethod("HapticPulse", new Type[] { handType, typeof(float), typeof(double) });
+                if (hapticMethod != null)
+                {
+                    hapticMethod.Invoke(inst, new object[] { handVal, amplitude, (double)durMs });
+                    Debug.Log($"[WebXRFusionBridge] Haptic Sent (double): {handVal}, {amplitude}, {durMs}");
+                    return;
+                }
+
+                Debug.LogError("[WebXRFusionBridge] HapticPulse method not found on WebXRManager.");
             }
             catch (Exception ex)
             {
@@ -142,6 +169,7 @@ namespace WebXR.FusionBridge
                 {
                     pr_Instance = managerType.GetProperty("Instance", BindingFlags.Public | BindingFlags.Static);
                     pr_XRState = managerType.GetProperty("XRState", BindingFlags.Public | BindingFlags.Instance);
+                    Debug.Log($"[WebXRFusionBridge] WebXRManager found. Instance Prop: {pr_Instance != null}, XRState Prop: {pr_XRState != null}");
                 }
 
                 controllerDataType = Type.GetType("WebXR.WebXRControllerData, WebXR");
@@ -157,6 +185,11 @@ namespace WebXR.FusionBridge
                     fd_buttonATouched = controllerDataType.GetField("buttonATouched");
                     fd_buttonBTouched = controllerDataType.GetField("buttonBTouched");
                     fd_triggerTouched = controllerDataType.GetField("triggerTouched");
+                    fd_thumbstick = controllerDataType.GetField("thumbstick");
+                    fd_thumbstickX = controllerDataType.GetField("thumbstickX");
+                    fd_thumbstickY = controllerDataType.GetField("thumbstickY");
+                    fd_buttonA = controllerDataType.GetField("buttonA");
+                    fd_buttonB = controllerDataType.GetField("buttonB");
                 }
 
                 handDataType = Type.GetType("WebXR.WebXRHandData, WebXR");
@@ -193,10 +226,17 @@ namespace WebXR.FusionBridge
                 var instanceVal = pr_Instance.GetValue(null);
                 if (instanceVal == null) return false;
                 var state = pr_XRState.GetValue(instanceVal);
-                return state != null && state.ToString() == "VR";
+                if (state == null) return false;
+                
+                string stateStr = state.ToString().ToUpper();
+                bool isVR = stateStr == "VR" || stateStr == "VR_PRESENTING" || stateStr == "ENABLED" || stateStr.Contains("VR");
+                
+                Debug.Log($"[WebXRFusionBridge] Checking WebXR State: '{stateStr}' -> isVR: {isVR}");
+                return isVR;
             }
-            catch
+            catch (Exception ex)
             {
+                Debug.LogError("[WebXRFusionBridge] IsWebXRActiveVR check failed: " + ex);
                 return false;
             }
         }
@@ -372,14 +412,14 @@ namespace WebXR.FusionBridge
             inputs.triggerTouched = (bool)fd_triggerTouched.GetValue(data);
             
             // WebXRControllerData has float thumbstick click value (buttonPressed ? 1 : 0)
-            float thumbstickVal = (float)controllerDataType.GetField("thumbstick").GetValue(data);
+            float thumbstickVal = (float)fd_thumbstick.GetValue(data);
             inputs.thumbstickClicked = thumbstickVal > 0.5f;
 
-            inputs.thumbstickX = (float)controllerDataType.GetField("thumbstickX").GetValue(data);
-            inputs.thumbstickY = (float)controllerDataType.GetField("thumbstickY").GetValue(data);
+            inputs.thumbstickX = (float)fd_thumbstickX.GetValue(data);
+            inputs.thumbstickY = (float)fd_thumbstickY.GetValue(data);
 
-            float aVal = (float)controllerDataType.GetField("buttonA").GetValue(data);
-            float bVal = (float)controllerDataType.GetField("buttonB").GetValue(data);
+            float aVal = (float)fd_buttonA.GetValue(data);
+            float bVal = (float)fd_buttonB.GetValue(data);
             inputs.buttonAPressed = aVal > 0.5f;
             inputs.buttonBPressed = bVal > 0.5f;
 
@@ -428,7 +468,7 @@ namespace WebXR.FusionBridge
             }
         }
 
-        private void ExecuteUIGrabClick(Collider hitCollider)
+        private void ExecuteUIGrabClick(Collider hitCollider, BeamToucher toucher)
         {
             if (hitCollider == null) return;
 
@@ -472,7 +512,8 @@ namespace WebXR.FusionBridge
 
             if (hasVRTouchable)
             {
-                Debug.Log("[WebXRFusionBridge] Collider has VR touchable extension, skipping manual click to prevent double trigger.");
+                Debug.Log("[WebXRFusionBridge] Collider has VR touchable extension, executing touch via BeamToucher.");
+                if (toucher != null) toucher.ExecuteTouch();
                 return;
             }
 
@@ -524,20 +565,20 @@ namespace WebXR.FusionBridge
                 if (beamer != null)
                 {
                     beamer.useRayActionInput = false;
-                    beamer.isRayEnabled = (LeftController.thumbstickY > 0.5f || LeftController.thumbstickClicked || LeftController.buttonAPressed || LeftController.buttonBPressed);
+                    beamer.isRayEnabled = (LeftController.thumbstickY > 0.5f || LeftController.thumbstickClicked || LeftController.buttonAPressed || LeftController.buttonBPressed || LeftController.triggerTouched || LeftController.trigger > 0.05f);
                 }
 
                 var toucher = leftHand.GetComponent<BeamToucher>();
-                if (beamer != null && toucher != null && toucher.HasHitTarget)
+                if (beamer != null && toucher != null)
                 {
                     bool wasPressed = LeftController.trigger > 0.5f && prevLeftTriggerVal <= 0.5f;
                     bool isPressed = LeftController.trigger > 0.5f;
 
-                    if (wasPressed)
+                    if (wasPressed && toucher.HasHitTarget)
                     {
-                        ExecuteUIGrabClick(toucher.GetLatestHitCollider());
+                        ExecuteUIGrabClick(toucher.GetLatestHitCollider(), toucher);
                     }
-                    if (isPressed) toucher.UpdateSlider(beamer.lastHit);
+                    if (isPressed && toucher.HasHitTarget) toucher.UpdateSlider(beamer.lastHit);
                     else toucher.ReleaseSlider();
                 }
             }
@@ -548,20 +589,20 @@ namespace WebXR.FusionBridge
                 if (beamer != null)
                 {
                     beamer.useRayActionInput = false;
-                    beamer.isRayEnabled = (RightController.thumbstickY > 0.5f || RightController.thumbstickClicked || RightController.buttonAPressed || RightController.buttonBPressed);
+                    beamer.isRayEnabled = (RightController.thumbstickY > 0.5f || RightController.thumbstickClicked || RightController.buttonAPressed || RightController.buttonBPressed || RightController.triggerTouched || RightController.trigger > 0.05f);
                 }
 
                 var toucher = rightHand.GetComponent<BeamToucher>();
-                if (beamer != null && toucher != null && toucher.HasHitTarget)
+                if (beamer != null && toucher != null)
                 {
                     bool wasPressed = RightController.trigger > 0.5f && prevRightTriggerVal <= 0.5f;
                     bool isPressed = RightController.trigger > 0.5f;
 
-                    if (wasPressed)
+                    if (wasPressed && toucher.HasHitTarget)
                     {
-                        ExecuteUIGrabClick(toucher.GetLatestHitCollider());
+                        ExecuteUIGrabClick(toucher.GetLatestHitCollider(), toucher);
                     }
-                    if (isPressed) toucher.UpdateSlider(beamer.lastHit);
+                    if (isPressed && toucher.HasHitTarget) toucher.UpdateSlider(beamer.lastHit);
                     else toucher.ReleaseSlider();
                 }
             }
