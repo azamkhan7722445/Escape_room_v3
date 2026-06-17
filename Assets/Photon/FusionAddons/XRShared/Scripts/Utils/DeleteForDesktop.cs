@@ -8,9 +8,13 @@ namespace Fusion.Samples.IndustriesComponents
     {
         void OnEnable()
         {
-#if !UNITY_ANDROID && !UNITY_EDITOR
-        DestroyImmediate( gameObject );
-#endif
+
+            if (Pref_manager.Instance.pc)
+            {
+                DestroyImmediate(gameObject);
+            }
+
+
         }
     }
 }
