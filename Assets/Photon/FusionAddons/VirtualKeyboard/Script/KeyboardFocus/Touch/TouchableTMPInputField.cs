@@ -110,15 +110,6 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
             inputFieldRectTransform = inputfield.GetComponent<RectTransform>();
             rectTransform = GetComponent<RectTransform>();
             touchable = GetComponent<Touchable>();
-
-            // Prevent TMP from opening a TouchScreenKeyboard session on Android/Quest.
-            // Without this, ActivateInputField() calls TouchScreenKeyboard.Open(), and
-            // TMP's LateUpdate() overwrites inputfield.text from the session's empty buffer
-            // every frame, wiping characters typed on Photon's VirtualKeyboard.
-            // shouldHideSoftKeyboard=true: skips Open() in ActivateInputFieldInternal AND
-            // makes isKeyboardUsingEvents() return true so LateUpdate exits before the sync loop.
-            if (inputfield != null)
-                inputfield.shouldHideSoftKeyboard = true;
         }
 
         private void Start()
@@ -217,22 +208,56 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
         // OnTouch event triggered when the player touches the 3D button is forwarded to the UI button 
         private void OnTouch()
         {
-            // Bounce protection
-            if (lastTMPSelect != -1 && (Time.time - lastTMPSelect) < lastTMPSelectBounceProtectionduration)
+
+
+
+
+            // Bounce protection (yeh rehne do)
+            if (hasFocus && lastTMPSelect != -1 &&
+                (Time.time - lastTMPSelect) < lastTMPSelectBounceProtectionduration)
             {
                 return;
             }
 
-            lastTMPSelect = Time.time;
+            // Quest rule: touch sirf focus ON kare
+            if (hasFocus)
+                return;
 
-            // Always ensure the input field is activated and selected on touch/click!
+            hasFocus = true;
+
+            //  SAME FRAME me activate mat karo (Quest fix)
             StartCoroutine(DelayedActivate());
 
-            if (!hasFocus)
-            {
-                hasFocus = true;
-                OnFocusChanged();
-            }
+            OnFocusChanged();
+
+
+
+
+
+
+            //Debug.LogError($"OnTouch (prev: {hasFocus})");
+            //if (hasFocus && lastTMPSelect != -1 && (Time.time - lastTMPSelect) < lastTMPSelectBounceProtectionduration)
+            //{
+            //    //Debug.LogError("Avoid double focus change due to touch/pointer");
+            //    return;
+            //}
+
+            //hasFocus = !hasFocus;
+
+            //if (hasFocus)
+            //{
+            //    //Debug.LogError("Force activate input field");
+            //    UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(inputfield.gameObject);
+            //    inputfield.ActivateInputField();
+            //}
+            //if (hasFocus == false)
+            //{
+            //    //Debug.LogError("Force deactivate input field");
+            //    UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
+            //    inputfield.DeactivateInputField();
+            //}
+
+            //OnFocusChanged();
         }
 
         IEnumerator DelayedActivate()
@@ -243,10 +268,8 @@ namespace Fusion.Addons.VirtualKeyboard.Touch
             if (!this || !inputfield)
                 yield break;
 
-            if (UnityEngine.EventSystems.EventSystem.current != null)
-            {
-                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(inputfield.gameObject);
-            }
+            UnityEngine.EventSystems.EventSystem.current
+                .SetSelectedGameObject(inputfield.gameObject);
 
             inputfield.ActivateInputField();
         }

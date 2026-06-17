@@ -13,7 +13,8 @@ namespace Fusion.Addons.VirtualKeyboard
         void OnReturnPressed();
     }
 
-    public interface ITextFocusListener {
+    public interface ITextFocusListener
+    {
         void OnFocusChange(ITextFocusable focusable);
         void OnTextChange(ITextFocusable focusable);
     }
@@ -55,7 +56,7 @@ namespace Fusion.Addons.VirtualKeyboard
         private void Awake()
         {
             Instance = this;
-            if(rigInfo == null) rigInfo = RigInfo.FindRigInfo(allowSceneSearch: true);
+            if (rigInfo == null) rigInfo = RigInfo.FindRigInfo(allowSceneSearch: true);
             if (rigInfo == null)
             {
                 Debug.LogError("RigInfo Missing for KeyboardFocusManager");
@@ -72,7 +73,7 @@ namespace Fusion.Addons.VirtualKeyboard
 
         private void OnDestroy()
         {
-            if(Instance == this)
+            if (Instance == this)
             {
                 Instance = null;
             }
@@ -107,7 +108,7 @@ namespace Fusion.Addons.VirtualKeyboard
         // OnFocusChange is called by objects requiring the keyboard focus
         public void OnFocusChange(ITextFocusable focusable)
         {
-            if(focusable.HasFocus)
+            if (focusable.HasFocus)
             {
                 // exit if the focusable is the same
                 if (focusable == CurrentKeyboardFocus) return;
@@ -245,7 +246,7 @@ namespace Fusion.Addons.VirtualKeyboard
 
             // Disable the desktop controller
             disabledDesktopController = rigInfo.localHardwareRigDesktopController;
-            if(disabledDesktopController)
+            if (disabledDesktopController)
                 disabledDesktopController.enabled = false;
         }
 
