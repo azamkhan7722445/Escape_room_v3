@@ -10,7 +10,7 @@ public class LargeChestKnob : NetworkBehaviour
     public int maxDigits = 10;
     public Vector3 rotationAxis = Vector3.forward;
     public Transform visualTransform;
-    
+
     [Header("Grab Settings")]
     public float grabSensitivity = 1.0f;
     public float minGrabDistance = 0.001f;
@@ -18,6 +18,10 @@ public class LargeChestKnob : NetworkBehaviour
     public float hapticDuration = 0.05f;
     public bool snapHandToKnob = true;
     public bool snapToCenter = true;
+
+    [Header("UI Click Cooldown")]
+    public float buttonCooldown = 0.25f;
+    private float _lastRotateTime = -999f;
 
     [Header("Networking")]
     [Networked, OnChangedRender(nameof(OnDigitChanged))]
@@ -84,7 +88,7 @@ public class LargeChestKnob : NetworkBehaviour
         _isLocalGrabbing = true;
         _lastHandAngle = GetHandAngle();
         _cumulativeAngleDelta = 0;
-        
+
         if (Object != null) _startDigit = CurrentDigit;
         else _startDigit = 0;
 
@@ -96,7 +100,7 @@ public class LargeChestKnob : NetworkBehaviour
                 _localHandVisual = hand.localRepresentation.gameObject.transform;
                 _handVisualInitialLocalPos = _localHandVisual.localPosition;
                 _handVisualInitialLocalRot = _localHandVisual.localRotation;
-                
+
                 if (visualTransform != null)
                 {
                     if (snapToCenter)
@@ -107,14 +111,14 @@ public class LargeChestKnob : NetworkBehaviour
                         Vector3 projected = Vector3.ProjectOnPlane(localHand, rotationAxis);
                         if (projected.magnitude < 0.01f) projected = Vector3.up * 0.05f;
                         else projected = projected.normalized * 0.05f;
-                        
+
                         _grabPointOffset = projected;
                     }
                     else
                     {
                         _grabPointOffset = visualTransform.InverseTransformPoint(_grabbable.currentGrabber.transform.position);
                     }
-                    
+
                     _grabPointRotationOffset = Quaternion.Inverse(visualTransform.rotation) * _grabbable.currentGrabber.transform.rotation;
                 }
             }
@@ -124,7 +128,7 @@ public class LargeChestKnob : NetworkBehaviour
     private void OnUngrab()
     {
         _isLocalGrabbing = false;
-        
+
         if (_localHandVisual != null)
         {
             _localHandVisual.localPosition = _handVisualInitialLocalPos;
@@ -140,7 +144,7 @@ public class LargeChestKnob : NetworkBehaviour
             // Update rotation smoothly every frame for responsiveness
             float currentAngle = GetHandAngle();
             float delta = Mathf.DeltaAngle(_lastHandAngle, currentAngle);
-            
+
             if (GetHandDistance() > minGrabDistance)
             {
                 _cumulativeAngleDelta += delta;
@@ -167,7 +171,7 @@ public class LargeChestKnob : NetworkBehaviour
                 // Update network state based on accumulated delta
                 int digitDelta = Mathf.RoundToInt((_cumulativeAngleDelta * grabSensitivity) / (360f / maxDigits));
                 int newDigit = (_startDigit - digitDelta + (maxDigits * 100)) % maxDigits;
-                
+
                 if (newDigit != CurrentDigit)
                 {
                     CurrentDigit = newDigit;
@@ -180,7 +184,7 @@ public class LargeChestKnob : NetworkBehaviour
     private void SendHapticFeedback()
     {
         if (_grabbable == null || _grabbable.currentGrabber == null) return;
-        
+
         var hand = _grabbable.currentGrabber.GetComponentInParent<HardwareHand>();
         if (hand != null)
         {
@@ -263,7 +267,7 @@ public class LargeChestKnob : NetworkBehaviour
     private float GetHandDistance()
     {
         if (_grabbable == null || _grabbable.currentGrabber == null) return 0;
-        
+
         Vector3 worldAxis = transform.TransformDirection(rotationAxis);
         Vector3 directionToHand = _grabbable.currentGrabber.transform.position - transform.position;
         return Vector3.ProjectOnPlane(directionToHand, worldAxis).magnitude;
@@ -271,6 +275,9 @@ public class LargeChestKnob : NetworkBehaviour
 
     public void RotateRight()
     {
+        if (Time.time - _lastRotateTime < buttonCooldown) return;
+        _lastRotateTime = Time.time;
+
         if (Object != null && Object.HasStateAuthority)
             CurrentDigit = (CurrentDigit + 1) % maxDigits;
         else
@@ -279,6 +286,9 @@ public class LargeChestKnob : NetworkBehaviour
 
     public void RotateLeft()
     {
+        if (Time.time - _lastRotateTime < buttonCooldown) return;
+        _lastRotateTime = Time.time;
+
         if (Object != null && Object.HasStateAuthority)
             CurrentDigit = (CurrentDigit - 1 + maxDigits) % maxDigits;
         else
@@ -288,6 +298,9 @@ public class LargeChestKnob : NetworkBehaviour
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     private void RPC_RequestRotation(int direction)
     {
+        if (Time.time - _lastRotateTime < buttonCooldown) return;
+        _lastRotateTime = Time.time;
+
         CurrentDigit = (CurrentDigit + direction + maxDigits) % maxDigits;
     }
 }

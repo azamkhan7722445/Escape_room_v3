@@ -7,7 +7,17 @@ public class KnobUIController : MonoBehaviour
     public Button rightButton;
     public LargeChestKnob knob;
 
+    private void Awake()
+    {
+        FindKnob();
+    }
+
     private void Start()
+    {
+        FindKnob();
+    }
+
+    private void FindKnob()
     {
         // If not assigned, try to find the knob by proximity or name
         if (knob == null)
@@ -33,8 +43,48 @@ public class KnobUIController : MonoBehaviour
                 }
             }
         }
-        
-        if (leftButton != null && knob != null) leftButton.onClick.AddListener(() => knob.RotateRight());
-        if (rightButton != null && knob != null) rightButton.onClick.AddListener(() => knob.RotateLeft());
+    }
+
+    private void OnEnable()
+    {
+        FindKnob();
+        if (leftButton != null)
+        {
+            leftButton.onClick.RemoveListener(OnLeftButtonClicked);
+            leftButton.onClick.AddListener(OnLeftButtonClicked);
+        }
+        if (rightButton != null)
+        {
+            rightButton.onClick.RemoveListener(OnRightButtonClicked);
+            rightButton.onClick.AddListener(OnRightButtonClicked);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (leftButton != null)
+        {
+            leftButton.onClick.RemoveListener(OnLeftButtonClicked);
+        }
+        if (rightButton != null)
+        {
+            rightButton.onClick.RemoveListener(OnRightButtonClicked);
+        }
+    }
+
+    private void OnLeftButtonClicked()
+    {
+        if (knob != null)
+        {
+            knob.RotateRight();
+        }
+    }
+
+    private void OnRightButtonClicked()
+    {
+        if (knob != null)
+        {
+            knob.RotateLeft();
+        }
     }
 }
