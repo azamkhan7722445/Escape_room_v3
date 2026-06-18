@@ -9,7 +9,10 @@ namespace Fusion.Samples.IndustriesComponents
         void OnEnable()
         {
 #if UNITY_WEBGL
-        DestroyImmediate( gameObject );
+            if (Pref_manager.Instance.pc)
+            {
+                DestroyImmediate(gameObject);
+            }
 #endif
         }
     }

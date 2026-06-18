@@ -1,10 +1,14 @@
 using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices;
 
 public class Pref_manager : MonoBehaviour
 {
     public static Pref_manager Instance;
+
+    [DllImport("__Internal")]
+    private static extern void TriggerVR();
 
     public bool vr, pc;
     private void Awake()
@@ -36,6 +40,11 @@ public class Pref_manager : MonoBehaviour
         pc = false;
         vr = true;
        // PlayerPrefs.SetInt("mode", 1); // 0 for PC, 1 for VR
+
+        #if !UNITY_EDITOR && UNITY_WEBGL
+        TriggerVR();
+        #endif
+
         SceneManager.LoadScene("AvatarSelection");
     }
 }
