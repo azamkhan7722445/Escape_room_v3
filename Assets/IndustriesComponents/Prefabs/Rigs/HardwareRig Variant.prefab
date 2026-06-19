@@ -12,9 +12,21 @@ PrefabInstance:
       propertyPath: startFadeLevel
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4208948367510053356, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208948367510053356, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
+      propertyPath: targetLayerMask.m_Bits
+      value: 511
+      objectReference: {fileID: 0}
     - target: {fileID: 4208948368294204022, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 52735
+      value: 2147450879
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208948368886931614, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
+      propertyPath: targetLayerMask.m_Bits
+      value: 511
       objectReference: {fileID: 0}
     - target: {fileID: 4208948369037581448, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
       propertyPath: runnerExpectations
@@ -30,15 +42,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4208948369037581450, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 21.061
       objectReference: {fileID: 0}
     - target: {fileID: 4208948369037581450, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 6.99
       objectReference: {fileID: 0}
     - target: {fileID: 4208948369037581450, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.751
       objectReference: {fileID: 0}
     - target: {fileID: 4208948369037581450, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
       propertyPath: m_LocalRotation.w
@@ -119,6 +131,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4208948369037581449, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8133192409566830627}
+    - targetCorrespondingSourceObject: {fileID: 4208948369037581449, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6323148089499324622}
+    - targetCorrespondingSourceObject: {fileID: 4208948369037581449, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1770733344725704290}
     - targetCorrespondingSourceObject: {fileID: 4208948368294204020, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1806066165}
@@ -258,7 +276,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -297,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startCenterPosition: {fileID: 0}
-  randomRadius: 10
+  randomRadius: 1
   useNavMesh: 1
   lookAtCenterPosition: 0
   shouldAlignHeadsetInsteadOfRigInVR: 1
@@ -369,6 +387,89 @@ MonoBehaviour:
   localAvatarLayer: InvisibleForLocalPlayer
   remoteAvatarLayer: Default
   hideLocalAvatar: 1
+--- !u!114 &6323148089499324622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4403603214171361315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894ae600aef35214aa0bceb9c0d426ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fusion.XR.Shared.Locomotion.SmoothLocomotion
+  leftControllerMove:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Controller Move
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 666172bb-5a1f-43e5-9bb0-f3234bc342d5
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 
+        m_Path: <XRController>{LeftHand}/joystick
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: 
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  rightControllerMove:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Controller Move
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 2930dc76-21e4-4fea-8948-1ef4ff9a4f97
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 
+        m_Path: <XRController>{RightHand}/joystick
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: 
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  useLeftController: 1
+  useRightController: 0
+  moveSpeed: 1.5
+  deadZone: 0.15
+  locomotionLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  groundCheckDistance: 1.5
+  navMeshDistanceTolerance: 0.5
+--- !u!195 &1770733344725704290
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4403603214171361315}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.16
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &4403603214355999798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4208948368886931612, guid: 72aacf5ad018ef84f8c2f1796da09345, type: 3}
@@ -455,9 +556,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4403603213583363400}
     m_Modifications:
+    - target: {fileID: 799187660, guid: ae13ea14de79a4c478168a6ce3ae8eae, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
+    - target: {fileID: 896310306, guid: ae13ea14de79a4c478168a6ce3ae8eae, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
     - target: {fileID: 6692007456231064993, guid: ae13ea14de79a4c478168a6ce3ae8eae, type: 3}
       propertyPath: menu
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692007456231064993, guid: ae13ea14de79a4c478168a6ce3ae8eae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6692007456231065006, guid: ae13ea14de79a4c478168a6ce3ae8eae, type: 3}
       propertyPath: m_RootOrder
@@ -536,6 +649,10 @@ PrefabInstance:
     - target: {fileID: 8925382688080028541, guid: 814fa524bf762ee4fafde3bb2f561611, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925382688083501659, guid: 814fa524bf762ee4fafde3bb2f561611, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8925382688083511481, guid: 814fa524bf762ee4fafde3bb2f561611, type: 3}
       propertyPath: m_Name
@@ -709,7 +826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7418525053719769204, guid: 3c3d9eaad2662ee4a938d5e953f41c3e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Fusion.Samples.Expo.ApplicationManager, Assembly-CSharp
+      value: Fusion.Samples.IndustriesComponents.ApplicationManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -745,6 +862,10 @@ PrefabInstance:
     - target: {fileID: 1174619126911106701, guid: bbe1b25275c702c4a80f203311c3eed2, type: 3}
       propertyPath: m_Name
       value: OSFRightHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174619126911131745, guid: bbe1b25275c702c4a80f203311c3eed2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1174619126911399555, guid: bbe1b25275c702c4a80f203311c3eed2, type: 3}
       propertyPath: m_RootOrder

@@ -9031,6 +9031,14 @@ PrefabInstance:
       propertyPath: rigInfo
       value: 
       objectReference: {fileID: 399848588}
+    - target: {fileID: 1770733344725704290, guid: 332fda1eff2cb6c48bc735d13f2565ea, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403603213583363398, guid: 332fda1eff2cb6c48bc735d13f2565ea, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4403603214171361312, guid: 332fda1eff2cb6c48bc735d13f2565ea, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -9093,6 +9101,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6b01d08517c292649974266c91441d73, type: 2}
     - target: {fileID: 5954232172772090359, guid: 332fda1eff2cb6c48bc735d13f2565ea, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323148089499324622, guid: 332fda1eff2cb6c48bc735d13f2565ea, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6745759657939136178, guid: 332fda1eff2cb6c48bc735d13f2565ea, type: 3}
