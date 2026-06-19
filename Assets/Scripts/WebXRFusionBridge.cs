@@ -114,8 +114,12 @@ namespace WebXR.FusionBridge
                     if (hapticMethod != null)
                     {
                         // WebXRControllerHand enum: LEFT = 1, RIGHT = 2
-                        int handVal = left ? 1 : 2;
-                        hapticMethod.Invoke(inst, new object[] { handVal, amplitude, durationSeconds * 1000f });
+                        var handType = Type.GetType("WebXR.WebXRControllerHand, WebXR");
+                        if (handType != null)
+                        {
+                            object handVal = Enum.ToObject(handType, left ? 1 : 2);
+                            hapticMethod.Invoke(inst, new object[] { handVal, amplitude, durationSeconds * 1000f });
+                        }
                     }
                 }
             }

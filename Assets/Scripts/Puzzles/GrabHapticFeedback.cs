@@ -18,17 +18,16 @@ namespace Fusion.XR.Shared.Puzzles
             _grabbable = GetComponent<Grabbable>();
             if (_grabbable != null)
             {
-                _grabbable.onGrab.AddListener(OnGrabbed);
+                _grabbable.onWillGrab.AddListener(OnWillGrab);
             }
         }
 
-        private void OnGrabbed()
+        private void OnWillGrab(Grabber grabber)
         {
-            if (_grabbable != null && _grabbable.currentGrabber != null)
+            if (grabber != null)
             {
                 // Find the HardwareHand associated with the grabber
-                // Note: Grabber.cs keeps 'hand' private, so we look for it in the parent
-                var hardwareHand = _grabbable.currentGrabber.GetComponentInParent<HardwareHand>();
+                var hardwareHand = grabber.GetComponentInParent<HardwareHand>();
                 if (hardwareHand != null)
                 {
                     hardwareHand.SendHapticImpulse(amplitude, duration);
@@ -40,7 +39,7 @@ namespace Fusion.XR.Shared.Puzzles
         {
             if (_grabbable != null)
             {
-                _grabbable.onGrab.RemoveListener(OnGrabbed);
+                _grabbable.onWillGrab.RemoveListener(OnWillGrab);
             }
         }
     }
